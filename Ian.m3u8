@@ -17,6 +17,7 @@ https://a1xs.vip/2000024
 #EXTINF:-1 tvg-id="premiersports.uk" tvg-name="|UK| PREMIER SPORTS 4K" tvg-logo="http://logo.ottcst.info/PREMIERSPORTS1.png" group-title="Premier Sports", PREMIER SPORTS 4K
 http://iptvcraft.ottcst.org:80/Ian/TUQMFJB8GQ/4786
 #EXTINF:-1 tvg-id="premiersports2.uk" tvg-name="|UK| PREMIER SPORTS 2 4K" tvg-logo="http://logo.ottcst.info/PREMIERSPORTS2.png" group-title="Premier Sports",PREMIER SPORTS 2 4K
+http://iptvcraft.ottcst.org:80/Ian/TUQMFJB8GQ/4785
 #EXTINF:-1 group-title="Golf" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/argentina/golf-channel-ar.png", Golf Channel HD - United States
 http://168.228.44.241:9998/play/a02s/index.m3u8
 #EXTINF:-1 group-title="Golf" tvg-logo="https://logo.m3uassets.com/golfchannel.png",USA GOLF CHANNEL
@@ -25,6 +26,7 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600001317
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125066
 #EXTINF:-1 group-title="Backup" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png",Sky Golf (Backup Stream)
 http://203.128.11.165:8000/play/a07x
+
 
 
 
