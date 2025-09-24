@@ -18,9 +18,12 @@ https://a1xs.vip/2000024
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600015557
 #EXTINF:-1 group-title="Premier Sports" tvg-logo="https://logo.m3uassets.com/premiersports2hd.png",Premier Sports 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600015558
+#EXTINF:-1 group-title="Golf" tvg-id="golfchannel.us" tvg-logo="http://lonewolftvpr.com/logos/golf.png" ,Golf Channel
+https://tvnow.best/api/stream/mikemog/878404/livetv.epg/golf.channel.canada.ca.m3u8
 #EXTINF:-1 group-title="Golf" tvg-logo="https://logo.m3uassets.com/golfchannel.png",USA GOLF CHANNEL
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600001317
 #EXTINF:-1 group-title="Golf" tvg-logo="https://logo.m3uassets.com/nbcgolfchannel.png",US: NBC GOLF CHANNEL
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125066
 #EXTINF:-1 group-title="Backup" tvg-logo="https://i.ibb.co/QvhY4tX/sky-golf.png",Sky Golf (Backup Stream)
 http://203.128.11.165:8000/play/a07x
+
