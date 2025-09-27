@@ -32,9 +32,10 @@ http://cord-cutter.net:8080/0UkGQf/114299/9806
 http://cord-cutter.net:8080/0UkGQf/114299/46728
 #EXTINF:-1 group-title="RTE Ireland" tvg-logo="https://lo1.in/ir/rte1.png",RTE ONE HD
 http://d4k4u.com:80/live/02092021iptv/pwqopprrct/379290.ts
-#EXTINF:-1 group-title="RTE Ireland" tvg-logo="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVcAAACTCAMAAAAN4ao8AAAAZlBMVEVCp2n///8wol7v9/I5pGOezq/s9e+o07c+pmaGwpv6/ftCqGoyol83pGKRyKU9pWZhs399v5Xc7eKCwZl0u47H4tCYy6rP5te12cLW6t1Mq3Gu1rxasHq+3slSrXVrt4fj8eganVNmMQjEAAAMMUlEQVR4nO2d65aqOBBGNUZBSAgqeAFR+/",RTE TWO HD
+#EXTINF:-1 group-title="RTE Ireland" tvg-logo="https://github.com/tv-logo/tv-logos/blob/6f7efcdd03d80c9117b317647a274fa26f56d00e/countries/united-kingdom/rte-2-uk.png?raw=true",RTE TWO HD
 http://d4k4u.com:80/live/02092021iptv/pwqopprrct/379291.ts
 #EXTINF:-1 group-title="BBC" tvg-logo="http://138.199.27.237:8080/UK/BBC1.png",BBC ONE HD
 http://d4k4u.com:80/live/02092021iptv/pwqopprrct/77361.ts
 #EXTINF:-1 group-title="BBC" tvg-logo="http://138.199.27.237:8080/UK/BBC2.png",BBC TWO HD
 http://d4k4u.com:80/live/02092021iptv/pwqopprrct/77362.ts
+
