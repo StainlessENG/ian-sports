@@ -1112,7 +1112,7 @@ https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/331726
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Sportsnet+ 40 :" tvg-logo="https://logo.m3uassets.com/sportsnet.png" group-title="PPV Live Events",Sportsnet+ 40 :
 https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/331726
 #EXTINF:-1 tvg-id="SkySportsMainEvent.uk" tvg-name="Sky Sports Main Event" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-main-event-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Main Event
-https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30116
+http://cord-cutter.net:8080/34886996/84366221/137720
 #EXTINF:-1 tvg-id="SkySportsPremierLeague.uk" tvg-name="Sky Sports Premier League" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-premier-league-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Premier League
 https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30128
 #EXTINF:-1 tvg-id="SkySportsFootball.uk" tvg-name="Sky Sports Football" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-football-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Football
@@ -1122,7 +1122,7 @@ https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30139
 #EXTINF:-1 tvg-id="SkySportsCricket.uk" tvg-name="Sky Sports Cricket" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-cricket-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Cricket
 https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30100
 #EXTINF:-1 tvg-id="SkySportsGolf.uk" tvg-name="Sky Sports Golf" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-golf-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Golf
-https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30112
+http://cord-cutter.net:8080/34886996/84366221/35240
 #EXTINF:-1 tvg-id="SkySportsF1.uk" tvg-name="Sky Sports F1" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-f1-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports F1
 https://m3ufilter.media4u.top/m3u-stream/live/media4u/media4u/30104
 #EXTINF:-1 tvg-id="SkySportsTennis.uk" tvg-name="Sky Sports Tennis" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-tennis-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Tennis
