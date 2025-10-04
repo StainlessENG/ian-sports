@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U url-tvg="http://m3u4u.com/epg/5z3endxz9zudejw8nqpk"
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="AMZN 01 | No Event Scheduled" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/misc/media/amazon.png?raw=true" group-title="PPV Live Events",AMZN 01 | No Event Scheduled
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200245387
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="AMZN 02 | No Event Scheduled" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/misc/media/amazon.png?raw=true" group-title="PPV Live Events",AMZN 02 | No Event Scheduled
@@ -975,18 +975,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400423688
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423689
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 1" tvg-logo="https://logo.m3uassets.com/ufc.png" group-title="PPV Live Events",UFC 1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423715
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 02" tvg-logo="https://logo.m3uassets.com/ufc02tbd.png" group-title="PPV Live Events",UFC 02
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423716
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 03" tvg-logo="https://logo.m3uassets.com/ufc03tbd.png" group-title="PPV Live Events",UFC 03
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423717
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 04" tvg-logo="https://logo.m3uassets.com/ufc04tbd.png" group-title="PPV Live Events",UFC 04
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423718
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 05" tvg-logo="https://logo.m3uassets.com/ufc05tbd.png" group-title="PPV Live Events",UFC 05
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423719
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 06" tvg-logo="https://logo.m3uassets.com/ufc06ppv.png" group-title="PPV Live Events",UFC 06
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423720
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UFC 07" tvg-logo="" group-title="PPV Live Events",UFC 07
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423721
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="VIDIO LIVE EVENTS 01" tvg-logo="" group-title="PPV Live Events",VIDIO LIVE EVENTS 01
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423722
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="VIDIO LIVE EVENTS 02" tvg-logo="" group-title="PPV Live Events",VIDIO LIVE EVENTS 02
@@ -1136,13 +1124,17 @@ http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508254
 #EXTINF:-1 tvg-id="SkySportsRacing.uk" tvg-name="Sky Sports Racing" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-racing-bug-hz-uk.png?raw=true" group-title="Sky Sports",Sky Sports Racing
 http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508258
 #EXTINF:-1 tvg-id="TNTSports1.uk" tvg-name="TNT Sports 1" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-1-uk.png?raw=true" group-title="TNT Sports",TNT Sports 1
-http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508184
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508184
 #EXTINF:-1 tvg-id="TNTSports2.uk" tvg-name="TNT Sports 2" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-2-uk.png?raw=true" group-title="TNT Sports",TNT Sports 2
-http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508186
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508186
 #EXTINF:-1 tvg-id="TNTSports3.uk" tvg-name="TNT Sports 3" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-3-uk.png?raw=true" group-title="TNT Sports",TNT Sports 3
-http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508187
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508187
 #EXTINF:-1 tvg-id="TNTSports4.uk" tvg-name="TNT Sports 4" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-4-uk.png?raw=true" group-title="TNT Sports",TNT Sports 4
-http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508189
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508189
+#EXTINF:-1 tvg-id="TNTSport5(src01).uk" tvg-name="TNT Sports 5" tvg-logo="" group-title="TNT Sports",TNT Sports 5
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508191
+#EXTINF:-1 tvg-id="TNTSport6(src01).uk" tvg-name="TNT Sports 6" tvg-logo="" group-title="TNT Sports",TNT Sports 6
+http://websafety101.net:5050/chulobonao7@aol.com/TQRfqAp9dA/508192
 #EXTINF:-1 tvg-id="TNTSportsUltimateUHD.uk" tvg-name="UK TNT Sports Ultimate 4K" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-ultimate-uk.png?raw=true" group-title="TNT Sports",UK TNT Sports Ultimate 4K
 http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508199
 #EXTINF:-1 tvg-id="TNTSportsBoxOffice(src01).uk" tvg-name="TNT SPORTS BOX OFFICE" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/tnt-sports-box-office-uk.png?raw=true" group-title="TNT Sports",TNT SPORTS BOX OFFICE
@@ -1271,7 +1263,7 @@ http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/360769
 https://gohyperspeed.com/1012038457/0IyMW81OPv/40027
 #EXTINF:-1 tvg-id="Pop.uk" tvg-name="UK POP" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s33638_dark_360w_270h.png" group-title="UK Entertainment",UK POP
 http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508168
-#EXTINF:-1 tvg-id="SonyTVMax.uk" tvg-name="UK Sony TV " tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s105958_dark_360w_270h.png" group-title="UK Entertainment",UK Sony TV
+#EXTINF:-1 tvg-id="SonyTVMax.uk" tvg-name="UK Sony TV" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s105958_dark_360w_270h.png" group-title="UK Entertainment",UK Sony TV
 http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508315
 #EXTINF:-1 tvg-id="BLAZE.uk" tvg-name="Blaze" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s101972_dark_360w_270h.png" group-title="UK Entertainment",Blaze
 http://websafety101.net:5050/powreb2000@yahoo.com/TwvfeLjAfb/508074
@@ -1903,8 +1895,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/500000747
 https://gohyperspeed.com/1012038457/0IyMW81OPv/5936
 #EXTINF:-1 tvg-id="ESPN2.us" tvg-name="US: ESPN2" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s12444_dark_360w_270h.png" group-title="US Sports",US: ESPN2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200163457
-#EXTINF:-1 tvg-id="ESPN.us" tvg-name="US: ESPN" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s10179_dark_360w_270h.png" group-title="US Sports",US: ESPN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000747
 #EXTINF:-1 tvg-id="foxsports1.us" tvg-name="US: Fox Sports 1" tvg-logo="https://logo.m3uassets.com/foxsports1.png" group-title="US Sports",US: Fox Sports 1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500300620
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US ESPN 1 (HD) (S)" tvg-logo="https://logo.m3uassets.com/espn1.png" group-title="US Sports",US ESPN 1 (HD) (S)
@@ -2209,8 +2199,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/9580
 https://gohyperspeed.com/1012038457/0IyMW81OPv/34805
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Altitude Sports (F)" tvg-logo="https://logo.m3uassets.com/altitudesports.png" group-title="US Sports",US Altitude Sports (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/105724
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MLB Network" tvg-logo="https://logo.m3uassets.com/mlbnetwork.png" group-title="US Sports",US: MLB Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500002342
 #EXTINF:-1 tvg-id="cbssportsnetwork.us" tvg-name="US CBS Sports Network (F)" tvg-logo="https://logo.m3uassets.com/cbssportsnetwork.png" group-title="US Sports",US CBS Sports Network (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/6005
 #EXTINF:-1 tvg-id="GameShowNetworkEast.us" tvg-name="US Game Show Network (GSN) (F)" tvg-logo="https://logo.m3uassets.com/gameshownetwork.png" group-title="US Sports",US Game Show Network (GSN) (F)
@@ -2265,20 +2253,12 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/36195
 https://gohyperspeed.com/1012038457/0IyMW81OPv/34804
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Ohio (F)" tvg-logo="" group-title="US Sports",US FanDuel Sports Ohio (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/112234
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBA TV" tvg-logo="https://logo.m3uassets.com/nbatv.png" group-title="US Sports",US: NBA TV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400424011
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Yes Network" tvg-logo="https://logo.m3uassets.com/yesnetwork.png" group-title="US Sports",US: Yes Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500005519
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Marquee Sports Network" tvg-logo="https://logo.m3uassets.com/marqueesportsnetwork.png" group-title="US Sports",US: Marquee Sports Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125056
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Monumental Sports Network (A)" tvg-logo="https://logo.m3uassets.com/monumentalsportsnetwork.png" group-title="US Sports",US Monumental Sports Network (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/36257
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Spectrum SportsNet Lakers (SD) (A)" tvg-logo="https://logo.m3uassets.com/spectrumsportsnetla.png" group-title="US Sports",US Spectrum SportsNet Lakers (SD) (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/27488
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US AFN Sports (D)" tvg-logo="https://logo.m3uassets.com/afnsports.png" group-title="US Sports",US AFN Sports (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/117489
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports Philadelphia" tvg-logo="https://logo.m3uassets.com/nbcsportsphiladelphia.png" group-title="US Sports",US: NBC Sports Philadelphia
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125075
 #EXTINF:-1 tvg-id="SportsmanChannel.us" tvg-name="US Sportsman Channel (F)" tvg-logo="https://logo.m3uassets.com/sportsmanchannel.png" group-title="US Sports",US Sportsman Channel (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/6002
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Detroit (D)" tvg-logo="https://logo.m3uassets.com/foxsportsdetroit.png" group-title="US Sports",US FanDuel Sports Detroit (D)
@@ -2299,14 +2279,10 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/71321
 https://gohyperspeed.com/1012038457/0IyMW81OPv/23011
 #EXTINF:-1 tvg-id="foxcollcental.us" tvg-name="US FanDuel Sports Kansas City (A)" tvg-logo="https://logo.m3uassets.com/foxsportskansascity.png" group-title="US Sports",US FanDuel Sports Kansas City (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/5960
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: CBS Sports Network" tvg-logo="https://logo.m3uassets.com/cbssportsnetwork.png" group-title="US Sports",US: CBS Sports Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125038
 #EXTINF:-1 tvg-id="nbcsportscali.us" tvg-name="US NBC Sports California (F)" tvg-logo="https://logo.m3uassets.com/nbcsportscalifornia.png" group-title="US Sports",US NBC Sports California (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/6017
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports New Orleans (A)" tvg-logo="https://logo.m3uassets.com/foxsportsneworleans.png" group-title="US Sports",US FanDuel Sports New Orleans (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43725
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: ESPNU" tvg-logo="https://logo.m3uassets.com/espnu.png" group-title="US Sports",US: ESPNU
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500002311
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports Detroit" tvg-logo="https://logo.m3uassets.com/ballysportsdetroit.png" group-title="US Sports",US: Bally Sports Detroit
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500006463
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US NBC Sports Bay Area (S)" tvg-logo="https://logo.m3uassets.com/nbcsportsbayarea.png" group-title="US Sports",US NBC Sports Bay Area (S)
@@ -2339,8 +2315,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/112241
 https://gohyperspeed.com/1012038457/0IyMW81OPv/5949
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Willow" tvg-logo="https://logo.m3uassets.com/willow.png" group-title="US Sports",US: Willow
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500002372
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Fox Sports 1" tvg-logo="https://logo.m3uassets.com/foxsports1.png" group-title="US Sports",US: Fox Sports 1
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500300620
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US ACC Network (Backup) (A)" tvg-logo="https://logo.m3uassets.com/accnetwork.png" group-title="US Sports",US ACC Network (Backup) (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14409
 #EXTINF:-1 tvg-id="foxsportnorth.us" tvg-name="US FanDuel Sports North (A)" tvg-logo="" group-title="US Sports",US FanDuel Sports North (A)
@@ -2349,8 +2323,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/5948
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14153
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US CBS Sports Golazo Network (PC)" tvg-logo="https://logo.m3uassets.com/cbssportsgolazonetwork.png" group-title="US Sports",US CBS Sports Golazo Network (PC)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/119908
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports California" tvg-logo="https://logo.m3uassets.com/nbcsportscalifornia.png" group-title="US Sports",US: NBC Sports California
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125070
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US NFL RedZone (Lower BW HD) (A)" tvg-logo="https://logo.m3uassets.com/nflredzone.png" group-title="US Sports",US NFL RedZone (Lower BW HD) (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/129287
 #EXTINF:-1 tvg-id="WWE.us" tvg-name="US WWE Network (FHD) (PC)" tvg-logo="https://logo.m3uassets.com/wwenetwork.png" group-title="US Sports",US WWE Network (FHD) (PC)
@@ -2373,12 +2345,8 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/124885
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500002314
 #EXTINF:-1 tvg-id="WWE.us" tvg-name="US WWE Network (HD) (PC)" tvg-logo="https://logo.m3uassets.com/wwenetwork.png" group-title="US Sports",US WWE Network (HD) (PC)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/19959
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports Bay Area" tvg-logo="https://logo.m3uassets.com/nbcsportsbayarea.png" group-title="US Sports",US: NBC Sports Bay Area
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125067
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Spectrum SportsNet" tvg-logo="https://logo.m3uassets.com/spectrumsportsnet.png" group-title="US Sports",US: Spectrum SportsNet
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500150611
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MSG" tvg-logo="https://logo.m3uassets.com/msg.png" group-title="US Sports",US: MSG
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125061
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports West (A)" tvg-logo="" group-title="US Sports",US FanDuel Sports West (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43743
 #EXTINF:-1 tvg-id="foxsports2.us" tvg-name="US Fox Sports 2 (H)" tvg-logo="https://logo.m3uassets.com/foxsports2.png" group-title="US Sports",US Fox Sports 2 (H)
@@ -2387,14 +2355,10 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/23013
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500157606
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US ESPN ACC Network (H)" tvg-logo="https://logo.m3uassets.com/espnaccnetwork.png" group-title="US Sports",US ESPN ACC Network (H)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/23010
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: SEC Network" tvg-logo="https://logo.m3uassets.com/secnetwork.png" group-title="US Sports",US: SEC Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125092
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Fubo Sports 1 (F)" tvg-logo="https://logo.m3uassets.com/sports1.png" group-title="US Sports",US Fubo Sports 1 (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/76845
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US NBC Sports California Plus (A)" tvg-logo="https://logo.m3uassets.com/nbcsportscalifornia.png" group-title="US Sports",US NBC Sports California Plus (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/67098
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NHL Network" tvg-logo="https://logo.m3uassets.com/nhlnetwork.png" group-title="US Sports",US: NHL Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500002348
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US UFC Channel (SD)" tvg-logo="https://logo.m3uassets.com/ufcchannel.png" group-title="US Sports",US UFC Channel (SD)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14158
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Florida (F)" tvg-logo="https://logo.m3uassets.com/foxsportsflorida.png" group-title="US Sports",US FanDuel Sports Florida (F)
@@ -2415,16 +2379,12 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/43761
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30959
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MLB BIG Inning (F)" tvg-logo="" group-title="US Sports",US MLB BIG Inning (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/118654
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports Boston" tvg-logo="https://logo.m3uassets.com/nbcsportsboston.png" group-title="US Sports",US: NBC Sports Boston
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125069
 #EXTINF:-1 tvg-id="US NBC_Sports_Network.US" tvg-name="US NBC Sports Network (FHD) (A)" tvg-logo="https://logo.m3uassets.com/nbcsportsnetwork.png" group-title="US Sports",US NBC Sports Network (FHD) (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14147
 #EXTINF:-1 tvg-id="tvgnetwork.us" tvg-name="US FanDuel TV (F)" tvg-logo="https://logo.m3uassets.com/fandueltv.png" group-title="US Sports",US FanDuel TV (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/12363
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US ACC Network (S)" tvg-logo="https://logo.m3uassets.com/accnetwork.png" group-title="US Sports",US ACC Network (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30934
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Big Ten Network" tvg-logo="https://logo.m3uassets.com/bigtennetwork.png" group-title="US Sports",US: Big Ten Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125034
 #EXTINF:-1 tvg-id="monumentalsportsnetwork.us" tvg-name="US: Monumental Sports Network" tvg-logo="https://logo.m3uassets.com/monumentalsportsnetwork.png" group-title="US Sports",US: Monumental Sports Network
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432327
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Midwest Kansas City (F)" tvg-logo="" group-title="US Sports",US FanDuel Sports Midwest Kansas City (F)
@@ -2443,8 +2403,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/67096
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30931
 #EXTINF:-1 tvg-id="beINSports.us" tvg-name="US BeIN Sports (F)" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="US Sports",US BeIN Sports (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/5971
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NESN" tvg-logo="https://logo.m3uassets.com/nesn.png" group-title="US Sports",US: NESN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125079
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Sportsman Channel (S)" tvg-logo="https://logo.m3uassets.com/sportsmanchannel.png" group-title="US Sports",US Sportsman Channel (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30964
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports Kansas City" tvg-logo="https://logo.m3uassets.com/ballysportskansascity.png" group-title="US Sports",US: Bally Sports Kansas City
@@ -2459,8 +2417,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400125050
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296763
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Detroit Plus (A)" tvg-logo="https://logo.m3uassets.com/ballysportsdetroitplus.png" group-title="US Sports",US FanDuel Sports Detroit Plus (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/42501
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Fox Sports 2" tvg-logo="https://logo.m3uassets.com/foxsports2.png" group-title="US Sports",US: Fox Sports 2
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500300621
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports Chicago" tvg-logo="https://logo.m3uassets.com/nbcsportschicago.png" group-title="US Sports",US: NBC Sports Chicago
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125071
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Sportsman Channel (A)" tvg-logo="https://logo.m3uassets.com/sportsmanchannel.png" group-title="US Sports",US Sportsman Channel (A)
@@ -2529,18 +2485,12 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/500296661
 https://gohyperspeed.com/1012038457/0IyMW81OPv/136106
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US (Spanish) beIN SPORTS en EspaÃ±ol (S)" tvg-logo="" group-title="US Sports",US (Spanish) beIN SPORTS en EspaÃ±ol (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30945
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Sportsman Channel" tvg-logo="https://logo.m3uassets.com/sportsmanchannel.png" group-title="US Sports",US: Sportsman Channel
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125097
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Ohio 11 (Evansville) (A)" tvg-logo="" group-title="US Sports",US FanDuel Sports Ohio 11 (Evansville) (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43745
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Premier League TV (PC)" tvg-logo="https://logo.m3uassets.com/premierleaguetv.png" group-title="US Sports",US Premier League TV (PC)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/64775
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US RFD TV (S)" tvg-logo="https://logo.m3uassets.com/rfdtv.png" group-title="US Sports",US RFD TV (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14301
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MavTV" tvg-logo="https://logo.m3uassets.com/mavtv.png" group-title="US Sports",US: MavTV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125059
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: ACC Network" tvg-logo="https://logo.m3uassets.com/accnetwork.png" group-title="US Sports",US: ACC Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400124982
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 3" tvg-logo="https://logo.m3uassets.com/ncaaf30.png" group-title="US Sports",NCAAF 3
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73158
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Big Ten Network Overflow 2 HD (A)" tvg-logo="https://logo.m3uassets.com/bigtennetworkoverflow2.png" group-title="US Sports",US Big Ten Network Overflow 2 HD (A)
@@ -2585,8 +2535,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/73188
 https://gohyperspeed.com/1012038457/0IyMW81OPv/36197
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: VSiN" tvg-logo="https://logo.m3uassets.com/vsin.png" group-title="US Sports",US: VSiN
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125107
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: SPECTRUM SPORTSNET DODGERS" tvg-logo="https://logo.m3uassets.com/spectrumsportsnet.png" group-title="US Sports",US: SPECTRUM SPORTSNET DODGERS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125093
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: YES NETWORK FHD" tvg-logo="https://logo.m3uassets.com/yesnetwork.png" group-title="US Sports",US: YES NETWORK FHD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125112
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: TVG" tvg-logo="https://logo.m3uassets.com/tvg.png" group-title="US Sports",US: TVG
@@ -2597,8 +2545,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/43758
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296674
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Florida (D)" tvg-logo="https://logo.m3uassets.com/foxsportsflorida.png" group-title="US Sports",US FanDuel Sports Florida (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/67362
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: beIN Sports" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="US Sports",US: beIN Sports
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500284530
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US NBC Los Angeles News (PC)" tvg-logo="https://logo.m3uassets.com/nbclosangeles.png" group-title="US Sports",US NBC Los Angeles News (PC)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/71322
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Gulf Coast Sports and Entertainment Network (GCSEN) (F)" tvg-logo="" group-title="US Sports",US Gulf Coast Sports and Entertainment Network (GCSEN) (F)
@@ -2703,10 +2649,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/73172
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73180
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports South Plus (A)" tvg-logo="https://logo.m3uassets.com/ballysportssouthplus.png" group-title="US Sports",US FanDuel Sports South Plus (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/42496
-#EXTINF:-1 tvg-id="SEC.Network.HDTV.(SEC-A).us" tvg-name="US: SEC NETWORK" tvg-logo="https://logo.m3uassets.com/secnetwork.png" group-title="US Sports",US: SEC NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125092
-#EXTINF:-1 tvg-id="Root.Sports.Northwest.(ROOT).us" tvg-name="US: ROOT SPORTS" tvg-logo="https://logo.m3uassets.com/rootsports.png" group-title="US Sports",US: ROOT SPORTS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125091
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ESPN+ 16 (D): Ajax vs. NAC Breda  10:25et 15:25uk" tvg-logo="https://logo.m3uassets.com/espn1.png" group-title="US Sports",ESPN+ 16 (D): Ajax vs. NAC Breda  10:25et 15:25uk
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43159
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MSG+" tvg-logo="https://logo.m3uassets.com/msg.png" group-title="US Sports",US: MSG+
@@ -2725,8 +2667,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400125072
 https://gohyperspeed.com/1012038457/0IyMW81OPv/5992
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Bon Appetit (S)" tvg-logo="https://logo.m3uassets.com/bonappetit.png" group-title="US Sports",US Bon Appetit (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30937
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NESN Plus" tvg-logo="https://logo.m3uassets.com/nesnplus.png" group-title="US Sports",US: NESN Plus
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125080
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 19" tvg-logo="https://logo.m3uassets.com/ncaaf19.png" group-title="US Sports",NCAAF 19
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73174
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 9" tvg-logo="https://logo.m3uassets.com/ncaaf01.png" group-title="US Sports",NCAAF 9
@@ -2815,24 +2755,16 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/112228
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43752
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: ESPN 2 HD (Backup)" tvg-logo="https://logo.m3uassets.com/espn2.png" group-title="US Sports",US: ESPN 2 HD (Backup)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400395709
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC Sports Washington" tvg-logo="https://logo.m3uassets.com/nbcsportswashington.png" group-title="US Sports",US: NBC Sports Washington
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125077
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports West Plus" tvg-logo="https://logo.m3uassets.com/ballysportswestplus.png" group-title="US Sports",US: Bally Sports West Plus
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296688
 #EXTINF:-1 tvg-id="FS1HD" tvg-name="US: Fox Sports 1 4K" tvg-logo="https://logo.m3uassets.com/foxsports1.png" group-title="US Sports",US: Fox Sports 1 4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256071
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: SportsGrid" tvg-logo="https://logo.m3uassets.com/sportsgrid.png" group-title="US Sports",US: SportsGrid
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500282284
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL KANSAS CITY" tvg-logo="" group-title="US Sports",US: FANDUEL KANSAS CITY
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432333
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 20" tvg-logo="https://logo.m3uassets.com/ncaaf20.png" group-title="US Sports",NCAAF 20
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73175
-#EXTINF:-1 tvg-id="Big.Ten.Network.HDTV.(National).(BTNHD).us" tvg-name="US: BIG TEN NETWORK" tvg-logo="https://logo.m3uassets.com/bigtennetwork.png" group-title="US Sports",US: BIG TEN NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125034
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 18" tvg-logo="https://logo.m3uassets.com/ncaaf18.png" group-title="US Sports",NCAAF 18
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73173
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: ESPN 2 HD" tvg-logo="https://logo.m3uassets.com/espn2.png" group-title="US Sports",US: ESPN 2 HD
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125040
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US AFN Spectrum (D)" tvg-logo="https://logo.m3uassets.com/afnspectrum.png" group-title="US Sports",US AFN Spectrum (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/119066
 #EXTINF:-1 tvg-id="FanDuel.Sports.Network.South-.Carolinas.us" tvg-name="US: Fanduel North Carolina" tvg-logo="https://logo.m3uassets.com/northcarolina.png" group-title="US Sports",US: Fanduel North Carolina
@@ -2869,10 +2801,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/73189
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500285073
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US beIN SPORTS 5 (S)" tvg-logo="https://logo.m3uassets.com/beinsports5.png" group-title="US Sports",US beIN SPORTS 5 (S)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30947
-#EXTINF:-1 tvg-id="ESPN.Deportes.HDTV.(EDEPHD).us" tvg-name="US: ESPN DEPORTES" tvg-logo="https://logo.m3uassets.com/espndeportes.png" group-title="US Sports",US: ESPN DEPORTES
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125041
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MARQUEE SPORTS NETWORK" tvg-logo="https://logo.m3uassets.com/marqueesportsnetwork.png" group-title="US Sports",US: MARQUEE SPORTS NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125056
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MLB NETWORK FHD" tvg-logo="https://logo.m3uassets.com/mlbnetwork.png" group-title="US Sports",US: MLB NETWORK FHD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400124980
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Eleven Sports" tvg-logo="https://logo.m3uassets.com/elevensports.png" group-title="US Sports",US: Eleven Sports
@@ -2883,8 +2811,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200256258
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500003362
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Oklahoma (F)" tvg-logo="https://logo.m3uassets.com/foxsportsoklahoma.png" group-title="US Sports",US FanDuel Sports Oklahoma (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/112243
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: TENNIS CHANNEL" tvg-logo="https://logo.m3uassets.com/tennischannel.png" group-title="US Sports",US: TENNIS CHANNEL
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125102
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports North Minnesota" tvg-logo="https://logo.m3uassets.com/foxsportsnorthminnesota.png" group-title="US Sports",US: Bally Sports North Minnesota
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296673
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports Ohio Plus" tvg-logo="https://logo.m3uassets.com/ballysportsohioplus.png" group-title="US Sports",US: Bally Sports Ohio Plus
@@ -2907,8 +2833,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/500003358
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73191
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MASN 2" tvg-logo="https://logo.m3uassets.com/masn2.png" group-title="US Sports",US: MASN 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125058
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL DETROIT" tvg-logo="" group-title="US Sports",US: FANDUEL DETROIT
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432329
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: PAC 12 Mountain" tvg-logo="https://logo.m3uassets.com/pac12mountain.png" group-title="US Sports",US: PAC 12 Mountain
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500007793
 #EXTINF:-1 tvg-id="NHL.Network.Alternate.HDTV.(NHLaHD).us" tvg-name="US: NHL NETWORK FHD" tvg-logo="https://logo.m3uassets.com/nhlnetwork.png" group-title="US Sports",US: NHL NETWORK FHD
@@ -2923,8 +2847,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400125049
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43742
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Stadium" tvg-logo="https://logo.m3uassets.com/stadium.png" group-title="US Sports",US: Stadium
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500029657
-#EXTINF:-1 tvg-id="CBS.Sports.Network.HDTV.(CBSSD).us" tvg-name="US: CBS SPORTS NETWORK" tvg-logo="https://logo.m3uassets.com/cbssportsnetwork.png" group-title="US Sports",US: CBS SPORTS NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125038
 #EXTINF:-1 tvg-id="BTN4KEvents.us" tvg-name="US: BTN 4K" tvg-logo="https://logo.m3uassets.com/btn.png" group-title="US Sports",US: BTN 4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256069
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US beIN SPORTS 8 (S)" tvg-logo="https://logo.m3uassets.com/beinsports8.png" group-title="US Sports",US beIN SPORTS 8 (S)
@@ -2957,12 +2879,8 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/137498
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256260
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports Netbase  (F)" tvg-logo="https://logo.m3uassets.com/foxsportsnetbase.png" group-title="US Sports",US FanDuel Sports Netbase  (F)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/112233
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: TUDN" tvg-logo="https://logo.m3uassets.com/tudn.png" group-title="US Sports",US: TUDN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125104
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports Midwest Plus" tvg-logo="https://logo.m3uassets.com/ballysportsmidwestplus.png" group-title="US Sports",US: Bally Sports Midwest Plus
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296670
-#EXTINF:-1 tvg-id="SportsNet.New.York.HDTV.(SNYHD).us" tvg-name="US: SPORTSNET NEW YORK" tvg-logo="https://logo.m3uassets.com/sportsnetnewyork.png" group-title="US Sports",US: SPORTSNET NEW YORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125098
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ESPN+ 60 (D): Saint Louis vs. George Mason  13:00et 18:00uk" tvg-logo="https://logo.m3uassets.com/espn6.png" group-title="US Sports",ESPN+ 60 (D): Saint Louis vs. George Mason  13:00et 18:00uk
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43203
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Bally Sports Arizona Plus" tvg-logo="https://logo.m3uassets.com/ballysportsarizonaplus.png" group-title="US Sports",US: Bally Sports Arizona Plus
@@ -2973,8 +2891,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/67360
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500296660
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US FanDuel Sports New Orleans Plus (A)" tvg-logo="https://logo.m3uassets.com/ballysportsneworleansplus.png" group-title="US Sports",US FanDuel Sports New Orleans Plus (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/23027
-#EXTINF:-1 tvg-id="ESPN.News.HDTV.(ESNEWSHD).us" tvg-name="US: ESPN NEWS" tvg-logo="https://logo.m3uassets.com/espnnews.png" group-title="US Sports",US: ESPN NEWS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125043
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: beIN Sports 7" tvg-logo="https://logo.m3uassets.com/beinsports7.png" group-title="US Sports",US: beIN Sports 7
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423822
 #EXTINF:-1 tvg-id="NBCSportsChicago4KEvents.us" tvg-name="US: NBC Sports 4K UHD (Event Only)" tvg-logo="https://logo.m3uassets.com/nbcsports.png" group-title="US Sports",US: NBC Sports 4K UHD (Event Only)
@@ -2991,16 +2907,10 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/500301494
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125048
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US Space City Home Network Alternate (A)" tvg-logo="https://logo.m3uassets.com/spacecityhomenetwork.png" group-title="US Sports",US Space City Home Network Alternate (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154013
-#EXTINF:-1 tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-name="US: ACC NETWORK" tvg-logo="https://logo.m3uassets.com/accnetwork.png" group-title="US Sports",US: ACC NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400124982
 #EXTINF:-1 tvg-id="DaznUS_Event10.p13" tvg-name="DAZN US   Event 10" tvg-logo="" group-title="US Sports",DAZN US   Event 10
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256182
-#EXTINF:-1 tvg-id="A.and.E.US.-.Eastern.Feed.us" tvg-name="US: WILLOW CRICKET" tvg-logo="https://logo.m3uassets.com/willowcricket.png" group-title="US Sports",US: WILLOW CRICKET
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125108
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MC Radio | &#039;60s Classic Rock" tvg-logo="https://logo.m3uassets.com/classicrock.png" group-title="US Sports",US MC Radio | &#039;60s Classic Rock
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137494
-#EXTINF:-1 tvg-id="MSG/MSG.Plus.Alternate.HDTV.DirecTV.(MSGHDA).us" tvg-name="US: MSG" tvg-logo="https://logo.m3uassets.com/msg.png" group-title="US Sports",US: MSG
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125061
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NCAAF 40" tvg-logo="https://logo.m3uassets.com/ncaaf40.png" group-title="US Sports",NCAAF 40
 https://gohyperspeed.com/1012038457/0IyMW81OPv/73195
 #EXTINF:-1 tvg-id="tennistv/event10" tvg-name="Tennis TV 10" tvg-logo="https://logo.m3uassets.com/tennis.png" group-title="US Sports",Tennis TV 10
@@ -3013,20 +2923,12 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200256270
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137497
 #EXTINF:-1 tvg-id="altitude2.us" tvg-name="US: Altitude Sports 2" tvg-logo="https://logo.m3uassets.com/altitudesports.png" group-title="US Sports",US: Altitude Sports 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400124985
-#EXTINF:-1 tvg-id="NBC.Sports.Philadelphia.HDTV.(NBCSPAHD).us" tvg-name="US: NBC SPORTS PHILADELPHIA" tvg-logo="https://logo.m3uassets.com/nbcsportsphiladelphia.png" group-title="US Sports",US: NBC SPORTS PHILADELPHIA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125075
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MC Radio | &#039;60s British Invasion" tvg-logo="" group-title="US Sports",US MC Radio | &#039;60s British Invasion
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137493
-#EXTINF:-1 tvg-id="NBC.Sports.Boston.(NBCSB).us" tvg-name="US: NBC SPORTS BOSTON" tvg-logo="https://logo.m3uassets.com/nbcsportsboston.png" group-title="US Sports",US: NBC SPORTS BOSTON
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125069
 #EXTINF:-1 tvg-id="DaznUS_Event22.p13" tvg-name="DAZN US   Event 22" tvg-logo="" group-title="US Sports",DAZN US   Event 22
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256194
 #EXTINF:-1 tvg-id="tennistv/event12" tvg-name="Tennis TV 12" tvg-logo="https://logo.m3uassets.com/tennis.png" group-title="US Sports",Tennis TV 12
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256269
-#EXTINF:-1 tvg-id="VSIN.us" tvg-name="US: VSIN" tvg-logo="https://logo.m3uassets.com/vsin.png" group-title="US Sports",US: VSIN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125107
-#EXTINF:-1 tvg-id="NESN.us" tvg-name="US: NESN" tvg-logo="https://logo.m3uassets.com/nesn.png" group-title="US Sports",US: NESN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125079
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Hub Sports 2" tvg-logo="https://logo.m3uassets.com/hubsports2.png" group-title="US Sports",Hub Sports 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600018705
 #EXTINF:-1 tvg-id="DaznUS_Event16.p13" tvg-name="DAZN US   Event 16" tvg-logo="" group-title="US Sports",DAZN US   Event 16
@@ -3061,8 +2963,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200256183
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400124988
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MC Radio | Hawaiian" tvg-logo="" group-title="US Sports",US MC Radio | Hawaiian
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137502
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: GOLF CHANNEL" tvg-logo="https://logo.m3uassets.com/golfchannel.png" group-title="US Sports",US: GOLF CHANNEL
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125053
 #EXTINF:-1 tvg-id="DaznUS_Event17.p13" tvg-name="DAZN US   Event 17" tvg-logo="" group-title="US Sports",DAZN US   Event 17
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256189
 #EXTINF:-1 tvg-id="tennistv/event17" tvg-name="Tennis TV 17" tvg-logo="https://logo.m3uassets.com/tennis.png" group-title="US Sports",Tennis TV 17
@@ -3077,10 +2977,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/73198
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256179
 #EXTINF:-1 tvg-id="DaznUS_Event24.p13" tvg-name="DAZN US   Event 24" tvg-logo="" group-title="US Sports",DAZN US   Event 24
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256196
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MOTORTREND" tvg-logo="https://logo.m3uassets.com/motortrend.png" group-title="US Sports",US: MOTORTREND
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125060
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: SPORTSMAN CHANNEL" tvg-logo="https://logo.m3uassets.com/sportsmanchannel.png" group-title="US Sports",US: SPORTSMAN CHANNEL
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125097
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: AT&amp;T SPORTSNET SOUTHWEST ALT" tvg-logo="https://logo.m3uassets.com/attsportsnetsouthwest.png" group-title="US Sports",US: AT&amp;T SPORTSNET SOUTHWEST ALT
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125023
 #EXTINF:-1 tvg-id="DaznUS_Event19.p13" tvg-name="DAZN US   Event 19" tvg-logo="" group-title="US Sports",DAZN US   Event 19
@@ -3095,8 +2991,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400125096
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137483
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: GOLTV (SPANISH)" tvg-logo="https://logo.m3uassets.com/goltv.png" group-title="US Sports",US: GOLTV (SPANISH)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400395514
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MONUMENTAL SPORTS NETWORK" tvg-logo="https://logo.m3uassets.com/monumentalsportsnetwork.png" group-title="US Sports",US: MONUMENTAL SPORTS NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432327
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Hub Sport 1" tvg-logo="https://logo.m3uassets.com/hubsports1.png" group-title="US Sports",Hub Sport 1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600018704
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 60 :" tvg-logo="" group-title="US Sports",Milb 60 :
@@ -3105,8 +2999,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600021321
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256271
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MC Radio | Lullabies" tvg-logo="" group-title="US Sports",US MC Radio | Lullabies
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137484
-#EXTINF:-1 tvg-id="World.Fishing.Network.(US).(WFN).us" tvg-name="US: WORLD FISHING NETWORK" tvg-logo="https://logo.m3uassets.com/worldfishingnetwork.png" group-title="US Sports",US: WORLD FISHING NETWORK
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125110
 #EXTINF:-1 tvg-id="NBC.Sports.Philadelphia.Plus.(NBCSPA+).us" tvg-name="US: NBC SPORTS PHILLY PLUS" tvg-logo="https://logo.m3uassets.com/nbcsportsphillyplus.png" group-title="US Sports",US: NBC SPORTS PHILLY PLUS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125076
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US WORLD OF FREESPORTS (S)" tvg-logo="https://logo.m3uassets.com/worldoffreesports.png" group-title="US Sports",US WORLD OF FREESPORTS (S)
@@ -3151,8 +3043,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400432387
 https://gohyperspeed.com/1012038457/0IyMW81OPv/43249
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US MC Radio | Movie Scores" tvg-logo="" group-title="US Sports",US MC Radio | Movie Scores
 https://gohyperspeed.com/1012038457/0IyMW81OPv/137504
-#EXTINF:-1 tvg-id="ATTPT" tvg-name="US: AT&amp;T SPORTSNET PITTSBURGH" tvg-logo="https://logo.m3uassets.com/attsportsnetpittsburgh.png" group-title="US Sports",US: AT&amp;T SPORTSNET PITTSBURGH
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400124986
 #EXTINF:-1 tvg-id="TVG2.us" tvg-name="US: TVG 2" tvg-logo="https://logo.m3uassets.com/tvg2.png" group-title="US Sports",US: TVG 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125106
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 56 :" tvg-logo="" group-title="US Sports",Milb 56 :
@@ -3183,48 +3073,28 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600019624
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154801
 #EXTINF:-1 tvg-id="DaznUS_Event23.p13" tvg-name="DAZN US   Event 23" tvg-logo="" group-title="US Sports",DAZN US   Event 23
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256195
-#EXTINF:-1 tvg-id="NBC.Sports.Chicago.HDTV.(NBCSCHHD).us" tvg-name="US: NBC SPORTS CHICAGO" tvg-logo="https://logo.m3uassets.com/nbcsportschicago.png" group-title="US Sports",US: NBC SPORTS CHICAGO
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125071
 #EXTINF:-1 tvg-id="WWE.Network.us" tvg-name="US: WWE NETWORK" tvg-logo="https://logo.m3uassets.com/wwenetwork.png" group-title="US Sports",US: WWE NETWORK
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125111
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: GOL TV ENGLISH HD" tvg-logo="https://logo.m3uassets.com/goltvenglish.png" group-title="US Sports",US: GOL TV ENGLISH HD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125054
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NBC SPORTS NETWORK" tvg-logo="https://logo.m3uassets.com/nbcsportsnetwork.png" group-title="US Sports",US: NBC SPORTS NETWORK
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125073
-#EXTINF:-1 tvg-id="NBC.Sports.Washington.(NBCSWA).us" tvg-name="US: NBC SPORTS WASHINGTON" tvg-logo="https://logo.m3uassets.com/nbcsportswashington.png" group-title="US Sports",US: NBC SPORTS WASHINGTON
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125077
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS ESPANOL" tvg-logo="https://logo.m3uassets.com/beinsportsespanol.png" group-title="US Sports",US: BEIN SPORTS ESPANOL
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125029
-#EXTINF:-1 tvg-id="DirecTV.Sports.707.us" tvg-name="US: MSG 2" tvg-logo="https://logo.m3uassets.com/msg2.png" group-title="US Sports",US: MSG 2
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125062
 #EXTINF:-1 tvg-id="tennistv/event9" tvg-name="Tennis TV 9" tvg-logo="https://logo.m3uassets.com/tennis.png" group-title="US Sports",Tennis TV 9
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256266
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL FLORIDA" tvg-logo="" group-title="US Sports",US: FANDUEL FLORIDA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432330
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 12 :" tvg-logo="" group-title="US Sports",Milb 12 :
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600021273
 #EXTINF:-1 tvg-id="ATTRM2" tvg-name="US: AT&amp;T SPORTSNET ROCKY MOUNTAIN" tvg-logo="https://logo.m3uassets.com/attsportsnetrockymountain.png" group-title="US Sports",US: AT&amp;T SPORTSNET ROCKY MOUNTAIN
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400124987
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MAVTV" tvg-logo="https://logo.m3uassets.com/mavtv.png" group-title="US Sports",US: MAVTV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125059
-#EXTINF:-1 tvg-id="Spectrum.SportsNet.LA.(SNLA).us" tvg-name="US: SPECTRUM SPORTSNET LAKERS" tvg-logo="https://logo.m3uassets.com/spectrumsportsnetla.png" group-title="US Sports",US: SPECTRUM SPORTSNET LAKERS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125094
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Hub Sports 3" tvg-logo="https://logo.m3uassets.com/hubsports3.png" group-title="US Sports",Hub Sports 3
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600018706
 #EXTINF:-1 tvg-id="DaznUS_Event4.p13" tvg-name="DAZN US   Event 4" tvg-logo="" group-title="US Sports",DAZN US   Event 4
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256176
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: ALTITUDE SPORTS" tvg-logo="https://logo.m3uassets.com/altitudesports.png" group-title="US Sports",US: ALTITUDE SPORTS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400124984
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: NESN PLUS" tvg-logo="https://logo.m3uassets.com/nesnplus.png" group-title="US Sports",US: NESN PLUS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125080
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  SOCAL" tvg-logo="" group-title="US Sports",US: FANDUEL  SOCAL
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432381
 #EXTINF:-1 tvg-id="DaznUS_Event20.p13" tvg-name="DAZN US   Event 20" tvg-logo="" group-title="US Sports",DAZN US   Event 20
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256192
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS 5" tvg-logo="https://logo.m3uassets.com/beinsports5.png" group-title="US Sports",US: BEIN SPORTS 5
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423820
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL OHIO" tvg-logo="" group-title="US Sports",US: FANDUEL OHIO
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432376
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: GINX" tvg-logo="https://logo.m3uassets.com/ginx.png" group-title="US Sports",US: GINX
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125052
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL SOUTHWEST EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL SOUTHWEST EXTRA
@@ -3235,40 +3105,24 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600019623
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256265
 #EXTINF:-1 tvg-id="DaznUS_Event5.p13" tvg-name="DAZN US   Event 5" tvg-logo="" group-title="US Sports",DAZN US   Event 5
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256177
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS 4" tvg-logo="https://logo.m3uassets.com/beinsports4.png" group-title="US Sports",US: BEIN SPORTS 4
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423819
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  WISCONSIN" tvg-logo="" group-title="US Sports",US: FANDUEL  WISCONSIN
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432386
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="USHTV 01: Jr Grizzlies vs 2011 T2 (09.27 11:00AM ET)" tvg-logo="" group-title="US Sports",USHTV 01: Jr Grizzlies vs 2011 T2 (09.27 11:00AM ET)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256494
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS LALIGA" tvg-logo="https://logo.m3uassets.com/beinsportslaliga.png" group-title="US Sports",US: BEIN SPORTS LALIGA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125030
-#EXTINF:-1 tvg-id="NSNWSEA" tvg-name="US: NBC SPORTS NORTHWEST" tvg-logo="https://logo.m3uassets.com/nbcsportsnorthwest.png" group-title="US Sports",US: NBC SPORTS NORTHWEST
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125074
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS 7" tvg-logo="https://logo.m3uassets.com/beinsports7.png" group-title="US Sports",US: BEIN SPORTS 7
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423822
 #EXTINF:-1 tvg-id="MSG2.us" tvg-name="US: MSG 2 PLUS" tvg-logo="https://logo.m3uassets.com/msg2plus.png" group-title="US Sports",US: MSG 2 PLUS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125063
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: STADIUM 1" tvg-logo="https://logo.m3uassets.com/stadium1.png" group-title="US Sports",US: STADIUM 1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125099
-#EXTINF:-1 tvg-id="BEINSP5" tvg-name="US: beIN Sports 5" tvg-logo="https://logo.m3uassets.com/beinsports5.png" group-title="US Sports",US: beIN Sports 5
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423820
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL NEW ORLEANS" tvg-logo="https://logo.m3uassets.com/neworleans.png" group-title="US Sports",US: FANDUEL NEW ORLEANS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432335
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 23 :" tvg-logo="" group-title="US Sports",Milb 23 :
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600021284
 #EXTINF:-1 tvg-id="tennistv/event19" tvg-name="Tennis TV 19" tvg-logo="https://logo.m3uassets.com/tennis.png" group-title="US Sports",Tennis TV 19
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256276
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS 8" tvg-logo="https://logo.m3uassets.com/beinsports8.png" group-title="US Sports",US: BEIN SPORTS 8
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423823
-#EXTINF:-1 tvg-id="redbulltv.us" tvg-name="US: REDBULL TV" tvg-logo="https://logo.m3uassets.com/redbulltv.png" group-title="US Sports",US: REDBULL TV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125090
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="PGA 07:" tvg-logo="" group-title="US Sports",PGA 07:
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423775
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL SOUTHEAST" tvg-logo="" group-title="US Sports",US: FANDUEL SOUTHEAST
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432337
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL NORTH" tvg-logo="" group-title="US Sports",US: FANDUEL NORTH
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432374
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  SOUTH" tvg-logo="" group-title="US Sports",US: FANDUEL  SOUTH
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432382
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 61 :" tvg-logo="" group-title="US Sports",Milb 61 :
@@ -3277,24 +3131,10 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600021322
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154808
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: STADIUM 3" tvg-logo="https://logo.m3uassets.com/stadium3.png" group-title="US Sports",US: STADIUM 3
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125101
-#EXTINF:-1 tvg-id="BEINSP7" tvg-name="US: beIN Sports 7" tvg-logo="https://logo.m3uassets.com/beinsports7.png" group-title="US Sports",US: beIN Sports 7
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423822
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL SOUTHWEST" tvg-logo="" group-title="US Sports",US: FANDUEL SOUTHWEST
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432338
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  OHIO EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL  OHIO EXTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432377
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  OKLAHOMA" tvg-logo="" group-title="US Sports",US: FANDUEL  OKLAHOMA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432378
-#EXTINF:-1 tvg-id="ALTS2" tvg-name="US: ALTITUDE SPORTS 2" tvg-logo="https://logo.m3uassets.com/altitudesports.png" group-title="US Sports",US: ALTITUDE SPORTS 2
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400124985
-#EXTINF:-1 tvg-id="Smithsonian.Channel.USA.HD.us" tvg-name="US: MSG PLUS" tvg-logo="https://logo.m3uassets.com/msgplus.png" group-title="US Sports",US: MSG PLUS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125064
-#EXTINF:-1 tvg-id="NBC.Sports.Bay.Area.(CSNBA).us" tvg-name="US: NBC SPORTS BAY AREA" tvg-logo="https://logo.m3uassets.com/nbcsportsbayarea.png" group-title="US Sports",US: NBC SPORTS BAY AREA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125067
-#EXTINF:-1 tvg-id="TVG.us" tvg-name="US: TVG" tvg-logo="https://logo.m3uassets.com/tvg.png" group-title="US Sports",US: TVG
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125105
-#EXTINF:-1 tvg-id="BEINSP6" tvg-name="US: beIN Sports 6" tvg-logo="https://logo.m3uassets.com/beinsports6.png" group-title="US Sports",US: beIN Sports 6
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125026
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL INDIANA EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL INDIANA EXTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432370
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL SPORTS KANSAS CITY EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL SPORTS KANSAS CITY EXTRA
@@ -3307,8 +3147,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600021311
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154804
 #EXTINF:-1 tvg-id="The.Cowboy.Channel.us" tvg-name="US: THE COWBOY CHANNEL" tvg-logo="https://logo.m3uassets.com/thecowboychannel.png" group-title="US Sports",US: THE COWBOY CHANNEL
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125103
-#EXTINF:-1 tvg-id="BEINSP4" tvg-name="US: beIN Sports 4" tvg-logo="https://logo.m3uassets.com/beinsports4.png" group-title="US Sports",US: beIN Sports 4
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423819
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  OKLAHOMA EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL  OKLAHOMA EXTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432379
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  SUN" tvg-logo="https://logo.m3uassets.com/fandueltv.png" group-title="US Sports",US: FANDUEL  SUN
@@ -3335,12 +3173,8 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600021320
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154810
 #EXTINF:-1 tvg-id="CBSSNHD" tvg-name="US: CBS Sports 4K" tvg-logo="https://logo.m3uassets.com/cbssports.png" group-title="US Sports",US: CBS Sports 4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256070
-#EXTINF:-1 tvg-id="NBC.Sports.Chicago.Plus.Full.Time.HDTV.(NBCSCH+H).us" tvg-name="US: NBC SPORTS CHICAGO PLUS" tvg-logo="https://logo.m3uassets.com/nbcsportschicagoplus.png" group-title="US Sports",US: NBC SPORTS CHICAGO PLUS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125072
 #EXTINF:-1 tvg-id="BEINX" tvg-name="US: beIN Sports Xtra" tvg-logo="https://logo.m3uassets.com/beinsportsxtra.png" group-title="US Sports",US: beIN Sports Xtra
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125033
-#EXTINF:-1 tvg-id="BEINSP8" tvg-name="US: beIN Sports 8" tvg-logo="https://logo.m3uassets.com/beinsports8.png" group-title="US Sports",US: beIN Sports 8
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400423823
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  SOUTH EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL  SOUTH EXTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432383
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 02 :" tvg-logo="" group-title="US Sports",Milb 02 :
@@ -3365,10 +3199,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200256273
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125055
 #EXTINF:-1 tvg-id="NBC.Sports.Washington.HDTV.24/7.(NBCSWAHD).us" tvg-name="US: NBC SPORTS WASHINGTON PLUS" tvg-logo="https://logo.m3uassets.com/nbcsportswashingtonplus.png" group-title="US Sports",US: NBC SPORTS WASHINGTON PLUS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125078
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL INDIANA" tvg-logo="" group-title="US Sports",US: FANDUEL INDIANA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432332
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL TV" tvg-logo="https://logo.m3uassets.com/fandueltv.png" group-title="US Sports",US: FANDUEL TV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432340
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 11 :" tvg-logo="" group-title="US Sports",Milb 11 :
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600021272
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 14 :" tvg-logo="" group-title="US Sports",Milb 14 :
@@ -3391,8 +3221,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400423771
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423772
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="PGA 05:" tvg-logo="" group-title="US Sports",PGA 05:
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423773
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL MIDWEST PLUS" tvg-logo="" group-title="US Sports",US: FANDUEL MIDWEST PLUS
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432372
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 03 :" tvg-logo="" group-title="US Sports",Milb 03 :
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600021264
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Milb 06 :" tvg-logo="" group-title="US Sports",Milb 06 :
@@ -3605,34 +3433,22 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200256511
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256512
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="USHTV 20: No Game Scheduled" tvg-logo="" group-title="US Sports",USHTV 20: No Game Scheduled
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256513
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: BEIN SPORTS 6" tvg-logo="https://logo.m3uassets.com/beinsports6.png" group-title="US Sports",US: BEIN SPORTS 6
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125026
-#EXTINF:-1 tvg-id="beIN.Sports.Xtra.(KJNK-LD5).Minneapolis,.MN.us" tvg-name="US: BEIN SPORTS XTRA" tvg-logo="https://logo.m3uassets.com/beinsportsxtra.png" group-title="US Sports",US: BEIN SPORTS XTRA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125033
 #EXTINF:-1 tvg-id="Big.Ten.Network.HDTV.(24/7.Overflow.#1).(BTFB1).us" tvg-name="US: BIG TEN OVERFLOW 1" tvg-logo="https://logo.m3uassets.com/bigtennetworkoverflow1.png" group-title="US Sports",US: BIG TEN OVERFLOW 1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125035
 #EXTINF:-1 tvg-id="Big.Ten.Network.HDTV.(24/7.Overflow.#2).(BTFB2).us" tvg-name="US: BIG TEN OVERFLOW 2" tvg-logo="https://logo.m3uassets.com/bigtennetworkoverflow2.png" group-title="US Sports",US: BIG TEN OVERFLOW 2
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125036
 #EXTINF:-1 tvg-id="Big.Ten.Network.HDTV.(24/7.Overflow.#3).(BTFB3).us" tvg-name="US: BIG TEN OVERFLOW 3" tvg-logo="https://logo.m3uassets.com/bigtennetworkoverflow3.png" group-title="US Sports",US: BIG TEN OVERFLOW 3
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400125037
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: MASN" tvg-logo="https://logo.m3uassets.com/masn.png" group-title="US Sports",US: MASN
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125057
-#EXTINF:-1 tvg-id="NBC.Sports.California.(DISH).(NBCSCA).us" tvg-name="US: NBC SPORTS CALIFORNIA" tvg-logo="https://logo.m3uassets.com/nbcsportscalifornia.png" group-title="US Sports",US: NBC SPORTS CALIFORNIA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400125070
 #EXTINF:-1 tvg-id="GOLTVE" tvg-name="US: GOLTV (ENGLISH)" tvg-logo="https://logo.m3uassets.com/goltv.png" group-title="US Sports",US: GOLTV (ENGLISH)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400395513
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="PGA 08:" tvg-logo="" group-title="US Sports",PGA 08:
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400423776
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: Space City Home Network" tvg-logo="https://logo.m3uassets.com/spacecityhomenetwork.png" group-title="US Sports",US: Space City Home Network
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432328
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL GREAT LAKES" tvg-logo="" group-title="US Sports",US: FANDUEL GREAT LAKES
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432331
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL NEW ORLEANS XTRA" tvg-logo="" group-title="US Sports",US: FANDUEL NEW ORLEANS XTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432373
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL DETROIT EXTRA" tvg-logo="" group-title="US Sports",US: FANDUEL DETROIT EXTRA
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432369
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL NEW ORLEANS XTRA" tvg-logo="" group-title="US Sports",US: FANDUEL NEW ORLEANS XTRA
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432373
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL NORTH PLUS" tvg-logo="" group-title="US Sports",US: FANDUEL NORTH PLUS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432375
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US: FANDUEL  SAN DIEGO" tvg-logo="" group-title="US Sports",US: FANDUEL  SAN DIEGO
@@ -3765,8 +3581,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200161010
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200160925
 #EXTINF:-1 tvg-id="TSN4(English).ca" tvg-name="CA TSN4 (R)" tvg-logo="https://logo.m3uassets.com/tsn4.png" group-title="Canada Sports",CA TSN4 (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/8263
-#EXTINF:-1 tvg-id="TSN3(English).ca" tvg-name="CA: TSN 3" tvg-logo="https://logo.m3uassets.com/tsn3.png" group-title="Canada Sports",CA: TSN 3
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000772
 #EXTINF:-1 tvg-id="sportsneteast.ca" tvg-name="CA Sportsnet East HD (R)" tvg-logo="https://logo.m3uassets.com/sportsnet.png" group-title="Canada Sports",CA Sportsnet East HD (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/8085
 #EXTINF:-1 tvg-id="SportsnetOntario(English).ca" tvg-name="CA Sportsnet Ontario (HD) (D)" tvg-logo="https://logo.m3uassets.com/sportsnetontario.png" group-title="Canada Sports",CA Sportsnet Ontario (HD) (D)
@@ -3817,12 +3631,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/54900
 https://gohyperspeed.com/1012038457/0IyMW81OPv/8086
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA (FR) RDS HQ (R)" tvg-logo="https://logo.m3uassets.com/rdshd.png" group-title="Canada Sports",CA (FR) RDS HQ (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/24242
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: TSN 5" tvg-logo="https://logo.m3uassets.com/tsn5.png" group-title="Canada Sports",CA: TSN 5
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000774
-#EXTINF:-1 tvg-id="SportsnetOntario(English).ca" tvg-name="CA: SportsNet Ontario" tvg-logo="https://logo.m3uassets.com/sportsnetontario.png" group-title="Canada Sports",CA: SportsNet Ontario
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500280602
-#EXTINF:-1 tvg-id="TSN1(English).ca" tvg-name="CA: TSN 1" tvg-logo="https://logo.m3uassets.com/tsn1.png" group-title="Canada Sports",CA: TSN 1
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000770
 #EXTINF:-1 tvg-id="TSN2(English).ca" tvg-name="CA TSN2 (R)" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA TSN2 (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/8265
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN2 (FHD) (D)" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA TSN2 (FHD) (D)
@@ -3839,8 +3647,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/33075
 https://gohyperspeed.com/1012038457/0IyMW81OPv/88503
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN1 HD (B)" tvg-logo="https://logo.m3uassets.com/tsn1.png" group-title="Canada Sports",CA TSN1 HD (B)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/33067
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: TSN 4" tvg-logo="https://logo.m3uassets.com/tsn4.png" group-title="Canada Sports",CA: TSN 4
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000773
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN4 (E)" tvg-logo="https://logo.m3uassets.com/tsn4.png" group-title="Canada Sports",CA TSN4 (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54903
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Fox News (R)" tvg-logo="https://logo.m3uassets.com/foxnews.png" group-title="Canada Sports",CA Fox News (R)
@@ -3869,8 +3675,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/26955
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200173756
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Golf Channel (E)" tvg-logo="https://logo.m3uassets.com/golfchannel.png" group-title="Canada Sports",CA Golf Channel (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54930
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet Pacific" tvg-logo="https://logo.m3uassets.com/sportsnetpacific.png" group-title="Canada Sports",CA: SportsNet Pacific
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500005511
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet West (E)" tvg-logo="https://logo.m3uassets.com/sportsnetwest.png" group-title="Canada Sports",CA Sportsnet West (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54910
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet West (HD) (D)" tvg-logo="https://logo.m3uassets.com/sportsnetwest.png" group-title="Canada Sports",CA Sportsnet West (HD) (D)
@@ -3887,8 +3691,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/33076
 https://gohyperspeed.com/1012038457/0IyMW81OPv/88505
 #EXTINF:-1 tvg-id="SportsnetEast.ca" tvg-name="CA: Sportsnet 4K" tvg-logo="https://logo.m3uassets.com/sportsnet.png" group-title="Canada Sports",CA: Sportsnet 4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256022
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet East" tvg-logo="https://logo.m3uassets.com/sportsnet.png" group-title="Canada Sports",CA: SportsNet East
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500001720
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: RDS Info" tvg-logo="https://logo.m3uassets.com/rdsinfo.png" group-title="Canada Sports",CA: RDS Info
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500000496
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet Pacific HD (B)" tvg-logo="https://logo.m3uassets.com/sportsnetpacific.png" group-title="Canada Sports",CA Sportsnet Pacific HD (B)
@@ -3901,8 +3703,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/26946
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54902
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet 360 (E)" tvg-logo="https://logo.m3uassets.com/sportsnet360.png" group-title="Canada Sports",CA Sportsnet 360 (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54906
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: TSN 2" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA: TSN 2
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500000771
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA (FR) RDS Info (D)" tvg-logo="https://logo.m3uassets.com/rdsinfo.png" group-title="Canada Sports",CA (FR) RDS Info (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/60922
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN5 (E)" tvg-logo="https://logo.m3uassets.com/tsn5.png" group-title="Canada Sports",CA TSN5 (E)
@@ -3917,12 +3717,8 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/33074
 https://gohyperspeed.com/1012038457/0IyMW81OPv/107591
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA CTV News National (D)" tvg-logo="https://logo.m3uassets.com/newsnation.png" group-title="Canada Sports",CA CTV News National (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/60928
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet One" tvg-logo="https://logo.m3uassets.com/sportsnetone.png" group-title="Canada Sports",CA: SportsNet One
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500003378
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN2 (E)" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA TSN2 (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54901
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet West" tvg-logo="https://logo.m3uassets.com/sportsnetwest.png" group-title="Canada Sports",CA: SportsNet West
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500072575
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet 360 (HD) (D)" tvg-logo="https://logo.m3uassets.com/sportsnet360.png" group-title="Canada Sports",CA Sportsnet 360 (HD) (D)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/88504
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN2 HD (B)" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA TSN2 HD (B)
@@ -3933,8 +3729,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/14355
 https://gohyperspeed.com/1012038457/0IyMW81OPv/14200
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA TSN5 HD (B)" tvg-logo="https://logo.m3uassets.com/tsn5.png" group-title="Canada Sports",CA TSN5 HD (B)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/33071
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet 360" tvg-logo="https://logo.m3uassets.com/sportsnet360.png" group-title="Canada Sports",CA: SportsNet 360
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500003377
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA The Fight Network (R)" tvg-logo="https://logo.m3uassets.com/thefightnetwork.png" group-title="Canada Sports",CA The Fight Network (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/30077
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA (F2) Fubo Sports" tvg-logo="https://logo.m3uassets.com/fubosportsnetwork.png" group-title="Canada Sports",CA (F2) Fubo Sports
@@ -3951,8 +3745,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/25131
 https://gohyperspeed.com/1012038457/0IyMW81OPv/15016
 #EXTINF:-1 tvg-id="sportsnetone.ca" tvg-name="CA: Sportsnet One 4K" tvg-logo="https://logo.m3uassets.com/sportsnetone.png" group-title="Canada Sports",CA: Sportsnet One 4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200256023
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: SportsNet World" tvg-logo="https://logo.m3uassets.com/sportsnetworld.png" group-title="Canada Sports",CA: SportsNet World
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500280568
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA HPITV (East) (E)" tvg-logo="https://logo.m3uassets.com/hpitv.png" group-title="Canada Sports",CA HPITV (East) (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54926
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: RDS 2" tvg-logo="https://logo.m3uassets.com/rds2.png" group-title="Canada Sports",CA: RDS 2
@@ -3971,8 +3763,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/54928
 https://gohyperspeed.com/1012038457/0IyMW81OPv/500006436
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA NBA TV (E)" tvg-logo="https://logo.m3uassets.com/nbatv.png" group-title="Canada Sports",CA NBA TV (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54929
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA: NBA TV Canada" tvg-logo="https://logo.m3uassets.com/nbatv.png" group-title="Canada Sports",CA: NBA TV Canada
-https://gohyperspeed.com/1012038457/0IyMW81OPv/500013222
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA Sportsnet World (E)" tvg-logo="https://logo.m3uassets.com/sportsnetworld.png" group-title="Canada Sports",CA Sportsnet World (E)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/54911
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA beIN SPORTS  (B)" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="Canada Sports",CA beIN SPORTS  (B)
@@ -4047,8 +3837,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/54977
 https://gohyperspeed.com/1012038457/0IyMW81OPv/15017
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA (F2) Fubo Sports 5" tvg-logo="https://logo.m3uassets.com/sports5.png" group-title="Canada Sports",CA (F2) Fubo Sports 5
 https://gohyperspeed.com/1012038457/0IyMW81OPv/130335
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA SUPER SPORTS CH 450 (R)" tvg-logo="https://logo.m3uassets.com/supersports⁶.png" group-title="Canada Sports",CA SUPER SPORTS CH 450 (R)
-https://gohyperspeed.com/1012038457/0IyMW81OPv/15004
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="CA SUPER SPORTS CH 450 (R)" tvg-logo="https://logo.m3uassets.com/supersports⁶.png" group-title="Canada Sports",CA SUPER SPORTS CH 450 (R)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/15004
 #EXTINF:-1 tvg-id="TSN2MEL" tvg-name="CA: TSN 2 HD" tvg-logo="https://logo.m3uassets.com/tsn2.png" group-title="Canada Sports",CA: TSN 2 HD
@@ -4831,8 +4619,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/55222
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400043382
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="US NFL Indianapolis Colts (HD)" tvg-logo="https://logo.m3uassets.com/indianapolis.png" group-title="NFL",US NFL Indianapolis Colts (HD)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/55201
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NFL | No Games Scheduled" tvg-logo="" group-title="NFL",NFL | No Games Scheduled
-https://gohyperspeed.com/1012038457/0IyMW81OPv/200256630
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NFL 05 : Offline" tvg-logo="https://logo.m3uassets.com/offline.png" group-title="NFL",NFL 05 : Offline
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400422727
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NFL 02 : Offline" tvg-logo="https://logo.m3uassets.com/offline.png" group-title="NFL",NFL 02 : Offline
@@ -4875,8 +4661,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/145664
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400422732
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="USA | NFL 02ⓧ: Cincinnati Bengals vs Minnesota Vikings (Sunday 9/21) 1:00PM ET" tvg-logo="" group-title="NFL",USA | NFL 02ⓧ: Cincinnati Bengals vs Minnesota Vikings (Sunday 9/21) 1:00PM ET
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400043383
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NFL | No Games Scheduled" tvg-logo="" group-title="NFL",NFL | No Games Scheduled
-https://gohyperspeed.com/1012038457/0IyMW81OPv/200256630
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="NFL 08 : Offline" tvg-logo="https://logo.m3uassets.com/offline.png" group-title="NFL",NFL 08 : Offline
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400422730
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="USA | NFL 10ⓧ: Denver Broncos vs Los Angeles Chargers (Sunday 9/21) 4:05PM ET" tvg-logo="" group-title="NFL",USA | NFL 10ⓧ: Denver Broncos vs Los Angeles Chargers (Sunday 9/21) 4:05PM ET
@@ -5479,8 +5263,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/200230690
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200230691
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MILB 60:" tvg-logo="" group-title="MLB Baseball league",MILB 60:
 https://gohyperspeed.com/1012038457/0IyMW81OPv/200230692
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLB 17 |" tvg-logo="" group-title="MLB Baseball league",MLB 17 |
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400043597
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLB 17: No Scheduled Event" tvg-logo="" group-title="MLB Baseball league",MLB 17: No Scheduled Event
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400043598
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLB 18: No Scheduled Event" tvg-logo="" group-title="MLB Baseball league",MLB 18: No Scheduled Event
@@ -5581,8 +5363,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600003293
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600003892
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Portugal  Eleven Sports 5" tvg-logo="https://logo.m3uassets.com/elevensports5.png" group-title="Others",Portugal  Eleven Sports 5
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600003295
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UKFHD: UTV" tvg-logo="" group-title="Others",UKFHD: UTV
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600003159
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Ultimate Pool | Event  1" tvg-logo="" group-title="Others",Ultimate Pool | Event  1
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600014148
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Sport Klub 10 HD HR" tvg-logo="https://logo.m3uassets.com/sportklub10.png" group-title="Others",Sport Klub 10 HD HR
@@ -6125,12 +5905,8 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/7852
 https://gohyperspeed.com/1012038457/0IyMW81OPv/7857
 #EXTINF:-1 tvg-id="beinsports5.qa" tvg-name="Arabic beIN Sports 2 French (P)" tvg-logo="https://logo.m3uassets.com/beinsports2french.png" group-title="beIN Sports",Arabic beIN Sports 2 French (P)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/7854
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="EN  beIN SPORTS 1 EN FHD" tvg-logo="https://logo.m3uassets.com/beinsports11en.png" group-title="beIN Sports",EN  beIN SPORTS 1 EN FHD
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600004656
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   PREMIUM 01 FHD" tvg-logo="https://logo.m3uassets.com/beinsportspremium1.png" group-title="beIN Sports",Bein Sports (L)   PREMIUM 01 FHD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004644
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="EN  beIN SPORTS 1 EN HD" tvg-logo="https://logo.m3uassets.com/beinsports11en.png" group-title="beIN Sports",EN  beIN SPORTS 1 EN HD
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600004676
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   01 HD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   01 HD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004669
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   01 FHD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   01 FHD
@@ -6141,8 +5917,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600004651
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004659
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   06 FHD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   06 FHD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004654
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="EN  beIN SPORTS 2 EN FHD" tvg-logo="https://logo.m3uassets.com/beinsports2.png" group-title="beIN Sports",EN  beIN SPORTS 2 EN FHD
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600004657
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   04 HD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   04 HD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004672
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   02 FHD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   02 FHD
@@ -6169,8 +5943,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600004675
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004667
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   Bein Sports 04  4K" tvg-logo="https://logo.m3uassets.com/beinsportssports.png" group-title="beIN Sports",Bein Sports (L)   Bein Sports 04  4K
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004663
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="EN  beIN SPORTS 2 EN HD" tvg-logo="https://logo.m3uassets.com/beinsports2.png" group-title="beIN Sports",EN  beIN SPORTS 2 EN HD
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600004677
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   03 HD" tvg-logo="https://logo.m3uassets.com/beinsports.png" group-title="beIN Sports",Bein Sports (L)   03 HD
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600004671
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Bein Sports (L)   PREMIUM  02 HD" tvg-logo="https://logo.m3uassets.com/beinsportspremium1.png" group-title="beIN Sports",Bein Sports (L)   PREMIUM  02 HD
@@ -9075,8 +8847,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400432264
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432267
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS 12 | LOS ANGELES GALAXY @ SPORTING KANSAS CITY | 9/27 10:30PM | MLS SEASON PASS" tvg-logo="" group-title="MLS",MLS 12 | LOS ANGELES GALAXY @ SPORTING KANSAS CITY | 9/27 10:30PM | MLS SEASON PASS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432262
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS 15" tvg-logo="" group-title="MLS",MLS 15
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432259
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS Season Pass 4 (A)" tvg-logo="" group-title="MLS",MLS Season Pass 4 (A)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/154974
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS 08 | NASHVILLE SC @ HOUSTON DYNAMO | 9/27 08:30PM | MLS SEASON PASS" tvg-logo="" group-title="MLS",MLS 08 | NASHVILLE SC @ HOUSTON DYNAMO | 9/27 08:30PM | MLS SEASON PASS
@@ -9087,8 +8857,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/400432265
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432273
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS 11 | REAL SALT LAKE @ AUSTIN | 9/27 09:30PM | MLS SEASON PASS" tvg-logo="" group-title="MLS",MLS 11 | REAL SALT LAKE @ AUSTIN | 9/27 09:30PM | MLS SEASON PASS
 https://gohyperspeed.com/1012038457/0IyMW81OPv/400432263
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="MLS 13" tvg-logo="" group-title="MLS",MLS 13
-https://gohyperspeed.com/1012038457/0IyMW81OPv/400432261
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Discovery Plus | Discovery Turbo" tvg-logo="https://logo.m3uassets.com/discoveryturboplus.png" group-title="Discovery Plus",Discovery Plus | Discovery Turbo
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600017764
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Discovery Plus | Discovery Science" tvg-logo="https://logo.m3uassets.com/discoveryscienceplus.png" group-title="Discovery Plus",Discovery Plus | Discovery Science
@@ -9179,8 +8947,6 @@ https://gohyperspeed.com/1012038457/0IyMW81OPv/600017888
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600017889
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ULSTER GAA 03 | Kilcoo (Down) v Scotstown (Monaghan)" tvg-logo="" group-title="GAAGO",ULSTER GAA 03 | Kilcoo (Down) v Scotstown (Monaghan)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600018098
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ULSTER GAA 04 | Ballinderry (Derry) v Derrylaughan (Tyrone)" tvg-logo="" group-title="GAAGO",ULSTER GAA 04 | Ballinderry (Derry) v Derrylaughan (Tyrone)
-https://gohyperspeed.com/1012038457/0IyMW81OPv/600018099
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ULSTER GAA 05 | Carey Faughs (Antrim) v Castleblayney (Monaghan)" tvg-logo="" group-title="GAAGO",ULSTER GAA 05 | Carey Faughs (Antrim) v Castleblayney (Monaghan)
 https://gohyperspeed.com/1012038457/0IyMW81OPv/600018101
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="ULSTER GAA 06 |" tvg-logo="" group-title="GAAGO",ULSTER GAA 06 |
