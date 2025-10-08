@@ -21,6 +21,7 @@ connection_history = []
 user_stats = defaultdict(lambda: {"total_fetches": 0, "last_fetch": None})
 cached_m3u = None
 cached_channels = []
+cached_categories = {}
 cache_time = 0
 
 def parse_m3u(content):
@@ -108,25 +109,36 @@ def parse_m3u(content):
 
 def get_cached_channels():
     """Get cached channels or fetch new ones"""
-    global cached_channels, cache_time, cached_m3u
+    global cached_channels, cached_categories, cache_time, cached_m3u
     
     # Cache for 5 minutes
-    if time.time() - cache_time < 300 and cached_channels:
-        return cached_channels, cached_m3u
+    if time.time() - cache_time < 300 and cached_channels and cached_categories:
+        return cached_channels, cached_categories, cached_m3u
     
     try:
         resp = requests.get(M3U_URL, timeout=10)
         if resp.status_code == 200:
             cached_m3u = resp.content
-            cached_channels = parse_m3u(resp.content)
+            result = parse_m3u(resp.content)
+            
+            # Handle return value
+            if isinstance(result, tuple):
+                cached_channels, cached_categories = result
+            else:
+                # Fallback for old format
+                cached_channels = result
+                cached_categories = {'Uncategorized': '1'}
+            
             cache_time = time.time()
-            print(f"Loaded {len(cached_channels)} channels from M3U")
+            print(f"Loaded {len(cached_channels)} channels in {len(cached_categories)} categories")
         else:
             print(f"Failed to fetch M3U: Status {resp.status_code}")
     except Exception as e:
         print(f"Error fetching M3U: {e}")
+        import traceback
+        traceback.print_exc()
     
-    return cached_channels, cached_m3u
+    return cached_channels, cached_categories, cached_m3u
 
 def generate_session_id(username):
     return f"{username}_{request.remote_addr}_{int(time.time() * 1000)}"
@@ -166,7 +178,7 @@ def get_php():
     user_stats[username]['total_fetches'] += 1
     user_stats[username]['last_fetch'] = datetime.now()
     
-    channels, m3u_content = get_cached_channels()
+    channels, categories, m3u_content = get_cached_channels()
     
     if not m3u_content:
         del active_sessions[session_id]
@@ -218,13 +230,24 @@ def player_api():
     action = request.args.get('action', '')
     
     if action == 'get_live_categories':
-        return jsonify([
-            {"category_id": "1", "category_name": "All Channels", "parent_id": 0}
-        ])
+        channels, categories, _ = get_cached_channels()
+        
+        category_list = []
+        for cat_name, cat_id in categories.items():
+            category_list.append({
+                "category_id": cat_id,
+                "category_name": cat_name,
+                "parent_id": 0
+            })
+        
+        # Sort by category name
+        category_list.sort(key=lambda x: x['category_name'])
+        
+        return jsonify(category_list)
     
     elif action == 'get_live_streams':
         category_id = request.args.get('category_id', '')
-        channels, _ = get_cached_channels()
+        channels, categories, _ = get_cached_channels()
         
         if not channels:
             return jsonify([])
@@ -232,6 +255,10 @@ def player_api():
         stream_list = []
         for ch in channels:
             try:
+                # Filter by category if specified
+                if category_id and ch.get('category_id') != category_id:
+                    continue
+                
                 stream_list.append({
                     "num": ch.get('num', 0),
                     "name": ch.get('name', 'Unknown'),
@@ -300,7 +327,7 @@ def stream_redirect(username, password, stream_id, ext=None):
     if username not in VALID_USERS or VALID_USERS[username] != password:
         return Response("Unauthorized", status=403)
     
-    channels, _ = get_cached_channels()
+    channels, categories, _ = get_cached_channels()
     
     # Find the channel
     for ch in channels:
@@ -346,7 +373,7 @@ def admin_dashboard():
     sessions = list(active_sessions.items())
     history = list(connection_history[-30:])
     stats = dict(user_stats)
-    channels, _ = get_cached_channels()
+    channels, categories, _ = get_cached_channels()
     
     html = """
     <!DOCTYPE html>
@@ -378,7 +405,7 @@ def admin_dashboard():
         <p>Auto-refreshes every 10 seconds | Current time: """ + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + """</p>
         
         <div class="info">
-            <strong>✅ Xtream API Active:</strong> """ + str(len(channels)) + """ channels loaded and ready for IPTV Smarters!
+            <strong>✅ Xtream API Active:</strong> """ + str(len(channels)) + """ channels in """ + str(len(categories)) + """ categories loaded!
         </div>
         
         <div class="stats">
@@ -391,8 +418,8 @@ def admin_dashboard():
                 <div class="stat-label">Channels Available</div>
             </div>
             <div class="stat-box">
-                <div class="stat-value">""" + str(len(VALID_USERS)) + """</div>
-                <div class="stat-label">Total Users</div>
+                <div class="stat-value">""" + str(len(categories)) + """</div>
+                <div class="stat-label">Categories</div>
             </div>
         </div>
         
@@ -518,7 +545,7 @@ def debug():
         preview = text[:2000]
         
         # Try to parse
-        channels = parse_m3u(content)
+        channels, categories = parse_m3u(content)
         
         return f"""
         <h2>M3U Debug Info</h2>
@@ -526,6 +553,10 @@ def debug():
         <p><strong>Response Status:</strong> {resp.status_code}</p>
         <p><strong>Content Length:</strong> {len(content)} bytes</p>
         <p><strong>Channels Parsed:</strong> {len(channels)}</p>
+        <p><strong>Categories Found:</strong> {len(categories)}</p>
+        
+        <h3>Categories:</h3>
+        <pre style="background: #f0f0f0; padding: 10px;">{list(categories.keys())[:20]}</pre>
         
         <h3>First 2000 characters of M3U:</h3>
         <pre style="background: #f0f0f0; padding: 10px; overflow: auto;">{preview}</pre>
