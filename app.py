@@ -26,6 +26,7 @@ cache_time = 0
 def parse_m3u(content):
     """Parse M3U content and extract channels"""
     channels = []
+    categories = {}  # Track unique categories
     
     try:
         # Handle both bytes and string
@@ -48,6 +49,7 @@ def parse_m3u(content):
                     'stream_icon': '',
                     'stream_id': len(channels) + 1,
                     'category_id': '1',
+                    'category_name': 'Uncategorized',
                     'tvg_id': '',
                     'stream_url': ''
                 }
@@ -57,6 +59,18 @@ def parse_m3u(content):
                     name_part = line.split(',', 1)[1].strip()
                     if name_part:
                         current_channel['name'] = name_part
+                
+                # Extract group-title (category)
+                group_match = re.search(r'group-title="([^"]*)"', line)
+                if group_match:
+                    category_name = group_match.group(1)
+                    current_channel['category_name'] = category_name
+                    
+                    # Add to categories dict if new
+                    if category_name not in categories:
+                        categories[category_name] = str(len(categories) + 1)
+                    
+                    current_channel['category_id'] = categories[category_name]
                 
                 # Extract tvg-id
                 tvg_match = re.search(r'tvg-id="([^"]*)"', line)
@@ -84,11 +98,13 @@ def parse_m3u(content):
             'stream_icon': '',
             'stream_id': 1,
             'category_id': '1',
+            'category_name': 'Test',
             'tvg_id': 'test',
             'stream_url': 'http://test.com/stream.m3u8'
         }]
+        categories = {'Test': '1'}
     
-    return channels
+    return channels, categories
 
 def get_cached_channels():
     """Get cached channels or fetch new ones"""
