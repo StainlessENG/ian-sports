@@ -29,43 +29,68 @@ cache_time = 0
 def parse_m3u(content):
 “”“Parse M3U content and extract channels”””
 channels = []
-lines = content.decode(‘utf-8’).split(’\n’)
 
 ```
-current_channel = {}
-for i, line in enumerate(lines):
-    line = line.strip()
+try:
+    # Handle both bytes and string
+    if isinstance(content, bytes):
+        text = content.decode('utf-8', errors='ignore')
+    else:
+        text = content
+        
+    lines = text.split('\n')
     
-    if line.startswith('#EXTINF:'):
-        # Extract channel info
-        current_channel = {
-            'num': len(channels) + 1,
-            'name': 'Unknown',
-            'stream_icon': '',
-            'stream_id': len(channels) + 1,
-            'category_id': '1',
-            'tvg_id': ''
-        }
+    current_channel = {}
+    for i, line in enumerate(lines):
+        line = line.strip()
         
-        # Extract name (after last comma)
-        if ',' in line:
-            current_channel['name'] = line.split(',', 1)[1].strip()
-        
-        # Extract tvg-id
-        tvg_match = re.search(r'tvg-id="([^"]*)"', line)
-        if tvg_match:
-            current_channel['tvg_id'] = tvg_match.group(1)
-        
-        # Extract logo
-        logo_match = re.search(r'tvg-logo="([^"]*)"', line)
-        if logo_match:
-            current_channel['stream_icon'] = logo_match.group(1)
+        if line.startswith('#EXTINF:'):
+            # Extract channel info
+            current_channel = {
+                'num': len(channels) + 1,
+                'name': 'Unknown Channel',
+                'stream_icon': '',
+                'stream_id': len(channels) + 1,
+                'category_id': '1',
+                'tvg_id': '',
+                'stream_url': ''
+            }
             
-    elif line and not line.startswith('#') and current_channel:
-        # This is the stream URL
-        current_channel['stream_url'] = line
-        channels.append(current_channel)
-        current_channel = {}
+            # Extract name (after last comma)
+            if ',' in line:
+                name_part = line.split(',', 1)[1].strip()
+                if name_part:
+                    current_channel['name'] = name_part
+            
+            # Extract tvg-id
+            tvg_match = re.search(r'tvg-id="([^"]*)"', line)
+            if tvg_match:
+                current_channel['tvg_id'] = tvg_match.group(1)
+            
+            # Extract logo
+            logo_match = re.search(r'tvg-logo="([^"]*)"', line)
+            if logo_match:
+                current_channel['stream_icon'] = logo_match.group(1)
+                
+        elif line and not line.startswith('#'):
+            # This is the stream URL
+            if current_channel:
+                current_channel['stream_url'] = line
+                channels.append(current_channel.copy())
+                current_channel = {}
+
+except Exception as e:
+    print(f"Error parsing M3U: {e}")
+    # Return at least a test channel so we can debug
+    channels = [{
+        'num': 1,
+        'name': 'Test Channel (Parser Error)',
+        'stream_icon': '',
+        'stream_id': 1,
+        'category_id': '1',
+        'tvg_id': 'test',
+        'stream_url': 'http://test.com/stream.m3u8'
+    }]
 
 return channels
 ```
@@ -79,11 +104,17 @@ global cached_channels, cache_time, cached_m3u
 if time.time() - cache_time < 300 and cached_channels:
     return cached_channels, cached_m3u
 
-resp = requests.get(M3U_URL)
-if resp.status_code == 200:
-    cached_m3u = resp.content
-    cached_channels = parse_m3u(resp.content)
-    cache_time = time.time()
+try:
+    resp = requests.get(M3U_URL, timeout=10)
+    if resp.status_code == 200:
+        cached_m3u = resp.content
+        cached_channels = parse_m3u(resp.content)
+        cache_time = time.time()
+        print(f"Loaded {len(cached_channels)} channels from M3U")
+    else:
+        print(f"Failed to fetch M3U: Status {resp.status_code}")
+except Exception as e:
+    print(f"Error fetching M3U: {e}")
 
 return cached_channels, cached_m3u
 ```
