@@ -503,6 +503,41 @@ html += """
 return html
 ```
 
+@app.route(’/debug’)
+def debug():
+“”“Debug endpoint to see M3U content”””
+try:
+resp = requests.get(M3U_URL, timeout=10)
+if resp.status_code != 200:
+return f”Failed to fetch M3U: Status {resp.status_code}”
+
+```
+    content = resp.content
+    text = content.decode('utf-8', errors='ignore')
+    
+    # Show first 2000 characters
+    preview = text[:2000]
+    
+    # Try to parse
+    channels = parse_m3u(content)
+    
+    return f"""
+    <h2>M3U Debug Info</h2>
+    <p><strong>M3U URL:</strong> {M3U_URL}</p>
+    <p><strong>Response Status:</strong> {resp.status_code}</p>
+    <p><strong>Content Length:</strong> {len(content)} bytes</p>
+    <p><strong>Channels Parsed:</strong> {len(channels)}</p>
+    
+    <h3>First 2000 characters of M3U:</h3>
+    <pre style="background: #f0f0f0; padding: 10px; overflow: auto;">{preview}</pre>
+    
+    <h3>First 3 Parsed Channels:</h3>
+    <pre style="background: #f0f0f0; padding: 10px;">{channels[:3]}</pre>
+    """
+except Exception as e:
+    return f"Error: {str(e)}"
+```
+
 @app.route(’/’)
 def home():
-return “Xtream bridge active! Use Xtream API: Server: xtream-bridge.onrender.com | User: john | Pass: pass123”
+return “Xtream bridge active! Use Xtream API: Server: xtream-bridge.onrender.com | User: john | Pass: pass123 | <a href='/debug'>Debug M3U</a>”
