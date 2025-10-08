@@ -365,6 +365,22 @@ def kick_user(username):
     
     return jsonify({"success": True, "message": f"Kicked {len(to_remove)} session(s) for {username}"})
 
+@app.route('/admin/refresh_m3u')
+def refresh_m3u():
+    """Force refresh the M3U cache"""
+    if not check_admin_auth():
+        return Response("Access denied", status=403)
+    
+    global cache_time
+    cache_time = 0  # Reset cache time to force refresh
+    
+    channels, categories, _ = get_cached_channels()
+    
+    return jsonify({
+        "success": True, 
+        "message": f"M3U refreshed! Loaded {len(channels)} channels in {len(categories)} categories"
+    })
+
 @app.route('/admin/dashboard')
 def admin_dashboard():
     if not check_admin_auth():
@@ -406,6 +422,9 @@ def admin_dashboard():
         
         <div class="info">
             <strong>✅ Xtream API Active:</strong> """ + str(len(channels)) + """ channels in """ + str(len(categories)) + """ categories loaded!
+            <br><br>
+            <strong>🔄 Cache Info:</strong> M3U refreshes automatically every 5 minutes. 
+            <a href="/admin/refresh_m3u?password=""" + ADMIN_PASSWORD + """" style="color: #4CAF50;">Force Refresh Now</a>
         </div>
         
         <div class="stats">
