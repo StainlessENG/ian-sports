@@ -210,22 +210,29 @@ def player_api():
         category_id = request.args.get('category_id', '')
         channels, _ = get_cached_channels()
         
+        if not channels:
+            return jsonify([])
+        
         stream_list = []
         for ch in channels:
-            stream_list.append({
-                "num": ch['num'],
-                "name": ch['name'],
-                "stream_type": "live",
-                "stream_id": ch['stream_id'],
-                "stream_icon": ch['stream_icon'],
-                "epg_channel_id": ch['tvg_id'],
-                "added": "1234567890",
-                "category_id": ch['category_id'],
-                "custom_sid": "",
-                "tv_archive": 0,
-                "direct_source": ch['stream_url'],
-                "tv_archive_duration": 0
-            })
+            try:
+                stream_list.append({
+                    "num": ch.get('num', 0),
+                    "name": ch.get('name', 'Unknown'),
+                    "stream_type": "live",
+                    "stream_id": ch.get('stream_id', 0),
+                    "stream_icon": ch.get('stream_icon', ''),
+                    "epg_channel_id": ch.get('tvg_id', ''),
+                    "added": "1234567890",
+                    "category_id": ch.get('category_id', '1'),
+                    "custom_sid": "",
+                    "tv_archive": 0,
+                    "direct_source": ch.get('stream_url', ''),
+                    "tv_archive_duration": 0
+                })
+            except Exception as e:
+                print(f"Error processing channel: {e}")
+                continue
         
         return jsonify(stream_list)
     
@@ -248,15 +255,15 @@ def player_api():
             "user_info": {
                 "username": username,
                 "password": VALID_USERS[username],
-                "message": "Welcome",
+                "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "1999999999",
+                "exp_date": "1735689600",
                 "is_trial": "0",
-                "active_cons": str(get_user_active_sessions(username)),
-                "created_at": "1234567890",
+                "active_cons": "0",
+                "created_at": "1609459200",
                 "max_connections": str(MAX_CONNECTIONS_PER_USER),
-                "allowed_output_formats": ["m3u8", "ts", "rtmp"]
+                "allowed_output_formats": ["m3u8", "ts"]
             },
             "server_info": {
                 "url": server_url,
