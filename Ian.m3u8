@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U url-tvg="http://m3u4u.com/epg/w16vy52exeax15kzn39p"
 #EXTINF:-1 tvg-id="BBCOne.uk" tvg-name="BBC One" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s69387_dark_360w_270h.png" group-title="UK Freeview",BBC One
 http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/507878.ts
 #EXTINF:-1 tvg-id="BBC2(England).uk" tvg-name="BBC Two" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s68113_dark_360w_270h.png" group-title="UK Freeview",BBC Two
@@ -184,15 +184,15 @@ http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508254.ts
 #EXTINF:-1 tvg-id="skysportsracing.uk" tvg-name="SKY SPORTS Racing" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/screen-bug/sky-sports-racing-bug-hz-uk.png?raw=true" group-title="*Sky Sports",SKY SPORTS Racing
 http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508258.ts
 #EXTINF:-1 tvg-id="tntsportsultimateuhd.uk" tvg-name="UK: TNT SPORTS Ultimate ⁴ᴷ" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s125396_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS Ultimate ⁴ᴷ
-http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508199.ts
+https://gotdark.com:443/habaoson/Spiderman1/59716
 #EXTINF:-1 tvg-id="tntsports1.uk" tvg-name="UK: TNT SPORTS  1" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s82450_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS  1
-http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508184.ts
+https://gotdark.com:443/habaoson/Spiderman1/38232
 #EXTINF:-1 tvg-id="tntsports2.uk" tvg-name="UK: TNT SPORTS 2" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s82451_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS 2
-http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508186.ts
+https://gotdark.com:443/habaoson/Spiderman1/38233
 #EXTINF:-1 tvg-id="tntsports3.uk" tvg-name="UK: TNT SPORTS 3" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s95772_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS 3
-http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508187.ts
+https://gotdark.com:443/habaoson/Spiderman1/38234
 #EXTINF:-1 tvg-id="tntsports4.uk" tvg-name="UK: TNT SPORTS 4" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s64572_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS 4
-http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508189.ts
+http://bestp55.xyz:80/A7FC77529786/519C32219872/311557
 #EXTINF:-1 tvg-id="tntsports5.uk" tvg-name="UK: TNT SPORTS 5" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/GNLZZGG00270R96.png_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS 5
 http://websafety101.net:5050/live/powreb2000@yahoo.com/TwvfeLjAfb/508191.ts
 #EXTINF:-1 tvg-id="tntsports6.uk" tvg-name="UK: TNT SPORTS 6" tvg-logo="http://schedulesdirect-api20141201-logos.s3.dualstack.us-east-1.amazonaws.com/stationLogos/s100890_dark_360w_270h.png" group-title="*TNT Sports",UK: TNT SPORTS 6
