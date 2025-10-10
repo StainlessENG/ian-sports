@@ -301,7 +301,7 @@ def player_api():
                 "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "1735689600",
+                "exp_date": "1760140800",
                 "is_trial": "0",
                 "active_cons": "0",
                 "created_at": "1609459200",
@@ -551,7 +551,10 @@ def admin_dashboard():
 
 @app.route('/debug')
 def debug():
-    """Debug endpoint to see M3U content"""
+    """Debug endpoint to see M3U content - ADMIN ONLY"""
+    if not check_admin_auth():
+        return Response("Access denied. Use ?password=YOUR_ADMIN_PASSWORD", status=403)
+    
     try:
         resp = requests.get(M3U_URL, timeout=10)
         if resp.status_code != 200:
@@ -588,4 +591,170 @@ def debug():
 
 @app.route('/')
 def home():
-    return "Xtream bridge active! Use Xtream API: Server: xtream-bridge.onrender.com | User: john | Pass: pass123 | <a href='/debug'>Debug M3U</a>"
+    channels, categories, _ = get_cached_channels()
+    
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>IPTV Streaming Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+            body {{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }}
+            .container {{
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                padding: 60px 40px;
+                max-width: 600px;
+                width: 100%;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                text-align: center;
+            }}
+            .logo {{
+                font-size: 64px;
+                margin-bottom: 20px;
+            }}
+            h1 {{
+                color: #333;
+                font-size: 36px;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }}
+            .subtitle {{
+                color: #666;
+                font-size: 18px;
+                margin-bottom: 40px;
+            }}
+            .stats {{
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin: 40px 0;
+                flex-wrap: wrap;
+            }}
+            .stat-box {{
+                text-align: center;
+            }}
+            .stat-number {{
+                font-size: 42px;
+                font-weight: bold;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }}
+            .stat-label {{
+                color: #888;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-top: 5px;
+            }}
+            .status {{
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #10b981;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-weight: 600;
+                margin-top: 20px;
+            }}
+            .pulse {{
+                width: 12px;
+                height: 12px;
+                background: white;
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }}
+            @keyframes pulse {{
+                0%, 100% {{ opacity: 1; }}
+                50% {{ opacity: 0.5; }}
+            }}
+            .footer {{
+                margin-top: 40px;
+                padding-top: 30px;
+                border-top: 1px solid #e5e5e5;
+                color: #999;
+                font-size: 14px;
+            }}
+            .info-box {{
+                background: #f8f9fa;
+                border-radius: 12px;
+                padding: 20px;
+                margin-top: 30px;
+                text-align: left;
+            }}
+            .info-box h3 {{
+                color: #667eea;
+                font-size: 16px;
+                margin-bottom: 15px;
+                font-weight: 600;
+            }}
+            .info-box p {{
+                color: #666;
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 8px;
+            }}
+            .info-box code {{
+                background: white;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                color: #764ba2;
+                font-size: 13px;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">📺</div>
+            <h1>IPTV Streaming</h1>
+            <p class="subtitle">Professional Xtream Codes API Service</p>
+            
+            <div class="status">
+                <div class="pulse"></div>
+                Service Online
+            </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">{len(channels)}</div>
+                    <div class="stat-label">Channels</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{len(categories)}</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h3>🔌 API Endpoints Available</h3>
+                <p>✓ Xtream Codes API (Full Compatibility)</p>
+                <p>✓ M3U Playlist Support</p>
+                <p>✓ EPG / XMLTV Guide</p>
+                <p>✓ Live Stream Categories</p>
+            </div>
+            
+            <div class="footer">
+                <p>For access credentials, please contact your service administrator</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
