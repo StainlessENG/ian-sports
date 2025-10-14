@@ -10,7 +10,11 @@ app = Flask(__name__)
 # --- CONFIG ---
 M3U_URL = "http://m3u4u.com/m3u/w16vy52exeax15kzn39p"
 EPG_URL = "http://websafety101.net:5050/xmltv.php?username=chulobonao7@aol.com&password=TQRfqAp9dA"
-VALID_USERS = {"sid": "devon", "john": "pass123"}
+VALID_USERS = {VALID_USERS = {
+    "sid": "devon",
+    "john": "pass123",
+    "mark": "Sidmouth2025"
+}
 MAX_CONNECTIONS_PER_USER = 2
 ADMIN_PASSWORD = "admin123"
 # ----------------
@@ -301,7 +305,7 @@ def player_api():
                 "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "1760140800",
+                "exp_date": "1780185600",
                 "is_trial": "0",
                 "active_cons": "0",
                 "created_at": "1609459200",
