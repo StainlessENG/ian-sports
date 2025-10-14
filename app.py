@@ -32,10 +32,9 @@ cache_time = 0
 def parse_m3u(content):
     """Parse M3U content and extract channels"""
     channels = []
-    categories = {}  # Track unique categories
+    categories = {}
     
     try:
-        # Handle both bytes and string
         if isinstance(content, bytes):
             text = content.decode('utf-8', errors='ignore')
         else:
@@ -48,7 +47,6 @@ def parse_m3u(content):
             line = line.strip()
             
             if line.startswith('#EXTINF:'):
-                # Extract channel info
                 current_channel = {
                     'num': len(channels) + 1,
                     'name': 'Unknown Channel',
@@ -60,36 +58,30 @@ def parse_m3u(content):
                     'stream_url': ''
                 }
                 
-                # Extract name (after last comma)
                 if ',' in line:
                     name_part = line.split(',', 1)[1].strip()
                     if name_part:
                         current_channel['name'] = name_part
                 
-                # Extract group-title (category)
                 group_match = re.search(r'group-title="([^"]*)"', line)
                 if group_match:
                     category_name = group_match.group(1)
                     current_channel['category_name'] = category_name
                     
-                    # Add to categories dict if new
                     if category_name not in categories:
                         categories[category_name] = str(len(categories) + 1)
                     
                     current_channel['category_id'] = categories[category_name]
                 
-                # Extract tvg-id
                 tvg_match = re.search(r'tvg-id="([^"]*)"', line)
                 if tvg_match:
                     current_channel['tvg_id'] = tvg_match.group(1)
                 
-                # Extract logo
                 logo_match = re.search(r'tvg-logo="([^"]*)"', line)
                 if logo_match:
                     current_channel['stream_icon'] = logo_match.group(1)
                     
             elif line and not line.startswith('#'):
-                # This is the stream URL
                 if current_channel:
                     current_channel['stream_url'] = line
                     channels.append(current_channel.copy())
@@ -97,7 +89,6 @@ def parse_m3u(content):
     
     except Exception as e:
         print(f"Error parsing M3U: {e}")
-        # Return at least a test channel so we can debug
         channels = [{
             'num': 1,
             'name': 'Test Channel (Parser Error)',
@@ -116,7 +107,6 @@ def get_cached_channels():
     """Get cached channels or fetch new ones"""
     global cached_channels, cached_categories, cache_time, cached_m3u
     
-    # Cache for 5 minutes
     if time.time() - cache_time < 300 and cached_channels and cached_categories:
         return cached_channels, cached_categories, cached_m3u
     
@@ -126,11 +116,9 @@ def get_cached_channels():
             cached_m3u = resp.content
             result = parse_m3u(resp.content)
             
-            # Handle return value
             if isinstance(result, tuple):
                 cached_channels, cached_categories = result
             else:
-                # Fallback for old format
                 cached_channels = result
                 cached_categories = {'Uncategorized': '1'}
             
@@ -148,6 +136,12 @@ def get_cached_channels():
 def generate_session_id(username):
     return f"{username}_{request.remote_addr}_{int(time.time() * 1000)}"
 
+def get_client_ip():
+    """Get the real client IP, accounting for proxies"""
+    if request.headers.get('X-Forwarded-For'):
+        return request.headers.get('X-Forwarded-For').split(',')[0].strip()
+    return request.remote_addr
+
 def check_auth():
     username = request.args.get('username', '')
     password = request.args.get('password', '')
@@ -163,6 +157,13 @@ def check_admin_auth():
 def get_user_active_sessions(username):
     return sum(1 for s in active_sessions.values() if s['user'] == username)
 
+def get_channel_by_id(stream_id):
+    """Get channel details by stream ID"""
+    for ch in cached_channels:
+        if str(ch['stream_id']) == str(stream_id):
+            return ch
+    return None
+
 @app.route('/get.php')
 def get_php():
     username = check_auth()
@@ -173,10 +174,13 @@ def get_php():
         return Response(f"Connection limit reached ({MAX_CONNECTIONS_PER_USER} max)", status=429)
     
     session_id = generate_session_id(username)
+    client_ip = get_client_ip()
+    
     active_sessions[session_id] = {
         'user': username,
-        'ip': request.remote_addr,
+        'ip': client_ip,
         'channel': 'M3U Playlist',
+        'channel_id': 0,
         'start_time': datetime.now()
     }
     
@@ -191,8 +195,9 @@ def get_php():
     
     connection_history.append({
         'user': username,
-        'ip': request.remote_addr,
+        'ip': client_ip,
         'action': 'M3U Fetch',
+        'channel': 'M3U Playlist',
         'time': datetime.now()
     })
     
@@ -210,14 +215,16 @@ def xmltv():
     if not EPG_URL:
         return Response("EPG not configured", status=404)
     
+    client_ip = get_client_ip()
     resp = requests.get(EPG_URL)
     if resp.status_code != 200:
         return Response("Could not fetch EPG", status=500)
     
     connection_history.append({
         'user': username,
-        'ip': request.remote_addr,
+        'ip': client_ip,
         'action': 'EPG Fetch',
+        'channel': 'EPG Guide',
         'time': datetime.now()
     })
     
@@ -245,7 +252,6 @@ def player_api():
                 "parent_id": 0
             })
         
-        # Sort by category name
         category_list.sort(key=lambda x: x['category_name'])
         
         return jsonify(category_list)
@@ -260,7 +266,6 @@ def player_api():
         stream_list = []
         for ch in channels:
             try:
-                # Filter by category if specified
                 if category_id and ch.get('category_id') != category_id:
                     continue
                 
@@ -297,7 +302,6 @@ def player_api():
         return jsonify([])
     
     else:
-        # Default: return user info
         server_url = request.url_root.rstrip('/')
         return jsonify({
             "user_info": {
@@ -333,11 +337,34 @@ def stream_redirect(username, password, stream_id, ext=None):
         return Response("Unauthorized", status=403)
     
     channels, categories, _ = get_cached_channels()
+    client_ip = get_client_ip()
     
     # Find the channel
-    for ch in channels:
-        if str(ch['stream_id']) == str(stream_id):
-            return redirect(ch['stream_url'])
+    channel = get_channel_by_id(stream_id)
+    if channel:
+        # Track session with channel info
+        session_id = generate_session_id(username)
+        active_sessions[session_id] = {
+            'user': username,
+            'ip': client_ip,
+            'channel': channel['name'],
+            'channel_id': stream_id,
+            'category': channel['category_name'],
+            'start_time': datetime.now()
+        }
+        
+        connection_history.append({
+            'user': username,
+            'ip': client_ip,
+            'action': 'Stream Play',
+            'channel': channel['name'],
+            'time': datetime.now()
+        })
+        
+        if len(connection_history) > 100:
+            connection_history.pop(0)
+        
+        return redirect(channel['stream_url'])
     
     return Response("Stream not found", status=404)
 
@@ -377,7 +404,7 @@ def refresh_m3u():
         return Response("Access denied", status=403)
     
     global cache_time
-    cache_time = 0  # Reset cache time to force refresh
+    cache_time = 0
     
     channels, categories, _ = get_cached_channels()
     
@@ -419,6 +446,8 @@ def admin_dashboard():
             .online { color: #4CAF50; }
             .offline { color: #f44336; }
             .info { background: #2a2a2a; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3; }
+            .channel-info { font-size: 12px; color: #aaa; }
+            .category-badge { background: #764ba2; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
         </style>
     </head>
     <body>
@@ -451,6 +480,8 @@ def admin_dashboard():
         <table>
             <tr>
                 <th>User</th>
+                <th>Channel / Content</th>
+                <th>Category</th>
                 <th>Started</th>
                 <th>Duration</th>
                 <th>IP Address</th>
@@ -467,19 +498,25 @@ def admin_dashboard():
             duration_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
             start_time = sess['start_time'].strftime("%H:%M:%S")
             
+            channel_name = sess.get('channel', 'M3U Playlist')
+            category = sess.get('category', 'N/A')
+            ip = sess.get('ip', 'Unknown')
+            
             kick_url = f"/admin/kick/{session_id}?password={ADMIN_PASSWORD}"
             
             html += f"""
             <tr>
                 <td><strong>{sess['user']}</strong></td>
+                <td>{channel_name}</td>
+                <td><span class="category-badge">{category}</span></td>
                 <td>{start_time}</td>
                 <td>{duration_str}</td>
-                <td>{sess['ip']}</td>
+                <td><code>{ip}</code></td>
                 <td><a href="{kick_url}"><button class="kick-btn">KICK</button></a></td>
             </tr>
             """
     else:
-        html += '<tr><td colspan="5" style="text-align: center; color: #888;">No active sessions</td></tr>'
+        html += '<tr><td colspan="7" style="text-align: center; color: #888;">No active sessions</td></tr>'
     
     html += """
         </table>
@@ -527,24 +564,29 @@ def admin_dashboard():
                 <th>Time</th>
                 <th>User</th>
                 <th>Action</th>
-                <th>IP</th>
+                <th>Channel / Content</th>
+                <th>IP Address</th>
             </tr>
     """
     
     if history:
         for entry in reversed(history):
             time_str = entry['time'].strftime("%H:%M:%S")
+            action = entry['action']
+            channel = entry.get('channel', 'N/A')
+            ip = entry.get('ip', 'Unknown')
             
             html += f"""
             <tr>
                 <td>{time_str}</td>
                 <td><strong>{entry['user']}</strong></td>
-                <td>{entry['action']}</td>
-                <td>{entry['ip']}</td>
+                <td>{action}</td>
+                <td>{channel}</td>
+                <td><code>{ip}</code></td>
             </tr>
             """
     else:
-        html += '<tr><td colspan="4" style="text-align: center; color: #888;">No recent activity</td></tr>'
+        html += '<tr><td colspan="5" style="text-align: center; color: #888;">No recent activity</td></tr>'
     
     html += """
         </table>
@@ -568,10 +610,8 @@ def debug():
         content = resp.content
         text = content.decode('utf-8', errors='ignore')
         
-        # Show first 2000 characters
         preview = text[:2000]
         
-        # Try to parse
         channels, categories = parse_m3u(content)
         
         return f"""
@@ -735,14 +775,6 @@ def home():
             
             <div class="stats">
                 <div class="stat-box">
-                    <div class="stat-number">{len(channels)}</div>
-                    <div class="stat-label">Channels</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">{len(categories)}</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat-box">
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Uptime</div>
                 </div>
@@ -763,3 +795,13 @@ def home():
     </body>
     </html>
     """
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)    <div class="stat-number">{len(channels)}</div>
+                    <div class="stat-label">Channels</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{len(categories)}</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-box">
