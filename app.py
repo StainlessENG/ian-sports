@@ -13,7 +13,8 @@ EPG_URL = "http://websafety101.net:5050/xmltv.php?username=chulobonao7@aol.com&p
 VALID_USERS = {
     "sid": "devon",
     "john": "pass123",
-    "mark": "Sidmouth2025"
+    "mark": "Sidmouth2025",
+    "james": "October2025"
 }
 MAX_CONNECTIONS_PER_USER = 2
 ADMIN_PASSWORD = "admin123"
