@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # --- CONFIG ---
 M3U_URL = "http://m3u4u.com/m3u/w16vy52exeax15kzn39p"
-EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
+EPG_URL = "http://m3u4u.com/epg/w16vy52exeax15kzn39p"
 VALID_USERS = {
     "sid": "devon",
     "john": "pass123",
