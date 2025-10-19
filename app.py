@@ -14,7 +14,9 @@ VALID_USERS = {
     "sid": "devon",
     "john": "pass123",
     "mark": "Sidmouth2025",
-    "james": "October2025"
+    "james": "October2025",
+    "ian": "October2025",
+    "harry": "October2025"
 }
 MAX_CONNECTIONS_PER_USER = 2
 ADMIN_PASSWORD = "admin123"
