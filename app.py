@@ -11,7 +11,7 @@ app = Flask(__name__)
 M3U_URL = "http://m3u4u.com/m3u/w16vy52exeax15kzn39p"
 EPG_URL = "http://m3u4u.com/epg/w16vy52exeax15kzn39p"
 VALID_USERS = {
-    "sid": "devon",
+    "dad": "devon",
     "john": "pass123",
     "mark": "Sidmouth2025",
     "james": "October2025",
