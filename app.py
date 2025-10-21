@@ -1,14 +1,14 @@
-
 import os
 import time
 import re
 import requests
 from flask import Flask, request, Response, jsonify, redirect, abort
 
-M3U_URL = os.getenv("M3U_URL", "http://m3u4u.com/m3u/w16vy52exeax15kzn39p")
-EPG_URL = os.getenv("EPG_URL", "http://m3u4u.com/epg/w16vy52exeax15kzn39p")
-CACHE_TTL = int(os.getenv("CACHE_TTL", "1800"))
+# ---- Config (hardcoded to m3u4u as requested) ----
+M3U_URL = "http://m3u4u.com/m3u/w16vy52exeax15kzn39p"
+CACHE_TTL = int(os.getenv("CACHE_TTL", "1800"))  # 30 minutes default
 
+# ---- Users (kept exactly as provided) ----
 VALID_USERS = {
     "dad": "devon",
     "john": "pass123",
@@ -20,6 +20,7 @@ VALID_USERS = {
 
 app = Flask(__name__)
 
+# ---- Cache ----
 _cache = {
     "fetched_at": 0.0,
     "channels": [],
@@ -28,6 +29,7 @@ _cache = {
     "cat_index": {},
 }
 
+# ---- M3U parsing ----
 M3U_EXTINF_RE = re.compile(r'#EXTINF:-?\d+\s*(?P<attrs>[^,]*)\s*,\s*(?P<name>.*)\s*$', re.IGNORECASE)
 M3U_ATTR_RE = re.compile(r'([a-zA-Z0-9_-]+)="([^"]*)"')
 
@@ -100,10 +102,12 @@ def _refresh_cache(force=False):
     _cache["cat_index"] = cat_index
     _cache["fetched_at"] = now
 
+# ---- Auth & info helpers ----
 def _auth_ok(username, password):
     return username in VALID_USERS and VALID_USERS[username] == password
 
 def _server_info():
+    # Keep it simple/xtream compatible; Render provides HTTPS on 443
     return {
         "url": request.host_url.rstrip("/"),
         "https_port": "443",
@@ -127,23 +131,12 @@ def _user_info(username):
         "created_at": "1609459200",
         "exp_date": "1780185600",
         "active_cons": "0",
-        "allowed_output_formats": ["m3u8", "ts"],
+        "allowed_output_formats": ["m3u8", "ts"],  # both, as requested
     }
 
-@app.route("/")
-def index():
-    return jsonify({
-        "status": "ok",
-        "source": M3U_URL,
-        "epg": EPG_URL,
-        "cached_channels": len(_cache["channels"]),
-        "cache_age_seconds": int(time.time() - _cache["fetched_at"]) if _cache["fetched_at"] else None,
-    })
-
-@app.route("/healthz")
-def healthz():
-    return "ok", 200
-
+# =========================
+# 1) /player_api.php
+# =========================
 @app.route("/player_api.php", methods=["GET", "POST"])
 def player_api():
     username = request.values.get("username", "")
@@ -155,9 +148,11 @@ def player_api():
 
     _refresh_cache()
 
+    # No action: standard xtream handshake
     if not action:
         return jsonify({"user_info": _user_info(username), "server_info": _server_info()})
 
+    # Minimal live-only feature set
     if action == "get_user_info":
         return jsonify(_user_info(username))
 
@@ -175,26 +170,28 @@ def player_api():
                 "is_adult": "0",
                 "tvg_id": ch["tvg_id"],
                 "custom_sid": "",
-                "direct_source": ch["url"],
+                "direct_source": ch["url"],  # point directly at m3u4u-provided URL
             })
         return jsonify(streams)
 
     if action == "get_live_categories":
         return jsonify(_cache["categories"])
 
-    if action in ("get_vod_streams", "get_series"):
+    # Explicitly no VOD/series/EPG
+    if action in ("get_vod_streams", "get_vod_categories", "get_series", "get_series_categories", "get_short_epg", "get_simple_data_table"):
         return jsonify([])
 
-    if action in ("get_vod_categories", "get_series_categories"):
-        return jsonify([{"category_id": "1", "category_name": "VOD", "parent_id": 0}])
-
+    # Default: return basic info
     return jsonify({"user_info": _user_info(username), "server_info": _server_info()})
 
+# =========================
+# 2) /get.php  (M3U playlist)
+# =========================
 @app.route("/get.php")
 def get_php():
     username = request.args.get("username", "")
     password = request.args.get("password", "")
-    _ = request.args.get("output", "m3u8")
+    _output = request.args.get("output", "m3u8")  # accepted but we just list direct URLs
 
     if not _auth_ok(username, password):
         return Response("#EXTM3U\n", mimetype="application/x-mpegURL")
@@ -212,20 +209,13 @@ def get_php():
             attrs.append(f'group-title="{ch["group"]}"')
         attr_str = " ".join(attrs)
         lines.append(f'#EXTINF:-1 {attr_str},{ch["name"]}')
-        lines.append(ch["url"])
+        lines.append(ch["url"])  # direct source from m3u4u
     body = "\n".join(lines) + "\n"
     return Response(body, mimetype="application/x-mpegURL")
 
-@app.route("/xmltv.php")
-def xmltv():
-    if not EPG_URL:
-        return ("", 204)
-    try:
-        r = _http_get(EPG_URL, timeout=30)
-        return Response(r.content, mimetype="application/xml")
-    except Exception as e:
-        return Response(f"<!-- EPG fetch error: {e} -->", mimetype="application/xml")
-
+# =========================
+# 3) /live/<username>/<password>/<stream_id>
+# =========================
 @app.route("/live/<username>/<password>/<stream_id>")
 @app.route("/live/<username>/<password>/<stream_id>.<ext>")
 def live_redirect(username, password, stream_id, ext=None):
@@ -235,8 +225,10 @@ def live_redirect(username, password, stream_id, ext=None):
     ch = _cache["by_id"].get(str(stream_id))
     if not ch:
         abort(404)
+    # Simple platform: redirect straight to the provider URL
     return redirect(ch["url"], code=302)
 
+# ---- Entrypoint for local/dev ----
 if __name__ == "__main__":
     port = int(os.getenv("PORT", "8000"))
     app.run(host="0.0.0.0", port=port)
