@@ -27,7 +27,7 @@ VALID_USERS = {
     "harry": "October2025"
 }
 
-MAX_CONNECTIONS_PER_USER = 2
+MAX_CONNECTIONS_PER_USER = 3
 ADMIN_PASSWORD = "admin123"
 # ----------------
 
