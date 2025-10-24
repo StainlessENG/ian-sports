@@ -168,15 +168,33 @@ def player_api():
 
     action = request.args.get("action", "")
 
+    # ---- Xtream Codes base info (for Smarters) ----
     if not action:
+        host_parts = request.host.split(":")
+        host = host_parts[0]
+        port = host_parts[1] if len(host_parts) > 1 else "8080"
+
         return jsonify({
-            "user_info": {"username": username, "password": VALID_USERS[username], "auth": 1, "status": "Active"},
+            "user_info": {
+                "username": username,
+                "password": VALID_USERS[username],
+                "message": "",
+                "auth": 1,
+                "status": "Active",
+                "exp_date": "1970-01-01 00:00:00",
+                "is_trial": "0",
+                "active_cons": "1",
+                "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "max_connections": "1",
+            },
             "server_info": {
-                "url": request.url_root.rstrip("/"),
-                "port": "8080",
+                "url": host,
+                "port": port,
+                "https_port": "443",
                 "server_protocol": "http",
-                "timezone": "UTC",
-                "timestamp_now": str(int(time.time())),
+                "rtmp_port": "25462",
+                "timezone": "Europe/London",
+                "timestamp_now": int(time.time()),
                 "time_now": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             }
         })
@@ -306,7 +324,7 @@ def serve_live(username, password, stream_id):
     stream = next((ch for ch in channels if ch["stream_id"] == stream_id), None)
     if not stream:
         return Response("Stream not found", status=404)
-    return redirect(stream["stream_url"])  # 302 redirect (lightweight)
+    return redirect(stream["stream_url"])  # lightweight redirect
 
 # ======================
 # ADMIN
