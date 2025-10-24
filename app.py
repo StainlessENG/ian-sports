@@ -168,7 +168,7 @@ def player_api():
 
     action = request.args.get("action", "")
 
-    # ---- Xtream Codes base info (for Smarters) ----
+    # ---- Xtream Codes base info ----
     if not action:
         host_parts = request.host.split(":")
         host = host_parts[0]
@@ -325,6 +325,11 @@ def serve_live(username, password, stream_id):
     if not stream:
         return Response("Stream not found", status=404)
     return redirect(stream["stream_url"])  # lightweight redirect
+
+# ---- Smarters Lite alternate route (/username/password/id) ----
+@app.route("/<username>/<password>/<int:stream_id>")
+def serve_live_alt(username, password, stream_id):
+    return redirect(f"/live/{username}/{password}/{stream_id}.ts", code=302)
 
 # ======================
 # ADMIN
