@@ -181,7 +181,7 @@ def player_api():
                 "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "(datetime.now() + timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")",
+                "exp_date": (datetime.now() + timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S"),
                 "is_trial": "0",
                 "active_cons": "1",
                 "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
