@@ -173,8 +173,8 @@ def player_api():
             "user_info": {"username": username, "password": VALID_USERS[username], "auth": 1, "status": "Active"},
             "server_info": {
                 "url": request.url_root.rstrip("/"),
-                "port": "443",
-                "server_protocol": "https",
+                "port": "8080",
+                "server_protocol": "http",
                 "timezone": "UTC",
                 "timestamp_now": str(int(time.time())),
                 "time_now": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -273,6 +273,33 @@ def player_api():
 
     return jsonify({"error": "Unsupported action"}), 400
 
+# ======================
+# NEW: Xtream-style live route
+# ======================
+@app.route("/live/<username>/<password>/<int:stream_id>.ts")
+def serve_live(username, password, stream_id):
+    # Authenticate user
+    if username not in VALID_USERS or VALID_USERS[username] != password:
+        return Response("Invalid credentials", status=403)
+
+    ok, err = refresh_user_cache(username)
+    if not ok:
+        return Response(f"Failed to refresh playlist: {err}", status=503)
+
+    cache = per_user_cache.get(username)
+    channels = cache["channels"]
+
+    # Find the stream by ID
+    stream = next((ch for ch in channels if ch["stream_id"] == stream_id), None)
+    if not stream:
+        return Response("Stream not found", status=404)
+
+    # Redirect to the actual stream URL
+    return redirect(stream["stream_url"])
+
+# ======================
+# ADMIN
+# ======================
 @app.route("/admin/refresh_cache")
 def admin_refresh_cache():
     if not check_admin():
