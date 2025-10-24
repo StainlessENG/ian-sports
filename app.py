@@ -267,6 +267,24 @@ def player_api():
             for ch in channels if not category_id or ch["category_id"] == category_id
         ])
 
+    # ---- Short EPG (Fix for IPTV Smarters) ----
+    if action == "get_short_epg":
+        stream_id = request.args.get("stream_id")
+        now_ts_val = int(time.time())
+        return jsonify({
+            "epg_listings": [
+                {
+                    "id": stream_id,
+                    "title": "No EPG Data",
+                    "start_timestamp": now_ts_val - 600,
+                    "stop_timestamp": now_ts_val + 1800,
+                    "start": datetime.utcfromtimestamp(now_ts_val - 600).strftime("%Y-%m-%d %H:%M:%S"),
+                    "end": datetime.utcfromtimestamp(now_ts_val + 1800).strftime("%Y-%m-%d %H:%M:%S"),
+                    "description": "",
+                }
+            ]
+        })
+
     # ---- Dummy VOD & Series ----
     if action in ["get_vod_categories", "get_vod_streams", "get_series", "get_series_categories"]:
         return jsonify([])
@@ -274,28 +292,21 @@ def player_api():
     return jsonify({"error": "Unsupported action"}), 400
 
 # ======================
-# NEW: Xtream-style live route
+# Xtream-style live route (302 redirect)
 # ======================
 @app.route("/live/<username>/<password>/<int:stream_id>.ts")
 def serve_live(username, password, stream_id):
-    # Authenticate user
     if username not in VALID_USERS or VALID_USERS[username] != password:
         return Response("Invalid credentials", status=403)
-
     ok, err = refresh_user_cache(username)
     if not ok:
         return Response(f"Failed to refresh playlist: {err}", status=503)
-
     cache = per_user_cache.get(username)
     channels = cache["channels"]
-
-    # Find the stream by ID
     stream = next((ch for ch in channels if ch["stream_id"] == stream_id), None)
     if not stream:
         return Response("Stream not found", status=404)
-
-    # Redirect to the actual stream URL
-    return redirect(stream["stream_url"])
+    return redirect(stream["stream_url"])  # 302 redirect (lightweight)
 
 # ======================
 # ADMIN
