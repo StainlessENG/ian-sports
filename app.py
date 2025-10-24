@@ -181,11 +181,11 @@ def player_api():
                 "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "1970-01-01 00:00:00",
+                "exp_date": "(datetime.now() + timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")",
                 "is_trial": "0",
                 "active_cons": "1",
                 "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "max_connections": "1",
+                "max_connections": "2",
             },
             "server_info": {
                 "url": host,
