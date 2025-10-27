@@ -41,7 +41,7 @@ def check_auth():
 
 
 def parse_m3u(content_bytes):
-    """Parse M3U playlist into channel list and category map"""
+    """Parse M3U playlist into channel list and categories"""
     channels = []
     categories = {}
     try:
@@ -103,7 +103,7 @@ def parse_m3u(content_bytes):
 # ======================
 @app.route("/")
 def index():
-    """Show all available user links"""
+    """Show available user links"""
     lines = ["=== IPTV Access Links ===", ""]
     for user, links in USER_LINKS.items():
         lines.append(f"User: {user}")
@@ -137,16 +137,15 @@ def player_api():
 
     action = request.args.get("action", "")
 
-    # --- Default login info (Smarters checks this first) ---
+    # --- Default login info ---
     if not action:
         return jsonify({
             "user_info": {
                 "username": username,
                 "password": VALID_USERS[username],
-                "message": "",
                 "auth": 1,
                 "status": "Active",
-                "exp_date": "1780185600",  # far-future timestamp (never expires)
+                "exp_date": "1780185600",
                 "is_trial": "0",
                 "active_cons": "0",
                 "created_at": "1609459200",
@@ -165,7 +164,7 @@ def player_api():
             }
         })
 
-    # --- Get live categories ---
+    # --- Live categories ---
     if action == "get_live_categories":
         try:
             resp = requests.get(USER_LINKS[username]["m3u"], timeout=10)
@@ -175,7 +174,7 @@ def player_api():
         except Exception:
             return jsonify([])
 
-    # --- Get live streams ---
+    # --- Live streams ---
     if action == "get_live_streams":
         category_id = request.args.get("category_id", "")
         try:
@@ -201,9 +200,12 @@ def player_api():
     return jsonify([])
 
 
-@app.route("/live/<username>/<password>/<int:stream_id>.ts")
-def live(username, password, stream_id):
-    """Redirect to actual M3U stream (no load on Render)"""
+# ======================
+# STREAM HANDLER (.ts and .m3u8)
+# ======================
+@app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
+def live_any(username, password, stream_id, ext):
+    """Redirect to actual M3U stream (.ts, .m3u8, etc.)"""
     if username not in VALID_USERS or VALID_USERS[username] != password:
         return Response("Invalid login", status=403)
     try:
@@ -213,9 +215,12 @@ def live(username, password, stream_id):
             if ch["stream_id"] == stream_id:
                 return redirect(ch["stream_url"], code=302)
     except Exception as e:
-        print(f"Live error: {e}")
+        print(f"Live redirect error: {e}")
     return Response("Stream not found", status=404)
 
 
+# ======================
+# RUN APP
+# ======================
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
