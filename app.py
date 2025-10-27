@@ -41,7 +41,7 @@ def check_auth():
 
 
 def parse_m3u(content_bytes):
-    """Parse M3U playlist into channel list and categories"""
+    """Parse M3U playlist into channel list and category map"""
     channels = []
     categories = {}
     try:
@@ -103,7 +103,7 @@ def parse_m3u(content_bytes):
 # ======================
 @app.route("/")
 def index():
-    """Show available user links"""
+    """Show all available user links"""
     lines = ["=== IPTV Access Links ===", ""]
     for user, links in USER_LINKS.items():
         lines.append(f"User: {user}")
@@ -137,7 +137,7 @@ def player_api():
 
     action = request.args.get("action", "")
 
-    # --- Default login info ---
+    # --- Default login info (for Smarters) ---
     if not action:
         return jsonify({
             "user_info": {
@@ -164,17 +164,19 @@ def player_api():
             }
         })
 
-    # --- Live categories ---
+    # --- Get live categories ---
     if action == "get_live_categories":
         try:
             resp = requests.get(USER_LINKS[username]["m3u"], timeout=10)
             channels, categories = parse_m3u(resp.content)
-            return jsonify([{"category_id": cid, "category_name": cname, "parent_id": 0}
-                            for cname, cid in categories.items()])
+            return jsonify([
+                {"category_id": cid, "category_name": cname, "parent_id": 0}
+                for cname, cid in categories.items()
+            ])
         except Exception:
             return jsonify([])
 
-    # --- Live streams ---
+    # --- Get live streams ---
     if action == "get_live_streams":
         category_id = request.args.get("category_id", "")
         try:
@@ -188,7 +190,7 @@ def player_api():
                     "stream_id": ch["stream_id"],
                     "stream_icon": ch["stream_icon"],
                     "category_id": ch["category_id"],
-                    "direct_source": ch["stream_url"],
+                    "direct_source": f"https://{request.host}/live/{username}/{VALID_USERS[username]}/{ch['stream_id']}.ts",
                     "epg_channel_id": ch["tvg_id"],
                 }
                 for ch in channels if not category_id or ch["category_id"] == category_id
@@ -196,26 +198,52 @@ def player_api():
         except Exception:
             return jsonify([])
 
-    # --- Stub for unsupported actions ---
     return jsonify([])
 
 
 # ======================
-# STREAM HANDLER (.ts and .m3u8)
+# STREAM HANDLERS
 # ======================
+
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
-def live_any(username, password, stream_id, ext):
-    """Redirect to actual M3U stream (.ts, .m3u8, etc.)"""
+def live_proxy(username, password, stream_id, ext):
+    """Proxy the stream over HTTPS (fixes iOS playback issues)"""
     if username not in VALID_USERS or VALID_USERS[username] != password:
         return Response("Invalid login", status=403)
     try:
         resp = requests.get(USER_LINKS[username]["m3u"], timeout=10)
-        channels, categories = parse_m3u(resp.content)
+        channels, _ = parse_m3u(resp.content)
         for ch in channels:
             if ch["stream_id"] == stream_id:
-                return redirect(ch["stream_url"], code=302)
+                headers = {"User-Agent": "Mozilla/5.0", "Referer": "https://m3u4u.com/"}
+                r = requests.get(ch["stream_url"], headers=headers, stream=True)
+                return Response(
+                    r.iter_content(chunk_size=8192),
+                    content_type=r.headers.get("content-type", "video/MP2T"),
+                )
     except Exception as e:
-        print(f"Live redirect error: {e}")
+        print(f"Proxy stream error: {e}")
+    return Response("Stream not found", status=404)
+
+
+@app.route("/<username>/<password>/<int:stream_id>")
+def live_fallback(username, password, stream_id):
+    """Handle apps that request /user/pass/id instead of /live/user/pass/id.ts"""
+    if username not in VALID_USERS or VALID_USERS[username] != password:
+        return Response("Invalid login", status=403)
+    try:
+        resp = requests.get(USER_LINKS[username]["m3u"], timeout=10)
+        channels, _ = parse_m3u(resp.content)
+        for ch in channels:
+            if ch["stream_id"] == stream_id:
+                headers = {"User-Agent": "Mozilla/5.0", "Referer": "https://m3u4u.com/"}
+                r = requests.get(ch["stream_url"], headers=headers, stream=True)
+                return Response(
+                    r.iter_content(chunk_size=8192),
+                    content_type=r.headers.get("content-type", "video/MP2T"),
+                )
+    except Exception as e:
+        print(f"Live fallback error: {e}")
     return Response("Stream not found", status=404)
 
 
