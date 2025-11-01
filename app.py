@@ -183,4 +183,72 @@ def player_api():
                 "port": "8080",
                 "https_port": "443",
                 "server_protocol": "https",
-                "timezone": "
+                "rtmp_port": "1935",
+                "timezone": "UTC",  # ✅ fixed line
+                "timestamp_now": str(int(time.time())),
+                "time_now": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+        })
+
+    # --- Categories ---
+    if action == "get_live_categories":
+        try:
+            data = fetch_m3u()
+            channels, categories = parse_m3u(data)
+            return jsonify([
+                {"category_id": cid, "category_name": cname, "parent_id": 0}
+                for cname, cid in categories.items()
+            ])
+        except Exception:
+            return jsonify([])
+
+    # --- Streams (returns real URLs) ---
+    if action == "get_live_streams":
+        category_id = request.args.get("category_id", "")
+        try:
+            data = fetch_m3u()
+            channels, categories = parse_m3u(data)
+            return jsonify([
+                {
+                    "num": ch["num"],
+                    "name": ch["name"],
+                    "stream_type": "live",
+                    "stream_id": ch["stream_id"],
+                    "stream_icon": ch["stream_icon"],
+                    "category_id": ch["category_id"],
+                    "stream_url": ch["stream_url"],      # ✅ direct URL
+                    "direct_source": ch["stream_url"],   # ✅ for IPTV Lite
+                    "epg_channel_id": ch["tvg_id"],
+                }
+                for ch in channels
+                if not category_id or ch["category_id"] == category_id
+            ])
+        except Exception as e:
+            print(f"get_live_streams error: {e}")
+            return jsonify([])
+
+    return jsonify([])
+
+
+@app.route("/live/<username>/<password>/<int:stream_id>.ts")
+def live(username, password, stream_id):
+    """Legacy redirect (kept for compatibility)"""
+    if username not in VALID_USERS or VALID_USERS[username] != password:
+        return Response("Invalid login", status=403)
+    try:
+        data = fetch_m3u()
+        channels, categories = parse_m3u(data)
+        for ch in channels:
+            if ch["stream_id"] == stream_id:
+                return redirect(ch["stream_url"], code=302)
+    except Exception as e:
+        print(f"Live error: {e}")
+    return Response("Stream not found", status=404)
+
+
+# ======================
+# MAIN
+# ======================
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080, debug=True)
