@@ -20,7 +20,7 @@ VALID_USERS = {
     "main": "admin",
 }
 
-# --- Use your GitHub-hosted playlist ---
+# --- GitHub playlist and EPG ---
 GITHUB_M3U = "https://raw.githubusercontent.com/StainlessENG/ian-sports/main/m3u4u-102864-671117-Playlist.m3u"
 EPG_URL = "http://m3u4u.com/epg/w16vy52exeax15kzn39p"
 
@@ -28,7 +28,7 @@ USER_LINKS = {u: {"m3u": GITHUB_M3U, "epg": EPG_URL} for u in VALID_USERS}
 
 # --- Cache for GitHub fetch ---
 _cache = {"timestamp": 0, "data": b""}
-CACHE_TTL = 300  # 5 minutes
+CACHE_TTL = 600  # 10 minutes
 
 
 # ======================
@@ -36,7 +36,7 @@ CACHE_TTL = 300  # 5 minutes
 # ======================
 
 def check_auth():
-    """Simple username/password check"""
+    """Check username and password from URL params"""
     u = request.args.get("username", "")
     p = request.args.get("password", "")
     if u in VALID_USERS and VALID_USERS[u] == p:
@@ -45,17 +45,21 @@ def check_auth():
 
 
 def fetch_m3u():
-    """Fetch M3U file from GitHub with caching"""
+    """Fetch M3U file from GitHub with caching and safe fallback"""
     now = time.time()
     if now - _cache["timestamp"] < CACHE_TTL and _cache["data"]:
         return _cache["data"]
 
     try:
-        r = requests.get(GITHUB_M3U, timeout=10)
+        r = requests.get(GITHUB_M3U, timeout=20)
         if r.status_code == 200:
             _cache["data"] = r.content
             _cache["timestamp"] = now
             return r.content
+        else:
+            print(f"⚠️ GitHub fetch failed: HTTP {r.status_code}")
+    except requests.exceptions.Timeout:
+        print("⚠️ GitHub fetch timeout — using cached copy.")
     except Exception as e:
         print(f"Fetch error: {e}")
 
@@ -63,7 +67,7 @@ def fetch_m3u():
 
 
 def parse_m3u(content_bytes):
-    """Parse M3U playlist into channel and category lists"""
+    """Parse M3U playlist into channel list and categories"""
     channels = []
     categories = {}
     try:
@@ -88,7 +92,6 @@ def parse_m3u(content_bytes):
                     "stream_url": "",
                 }
 
-                # Channel name
                 if "," in line:
                     current["name"] = line.split(",", 1)[1].strip()
 
@@ -100,7 +103,7 @@ def parse_m3u(content_bytes):
                 current["category_name"] = cat_name
                 current["category_id"] = categories[cat_name]
 
-                # TVG ID / logo
+                # TVG info
                 m = re.search(r'tvg-id="([^"]*)"', line)
                 if m:
                     current["tvg_id"] = m.group(1)
@@ -163,7 +166,7 @@ def player_api():
 
     action = request.args.get("action", "")
 
-    # --- Login info (default) ---
+    # --- Login info ---
     if not action:
         return jsonify({
             "user_info": {
@@ -184,13 +187,13 @@ def player_api():
                 "https_port": "443",
                 "server_protocol": "https",
                 "rtmp_port": "1935",
-                "timezone": "UTC",  # ✅ fixed line
+                "timezone": "UTC",
                 "timestamp_now": str(int(time.time())),
                 "time_now": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
         })
 
-    # --- Categories ---
+    # --- Live Categories ---
     if action == "get_live_categories":
         try:
             data = fetch_m3u()
@@ -199,10 +202,11 @@ def player_api():
                 {"category_id": cid, "category_name": cname, "parent_id": 0}
                 for cname, cid in categories.items()
             ])
-        except Exception:
+        except Exception as e:
+            print(f"get_live_categories error: {e}")
             return jsonify([])
 
-    # --- Streams (returns real URLs) ---
+    # --- Live Streams ---
     if action == "get_live_streams":
         category_id = request.args.get("category_id", "")
         try:
@@ -216,8 +220,8 @@ def player_api():
                     "stream_id": ch["stream_id"],
                     "stream_icon": ch["stream_icon"],
                     "category_id": ch["category_id"],
-                    "stream_url": ch["stream_url"],      # ✅ direct URL
-                    "direct_source": ch["stream_url"],   # ✅ for IPTV Lite
+                    "stream_url": ch["stream_url"],
+                    "direct_source": ch["stream_url"],
                     "epg_channel_id": ch["tvg_id"],
                 }
                 for ch in channels
@@ -232,7 +236,7 @@ def player_api():
 
 @app.route("/live/<username>/<password>/<int:stream_id>.ts")
 def live(username, password, stream_id):
-    """Legacy redirect (kept for compatibility)"""
+    """Legacy redirect endpoint"""
     if username not in VALID_USERS or VALID_USERS[username] != password:
         return Response("Invalid login", status=403)
     try:
@@ -244,6 +248,14 @@ def live(username, password, stream_id):
     except Exception as e:
         print(f"Live error: {e}")
     return Response("Stream not found", status=404)
+
+
+@app.route("/cache/clear")
+def clear_cache():
+    """Manually clear cached GitHub playlist"""
+    _cache["data"] = b""
+    _cache["timestamp"] = 0
+    return jsonify({"status": "Cache cleared", "timestamp": int(time.time())})
 
 
 # ======================
