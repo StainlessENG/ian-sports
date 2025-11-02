@@ -21,7 +21,8 @@ VALID_USERS = {
     "mark": "Sidmouth2025",
     "james": "October2025",
     "ian": "October2025",
-    "harry": "October2025"
+    "harry": "October2025",
+    "main": "admin"
 }
 
 MAX_CONNECTIONS_PER_USER = 2
