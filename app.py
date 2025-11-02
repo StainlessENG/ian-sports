@@ -10,6 +10,7 @@ app = Flask(__name__)
 # CONFIGURATION
 # ======================
 
+# --- All user credentials ---
 VALID_USERS = {
     "dad": "devon",
     "john": "pass123",
@@ -20,15 +21,15 @@ VALID_USERS = {
     "main": "admin",
 }
 
-# --- GitHub playlist and EPG ---
-GITHUB_M3U = "https://raw.githubusercontent.com/StainlessENG/ian-sports/main/m3u4u-102864-671117-Playlist.m3u"
+# --- All users share this playlist + EPG ---
+GITHUB_M3U = "https://raw.githubusercontent.com/StainlessENG/ian-sports/main/m3u4u-102864-670937-Playlist.m3u"
 EPG_URL = "http://m3u4u.com/epg/w16vy52exeax15kzn39p"
 
 USER_LINKS = {u: {"m3u": GITHUB_M3U, "epg": EPG_URL} for u in VALID_USERS}
 
 # --- Cache for GitHub fetch ---
 _cache = {"timestamp": 0, "data": b""}
-CACHE_TTL = 600  # 10 minutes
+CACHE_TTL = 86400  # 24 hours (in seconds)
 
 
 # ======================
@@ -45,16 +46,18 @@ def check_auth():
 
 
 def fetch_m3u():
-    """Fetch M3U file from GitHub with caching and safe fallback"""
+    """Fetch M3U file from GitHub once per day with caching and fallback"""
     now = time.time()
     if now - _cache["timestamp"] < CACHE_TTL and _cache["data"]:
         return _cache["data"]
 
     try:
-        r = requests.get(GITHUB_M3U, timeout=20)
+        print("🔄 Fetching new playlist from GitHub...")
+        r = requests.get(GITHUB_M3U, timeout=30)
         if r.status_code == 200:
             _cache["data"] = r.content
             _cache["timestamp"] = now
+            print("✅ Playlist updated successfully.")
             return r.content
         else:
             print(f"⚠️ GitHub fetch failed: HTTP {r.status_code}")
@@ -67,7 +70,7 @@ def fetch_m3u():
 
 
 def parse_m3u(content_bytes):
-    """Parse M3U playlist into channel list and categories"""
+    """Parse M3U playlist into channels and categories"""
     channels = []
     categories = {}
     try:
@@ -92,6 +95,7 @@ def parse_m3u(content_bytes):
                     "stream_url": "",
                 }
 
+                # Channel name
                 if "," in line:
                     current["name"] = line.split(",", 1)[1].strip()
 
@@ -255,7 +259,11 @@ def clear_cache():
     """Manually clear cached GitHub playlist"""
     _cache["data"] = b""
     _cache["timestamp"] = 0
-    return jsonify({"status": "Cache cleared", "timestamp": int(time.time())})
+    return jsonify({
+        "status": "Cache cleared",
+        "timestamp": int(time.time()),
+        "message": "Next request will fetch a fresh copy from GitHub."
+    })
 
 
 # ======================
