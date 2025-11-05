@@ -106,45 +106,55 @@ def get_m3u():
     return redirect(M3U_URL)
 
 
-@app.route("/player_api.php")
+@app.route("/player_api.php", methods=["GET", "POST"])
 def player_api():
-    username = request.args.get("username")
-    password = request.args.get("password")
-    action = request.args.get("action", "")
+    username = request.values.get("username", "")
+    password = request.values.get("password", "")
+    action = request.values.get("action", "")
 
-    if not valid_user(username, password):
-        xml_root = Element("xml")
-        user_info = SubElement(xml_root, "user_info")
-        SubElement(user_info, "auth").text = "0"
-        SubElement(user_info, "status").text = "Unauthorized"
-        xml_bytes = tostring(xml_root, encoding="utf-8")
-        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
-
-    # -------- LOGIN INFO (no action) --------
+    # ----- LOGIN (no action) -----
     if action == "":
-        xml_root = Element("xml")
-        user_info = SubElement(xml_root, "user_info")
-        SubElement(user_info, "auth").text = "1"
-        SubElement(user_info, "username").text = username
-        SubElement(user_info, "password").text = password
-        SubElement(user_info, "status").text = "Active"
-        SubElement(user_info, "message").text = "Active"
-        SubElement(user_info, "exp_date").text = "UNLIMITED"
-        SubElement(user_info, "is_trial").text = "0"
-        SubElement(user_info, "active_cons").text = "1"
+        # invalid user
+        if username not in USERS or USERS[username] != password:
+            xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<xmltv>
+  <user_info>
+    <username>{username}</username>
+    <password>{password}</password>
+    <message>Invalid credentials</message>
+    <auth>0</auth>
+  </user_info>
+  <server_info>
+    <url>{request.host}</url>
+    <port>80</port>
+    <https_port>443</https_port>
+    <server_protocol>http</server_protocol>
+  </server_info>
+</xmltv>"""
+            return Response(xml, content_type="text/xml; charset=utf-8")
 
-        server_info = SubElement(xml_root, "server_info")
-        SubElement(server_info, "url").text = request.host
-        SubElement(server_info, "port").text = "80"
-        SubElement(server_info, "https_port").text = "443"
-        SubElement(server_info, "server_protocol").text = "http"
-        SubElement(server_info, "timezone").text = "Europe/London"
-        SubElement(server_info, "timestamp_now").text = str(int(time.time()))
-        SubElement(server_info, "time_now").text = time.strftime("%Y-%m-%d %H:%M:%S")
-        SubElement(server_info, "x_tvg_url").text = EPG_URL
+        # valid user
+        xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<xmltv>
+  <user_info>
+    <username>{username}</username>
+    <password>{password}</password>
+    <message>Active</message>
+    <status>Active</status>
+    <auth>1</auth>
+  </user_info>
+  <server_info>
+    <url>{request.host}</url>
+    <port>80</port>
+    <https_port>443</https_port>
+    <server_protocol>http</server_protocol>
+  </server_info>
+</xmltv>"""
+        return Response(xml, content_type="text/xml; charset=utf-8")
 
-        xml_bytes = tostring(xml_root, encoding="utf-8")
-        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+    # ----- Any other action -----
+    return jsonify({"error": "action not handled"})
+
 
     # -------- LIVE CATEGORIES --------
     if action == "get_live_categories":
