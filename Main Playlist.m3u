@@ -7,13 +7,13 @@ http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276752.m3u8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276747.m3u8
 #EXTINF:-1 tvg-id="Channel.4.HD.uk" tvg-name="Channel 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png" group-title="UK Freeview",Channel 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276743.m3u8
-#EXTINF:-1 tvg-id="channel5.uk" tvg-name="Channel 5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/120px-Channel_5_logo_2011.svg.png" group-title="UK Freeview",Channel 5
+#EXTINF:-1 tvg-id="Channel.5.HD.uk" tvg-name="Channel 5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/120px-Channel_5_logo_2011.svg.png" group-title="UK Freeview",Channel 5
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276739.m3u8
-#EXTINF:-1 tvg-id="itv2.uk" tvg-name="ITV2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/ITV2_logo_2015.svg/1920px-ITV2_logo_2015.svg.png" group-title="UK Freeview",ITV2
+#EXTINF:-1 tvg-id="ITV2.HD.uk" tvg-name="ITV2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/ITV2_logo_2015.svg/1920px-ITV2_logo_2015.svg.png" group-title="UK Freeview",ITV2
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276735.m3u8
-#EXTINF:-1 tvg-id="fiveusa.uk" tvg-name="5 USA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",5 USA
+#EXTINF:-1 tvg-id="5.USA.uk" tvg-name="5 USA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",5 USA
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276700.m3u8
-#EXTINF:-1 tvg-id="bbc4.uk" tvg-name="BBC Four" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BBC_Four_logo_2021.svg/1280px-BBC_Four_logo_2021.svg.png" group-title="UK Freeview",BBC Four
+#EXTINF:-1 tvg-id="BBC.Four.HD.uk" tvg-name="BBC Four" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BBC_Four_logo_2021.svg/1280px-BBC_Four_logo_2021.svg.png" group-title="UK Freeview",BBC Four
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276692.m3u8
 #EXTINF:-1 tvg-id="itv3.uk" tvg-name="ITV 3" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/ITV3_logo_2013.svg/1920px-ITV3_logo_2013.svg.png" group-title="UK Freeview",ITV 3
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276731.m3u8
