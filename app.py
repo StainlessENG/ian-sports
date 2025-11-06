@@ -78,7 +78,12 @@ def parse_m3u(text):
         line = lines[i]
         if line.startswith("#EXTINF"):
             attrs = dict(attr_re.findall(line))
-            name = line.split(",", 1)[1].strip() if "," in line else attrs.get("tvg-name", "Channel")
+            # Use tvg-name attribute first, fallback to text after comma
+            name = attrs.get("tvg-name", "")
+            if not name and "," in line:
+                name = line.split(",", 1)[1].strip()
+            if not name:
+                name = "Channel"
             url = ""
             j = i + 1
             while j < len(lines) and lines[j].startswith("#"):
