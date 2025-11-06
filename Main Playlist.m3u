@@ -1,11 +1,11 @@
 #EXTM3U url-tvg="http://m3u4u.com/epg/p87vnr8dzdu4w2q6n41j"
 #EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-name="BBC One" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/BBC_One_HD.svg/800px-BBC_One_HD.svg.png" group-title="UK Freeview",BBC One
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276755.m3u8
-#EXTINF:-1 tvg-id="bbc2.uk" tvg-name="BBC Two" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/BBC_Two_%282001%29.svg/220px-BBC_Two_%282001%29.svg.png" group-title="UK Freeview",BBC Two
+#EXTINF:-1 tvg-id="BBC.Two.HD.uk" tvg-name="BBC Two" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/BBC_Two_%282001%29.svg/220px-BBC_Two_%282001%29.svg.png" group-title="UK Freeview",BBC Two
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276752.m3u8
-#EXTINF:-1 tvg-id="itv1.uk" tvg-name="ITV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/ITV_logo_2019.svg/200px-ITV_logo_2019.svg.png" group-title="UK Freeview",ITV
+#EXTINF:-1 tvg-id="ITV1.HD.uk" tvg-name="ITV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/ITV_logo_2019.svg/200px-ITV_logo_2019.svg.png" group-title="UK Freeview",ITV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276747.m3u8
-#EXTINF:-1 tvg-id="channel4.uk" tvg-name="Channel 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png" group-title="UK Freeview",Channel 4
+#EXTINF:-1 tvg-id="Channel.4.HD.uk" tvg-name="Channel 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png" group-title="UK Freeview",Channel 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276743.m3u8
 #EXTINF:-1 tvg-id="channel5.uk" tvg-name="Channel 5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/120px-Channel_5_logo_2011.svg.png" group-title="UK Freeview",Channel 5
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276739.m3u8
