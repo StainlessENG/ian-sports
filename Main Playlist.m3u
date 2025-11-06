@@ -17,7 +17,7 @@ http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276700.m3u8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276692.m3u8
 #EXTINF:-1 tvg-id="itv3.uk" tvg-name="ITV 3" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/ITV3_logo_2013.svg/1920px-ITV3_logo_2013.svg.png" group-title="UK Freeview",ITV 3
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276731.m3u8
-#EXTINF:-1 tvg-id="skymax.uk" tvg-name="Sky Max" tvg-logo="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEBAPEBAVFQ8PEBUWGBcYGBAWGBUVFRcXFxUVFhgYHSgiGBonGxYXITEhJSorLi4vGB8zODMsNygwMCsBCgoKDg0OGhAQGi0lICUtLS0tLSstLSsvLSstKy0tKy0tLS0tLS0tLSstLSstLS0rLS0tLS0tLS0tLS0tLS0rLf/AABEIAHUBsAMBEQACEQEDEQH/x" group-title="UK Freeview",Sky Max
+#EXTINF:-1 tvg-id="skymax.uk" tvg-name="Sky Max" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/sky-max-uk.png?raw=true" group-title="UK Freeview",Sky Max
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276713.m3u8
 #EXTINF:-1 tvg-id="film4.uk" tvg-name="Film 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Film4_logo_2018.svg/800px-Film4_logo_2018.svg.png" group-title="UK Freeview",Film 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276660.m3u8
@@ -25,7 +25,7 @@ http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276660.m3u8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276740.m3u8
 #EXTINF:-1 tvg-id="quest.uk" tvg-name="QUEST" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/00/Quest_2014.svg/revision/latest?cb=20140512195710" group-title="UK Freeview",QUEST
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276643.m3u8
-#EXTINF:-1 tvg-id="drama.uk" tvg-name="Drama" tvg-logo="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAABhCAMAAACaj5lZAAAAclBMVEW5hv/////Oqv+3g/+1fv+2gf/MqP+3gv/n1//17v/bwv/38v/v5P+ze/+6h//69v/Hnv/Mpv/ex//8+v/Blf+8i//awP/t4f/Wuv/BlP/gy//Jo//j0P/q3P++j//QsP/y6f/Ut//Qrv/l1P/Em//izv9bYvlDAAAWnUlEQVR4nO2d6XbyPK" group-title="UK Freeview",Drama
+#EXTINF:-1 tvg-id="drama.uk" tvg-name="Drama" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/drama-uk.png?raw=true" group-title="UK Freeview",Drama
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276671.m3u8
 #EXTINF:-1 tvg-id="e4.uk" tvg-name="E4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/E4_logo_2018.svg/800px-E4_logo_2018.svg.png" group-title="UK Freeview",E4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276664.m3u8
@@ -35,7 +35,7 @@ http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276705.m3u8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276704.m3u8
 #EXTINF:-1 tvg-id="5select.uk" tvg-name="5SELECT" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c6/5Select_logo.png" group-title="UK Freeview",5SELECT
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276703.m3u8
-#EXTINF:-1 tvg-id="5STAR.uk" tvg-name="5STAR" tvg-logo="https://cdn.skymedia.co.uk/wp-content/uploads/2016/01/5-STAR-new.png" group-title="UK Freeview",5STAR
+#EXTINF:-1 tvg-id="5STAR.uk" tvg-name="5STAR" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-star-uk.png?raw=true" group-title="UK Freeview",5STAR
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276702.m3u8
 #EXTINF:-1 tvg-id="alibi.uk" tvg-name="Alibi" tvg-logo="https://static.wikia.nocookie.net/bbc/images/e/ea/U%26Alibi_%282024%29.svg/revision/latest?cb=20250122014859" group-title="UK Freeview",Alibi
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276698.m3u8
@@ -79,7 +79,7 @@ http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276711.m3u8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276709.m3u8
 #EXTINF:-1 tvg-id="skywitnessplus1.uk" tvg-name="Sky Witness+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7d/Sky_witness_2020.png/revision/latest/scale-to-width-down/78?cb=20200407065318" group-title="UK Freeview",Sky Witness+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276706.m3u8
-#EXTINF:-1 tvg-id="5starplus1.uk" tvg-name="5STAR+1" tvg-logo="https://tvepg.eu/img/united_kingdom/logo/5star_plus_1.png" group-title="UK Freeview",5STAR+1
+#EXTINF:-1 tvg-id="5starplus1.uk" tvg-name="5STAR+1" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/united-kingdom/5-star-plus-uk.png?raw=true" group-title="UK Freeview",5STAR+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276701.m3u8
 #EXTINF:-1 tvg-id="fiveusaplus1.uk" tvg-name="5USA+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",5USA+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276699.m3u8
