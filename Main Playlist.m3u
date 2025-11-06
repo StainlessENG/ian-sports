@@ -1,349 +1,349 @@
 #EXTM3U url-tvg="http://m3u4u.com/epg/p87vnr8dzdu4w2q6n41j"
-#EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-name="UK: BBC One FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/BBC_One_HD.svg/800px-BBC_One_HD.svg.png" group-title="UK Freeview",UK: BBC One FHD
+#EXTINF:-1 tvg-id="BBC.One.Lon.HD.uk" tvg-name="BBC One" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/BBC_One_HD.svg/800px-BBC_One_HD.svg.png" group-title="UK Freeview",BBC One
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276755.m3u8
-#EXTINF:-1 tvg-id="bbc2.uk" tvg-name="UK: BBC Two FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/BBC_Two_%282001%29.svg/220px-BBC_Two_%282001%29.svg.png" group-title="UK Freeview",UK: BBC Two FHD
+#EXTINF:-1 tvg-id="bbc2.uk" tvg-name="BBC Two" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/BBC_Two_%282001%29.svg/220px-BBC_Two_%282001%29.svg.png" group-title="UK Freeview",BBC Two
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276752.m3u8
-#EXTINF:-1 tvg-id="itv1.uk" tvg-name="UK: ITV FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/ITV_logo_2019.svg/200px-ITV_logo_2019.svg.png" group-title="UK Freeview",UK: ITV FHD
+#EXTINF:-1 tvg-id="itv1.uk" tvg-name="ITV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/ITV_logo_2019.svg/200px-ITV_logo_2019.svg.png" group-title="UK Freeview",ITV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276747.m3u8
-#EXTINF:-1 tvg-id="channel4.uk" tvg-name="UK: Channel 4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png" group-title="UK Freeview",UK: Channel 4 FHD
+#EXTINF:-1 tvg-id="channel4.uk" tvg-name="Channel 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png" group-title="UK Freeview",Channel 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276743.m3u8
-#EXTINF:-1 tvg-id="channel5.uk" tvg-name="UK: Channel 5 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/120px-Channel_5_logo_2011.svg.png" group-title="UK Freeview",UK: Channel 5 FHD
+#EXTINF:-1 tvg-id="channel5.uk" tvg-name="Channel 5" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/120px-Channel_5_logo_2011.svg.png" group-title="UK Freeview",Channel 5
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276739.m3u8
-#EXTINF:-1 tvg-id="itv2.uk" tvg-name="UK: ITV2 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/ITV2_logo_2015.svg/1920px-ITV2_logo_2015.svg.png" group-title="UK Freeview",UK: ITV2 FHD
+#EXTINF:-1 tvg-id="itv2.uk" tvg-name="ITV2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/ITV2_logo_2015.svg/1920px-ITV2_logo_2015.svg.png" group-title="UK Freeview",ITV2
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276735.m3u8
-#EXTINF:-1 tvg-id="fiveusa.uk" tvg-name="UK: 5 USA SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",UK: 5 USA SD
+#EXTINF:-1 tvg-id="fiveusa.uk" tvg-name="5 USA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",5 USA
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276700.m3u8
-#EXTINF:-1 tvg-id="bbc4.uk" tvg-name="UK: BBC Four FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BBC_Four_logo_2021.svg/1280px-BBC_Four_logo_2021.svg.png" group-title="UK Freeview",UK: BBC Four FHD
+#EXTINF:-1 tvg-id="bbc4.uk" tvg-name="BBC Four" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/BBC_Four_logo_2021.svg/1280px-BBC_Four_logo_2021.svg.png" group-title="UK Freeview",BBC Four
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276692.m3u8
-#EXTINF:-1 tvg-id="itv3.uk" tvg-name="UK: ITV 3 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/ITV3_logo_2013.svg/1920px-ITV3_logo_2013.svg.png" group-title="UK Freeview",UK: ITV 3 FHD
+#EXTINF:-1 tvg-id="itv3.uk" tvg-name="ITV 3" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/ITV3_logo_2013.svg/1920px-ITV3_logo_2013.svg.png" group-title="UK Freeview",ITV 3
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276731.m3u8
-#EXTINF:-1 tvg-id="skymax.uk" tvg-name="UK: Sky Max FHD" tvg-logo="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEBAPEBAVFQ8PEBUWGBcYGBAWGBUVFRcXFxUVFhgYHSgiGBonGxYXITEhJSorLi4vGB8zODMsNygwMCsBCgoKDg0OGhAQGi0lICUtLS0tLSstLSsvLSstKy0tKy0tLS0tLS0tLSstLSstLS0rLS0tLS0tLS0tLS0tLS0rLf/AABEIAHUBsAMBEQACEQEDEQH/x" group-title="UK Freeview",UK: Sky Max FHD
+#EXTINF:-1 tvg-id="skymax.uk" tvg-name="Sky Max" tvg-logo="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEBAPEBAVFQ8PEBUWGBcYGBAWGBUVFRcXFxUVFhgYHSgiGBonGxYXITEhJSorLi4vGB8zODMsNygwMCsBCgoKDg0OGhAQGi0lICUtLS0tLSstLSsvLSstKy0tKy0tLS0tLS0tLSstLSstLS0rLS0tLS0tLS0tLS0tLS0rLf/AABEIAHUBsAMBEQACEQEDEQH/x" group-title="UK Freeview",Sky Max
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276713.m3u8
-#EXTINF:-1 tvg-id="film4.uk" tvg-name="UK: Film 4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Film4_logo_2018.svg/800px-Film4_logo_2018.svg.png" group-title="UK Freeview",UK: Film 4 FHD
+#EXTINF:-1 tvg-id="film4.uk" tvg-name="Film 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Film4_logo_2018.svg/800px-Film4_logo_2018.svg.png" group-title="UK Freeview",Film 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276660.m3u8
-#EXTINF:-1 tvg-id="channel4plus1.uk" tvg-name="UK: Channel 4+1" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/channel4-plus1-logo-255x140.png" group-title="UK Freeview",UK: Channel 4+1
+#EXTINF:-1 tvg-id="channel4plus1.uk" tvg-name="Channel 4+1" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/channel4-plus1-logo-255x140.png" group-title="UK Freeview",Channel 4+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276740.m3u8
-#EXTINF:-1 tvg-id="quest.uk" tvg-name="UK: QUEST FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/00/Quest_2014.svg/revision/latest?cb=20140512195710" group-title="UK Freeview",UK: QUEST FHD
+#EXTINF:-1 tvg-id="quest.uk" tvg-name="QUEST" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/00/Quest_2014.svg/revision/latest?cb=20140512195710" group-title="UK Freeview",QUEST
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276643.m3u8
-#EXTINF:-1 tvg-id="drama.uk" tvg-name="UK: Drama SD" tvg-logo="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAABhCAMAAACaj5lZAAAAclBMVEW5hv/////Oqv+3g/+1fv+2gf/MqP+3gv/n1//17v/bwv/38v/v5P+ze/+6h//69v/Hnv/Mpv/ex//8+v/Blf+8i//awP/t4f/Wuv/BlP/gy//Jo//j0P/q3P++j//QsP/y6f/Ut//Qrv/l1P/Em//izv9bYvlDAAAWnUlEQVR4nO2d6XbyPK" group-title="UK Freeview",UK: Drama SD
+#EXTINF:-1 tvg-id="drama.uk" tvg-name="Drama" tvg-logo="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAABhCAMAAACaj5lZAAAAclBMVEW5hv/////Oqv+3g/+1fv+2gf/MqP+3gv/n1//17v/bwv/38v/v5P+ze/+6h//69v/Hnv/Mpv/ex//8+v/Blf+8i//awP/t4f/Wuv/BlP/gy//Jo//j0P/q3P++j//QsP/y6f/Ut//Qrv/l1P/Em//izv9bYvlDAAAWnUlEQVR4nO2d6XbyPK" group-title="UK Freeview",Drama
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276671.m3u8
-#EXTINF:-1 tvg-id="e4.uk" tvg-name="UK: E4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/E4_logo_2018.svg/800px-E4_logo_2018.svg.png" group-title="UK Freeview",UK: E4 FHD
+#EXTINF:-1 tvg-id="e4.uk" tvg-name="E4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/E4_logo_2018.svg/800px-E4_logo_2018.svg.png" group-title="UK Freeview",E4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276664.m3u8
-#EXTINF:-1 tvg-id="4seven.uk" tvg-name="UK: 4seven SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/4seven_logo_2018.svg/800px-4seven_logo_2018.svg.png" group-title="UK Freeview",UK: 4seven SD
+#EXTINF:-1 tvg-id="4seven.uk" tvg-name="4seven" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/4seven_logo_2018.svg/800px-4seven_logo_2018.svg.png" group-title="UK Freeview",4seven
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276705.m3u8
-#EXTINF:-1 tvg-id="5action.uk" tvg-name="UK: 5 Action" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/5Action_logo.svg/1920px-5Action_logo.svg.png" group-title="UK Freeview",UK: 5 Action
+#EXTINF:-1 tvg-id="5action.uk" tvg-name="5 Action" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/5Action_logo.svg/1920px-5Action_logo.svg.png" group-title="UK Freeview",5 Action
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276704.m3u8
-#EXTINF:-1 tvg-id="5select.uk" tvg-name="UK: 5SELECT SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c6/5Select_logo.png" group-title="UK Freeview",UK: 5SELECT SD
+#EXTINF:-1 tvg-id="5select.uk" tvg-name="5SELECT" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c6/5Select_logo.png" group-title="UK Freeview",5SELECT
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276703.m3u8
-#EXTINF:-1 tvg-id="5STAR.uk" tvg-name="UK: 5STAR SD" tvg-logo="https://cdn.skymedia.co.uk/wp-content/uploads/2016/01/5-STAR-new.png" group-title="UK Freeview",UK: 5STAR SD
+#EXTINF:-1 tvg-id="5STAR.uk" tvg-name="5STAR" tvg-logo="https://cdn.skymedia.co.uk/wp-content/uploads/2016/01/5-STAR-new.png" group-title="UK Freeview",5STAR
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276702.m3u8
-#EXTINF:-1 tvg-id="alibi.uk" tvg-name="UK: Alibi FHD" tvg-logo="https://static.wikia.nocookie.net/bbc/images/e/ea/U%26Alibi_%282024%29.svg/revision/latest?cb=20250122014859" group-title="UK Freeview",UK: Alibi FHD
+#EXTINF:-1 tvg-id="alibi.uk" tvg-name="Alibi" tvg-logo="https://static.wikia.nocookie.net/bbc/images/e/ea/U%26Alibi_%282024%29.svg/revision/latest?cb=20250122014859" group-title="UK Freeview",Alibi
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276698.m3u8
-#EXTINF:-1 tvg-id="bbc3.uk" tvg-name="UK: BBC Three HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/BBC_Three_2022.svg/1920px-BBC_Three_2022.svg.png" group-title="UK Freeview",UK: BBC Three HD
+#EXTINF:-1 tvg-id="bbc3.uk" tvg-name="BBC Three HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/BBC_Three_2022.svg/1920px-BBC_Three_2022.svg.png" group-title="UK Freeview",BBC Three HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276749.m3u8
-#EXTINF:-1 tvg-id="blaze.uk" tvg-name="UK: BLAZE" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Blaze_-_2016_logo.svg/1280px-Blaze_-_2016_logo.svg.png" group-title="UK Freeview",UK: BLAZE
+#EXTINF:-1 tvg-id="blaze.uk" tvg-name="BLAZE" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Blaze_-_2016_logo.svg/1280px-Blaze_-_2016_logo.svg.png" group-title="UK Freeview",BLAZE
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276688.m3u8
-#EXTINF:-1 tvg-id="realityxtra.uk" tvg-name="UK: Reality Xtra (CBS Drama)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/True_Crime_Xtra.svg/1920px-True_Crime_Xtra.svg.png" group-title="UK Freeview",UK: Reality Xtra (CBS Drama)
+#EXTINF:-1 tvg-id="realityxtra.uk" tvg-name="Reality Xtra (CBS Drama)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/True_Crime_Xtra.svg/1920px-True_Crime_Xtra.svg.png" group-title="UK Freeview",Reality Xtra (CBS Drama)
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276687.m3u8
-#EXTINF:-1 tvg-id="zaf#132" tvg-name="UK: CBS Reality" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/CBS_Reality_%282017%29.svg/1920px-CBS_Reality_%282017%29.svg.png" group-title="UK Freeview",UK: CBS Reality
+#EXTINF:-1 tvg-id="zaf#132" tvg-name="CBS Reality" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/CBS_Reality_%282017%29.svg/1920px-CBS_Reality_%282017%29.svg.png" group-title="UK Freeview",CBS Reality
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276685.m3u8
-#EXTINF:-1 tvg-id="challenge.uk" tvg-name="UK: Challenge" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Challenge_logo_2016.png/250px-Challenge_logo_2016.png" group-title="UK Freeview",UK: Challenge
+#EXTINF:-1 tvg-id="challenge.uk" tvg-name="Challenge" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Challenge_logo_2016.png/250px-Challenge_logo_2016.png" group-title="UK Freeview",Challenge
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276683.m3u8
-#EXTINF:-1 tvg-id="comedycentral.uk" tvg-name="UK: Comedy Central FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/1920px-Comedy_Central_2018.svg.png" group-title="UK Freeview",UK: Comedy Central FHD
+#EXTINF:-1 tvg-id="comedycentral.uk" tvg-name="Comedy Central" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/1920px-Comedy_Central_2018.svg.png" group-title="UK Freeview",Comedy Central
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276682.m3u8
-#EXTINF:-1 tvg-id="courttv.uk" tvg-name="UK: Court TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Court_TV_2019.png/300px-Court_TV_2019.png" group-title="UK Freeview",UK: Court TV
+#EXTINF:-1 tvg-id="courttv.uk" tvg-name="Court TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Court_TV_2019.png/300px-Court_TV_2019.png" group-title="UK Freeview",Court TV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277171.m3u8
-#EXTINF:-1 tvg-id="dave.uk" tvg-name="UK: Dave FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/U%26Dave_%282024%29.svg/1920px-U%26Dave_%282024%29.svg.png" group-title="UK Freeview",UK: Dave FHD
+#EXTINF:-1 tvg-id="dave.uk" tvg-name="Dave" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/U%26Dave_%282024%29.svg/1920px-U%26Dave_%282024%29.svg.png" group-title="UK Freeview",Dave
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276677.m3u8
-#EXTINF:-1 tvg-id="discoverydmax.uk" tvg-name="UK: DMAX SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/DMAX_BLACK.svg/1920px-DMAX_BLACK.svg.png" group-title="UK Freeview",UK: DMAX SD
+#EXTINF:-1 tvg-id="discoverydmax.uk" tvg-name="DMAX" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/DMAX_BLACK.svg/1920px-DMAX_BLACK.svg.png" group-title="UK Freeview",DMAX
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276673.m3u8
-#EXTINF:-1 tvg-id="eden.uk" tvg-name="UK: Eden SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/U%26eden_%282024%29.svg/1920px-U%26eden_%282024%29.svg.png" group-title="UK Freeview",UK: Eden SD
+#EXTINF:-1 tvg-id="eden.uk" tvg-name="Eden" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/U%26eden_%282024%29.svg/1920px-U%26eden_%282024%29.svg.png" group-title="UK Freeview",Eden
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276666.m3u8
-#EXTINF:-1 tvg-id="gold.uk" tvg-name="UK: GOLD FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/U%26Gold_%282024%29.svg/1920px-U%26Gold_%282024%29.svg.png" group-title="UK Freeview",UK: GOLD FHD
+#EXTINF:-1 tvg-id="gold.uk" tvg-name="GOLD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/U%26Gold_%282024%29.svg/1920px-U%26Gold_%282024%29.svg.png" group-title="UK Freeview",GOLD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276656.m3u8
-#EXTINF:-1 tvg-id="itv4.uk" tvg-name="UK: ITV4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/ITV4_logo_2013.svg/1920px-ITV4_logo_2013.svg.png" group-title="UK Freeview",UK: ITV4 FHD
+#EXTINF:-1 tvg-id="itv4.uk" tvg-name="ITV4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/ITV4_logo_2013.svg/1920px-ITV4_logo_2013.svg.png" group-title="UK Freeview",ITV4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276727.m3u8
-#EXTINF:-1 tvg-id="itvbe.uk" tvg-name="UK: ITVBe SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/ITVBe_logo_2014-.svg/800px-ITVBe_logo_2014-.svg.png" group-title="UK Freeview",UK: ITVBe SD
+#EXTINF:-1 tvg-id="itvbe.uk" tvg-name="ITVBe" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/ITVBe_logo_2014-.svg/800px-ITVBe_logo_2014-.svg.png" group-title="UK Freeview",ITVBe
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276723.m3u8
-#EXTINF:-1 tvg-id="legend.uk" tvg-name="UK: Legend (CBS Justice)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Legend_TV_logo.svg/1920px-Legend_TV_logo.svg.png" group-title="UK Freeview",UK: Legend (CBS Justice)
+#EXTINF:-1 tvg-id="legend.uk" tvg-name="Legend (CBS Justice)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Legend_TV_logo.svg/1920px-Legend_TV_logo.svg.png" group-title="UK Freeview",Legend (CBS Justice)
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276686.m3u8
-#EXTINF:-1 tvg-id="skyarts.uk" tvg-name="UK: Sky Arts FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Sky_Arts_2020.png" group-title="UK Freeview",UK: Sky Arts FHD
+#EXTINF:-1 tvg-id="skyarts.uk" tvg-name="Sky Arts" tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Sky_Arts_2020.png" group-title="UK Freeview",Sky Arts
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276722.m3u8
-#EXTINF:-1 tvg-id="skyatlantic.uk" tvg-name="UK: Sky Atlantic FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/51/Sky_Atlantic_2020.svg/revision/latest/scale-to-width-down/78?cb=20210116003838" group-title="UK Freeview",UK: Sky Atlantic FHD
+#EXTINF:-1 tvg-id="skyatlantic.uk" tvg-name="Sky Atlantic" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/51/Sky_Atlantic_2020.svg/revision/latest/scale-to-width-down/78?cb=20210116003838" group-title="UK Freeview",Sky Atlantic
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276719.m3u8
-#EXTINF:-1 tvg-id="skycinemacomedy.uk" tvg-name="UK: Sky Comedy FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/d/dc/Sky_Comedy_Logo_2020.png/798px-Sky_Comedy_Logo_2020.png" group-title="UK Freeview",UK: Sky Comedy FHD
+#EXTINF:-1 tvg-id="skycinemacomedy.uk" tvg-name="Sky Comedy" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/d/dc/Sky_Comedy_Logo_2020.png/798px-Sky_Comedy_Logo_2020.png" group-title="UK Freeview",Sky Comedy
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276717.m3u8
-#EXTINF:-1 tvg-id="skyshowcase.uk" tvg-name="UK: Sky Showcase FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ed/Sky_Showcase_2021.svg/revision/latest/scale-to-width-down/300?cb=20210729112657" group-title="UK Freeview",UK: Sky Showcase FHD
+#EXTINF:-1 tvg-id="skyshowcase.uk" tvg-name="Sky Showcase" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ed/Sky_Showcase_2021.svg/revision/latest/scale-to-width-down/300?cb=20210729112657" group-title="UK Freeview",Sky Showcase
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276711.m3u8
-#EXTINF:-1 tvg-id="skywitness.uk" tvg-name="UK: Sky Witness FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7d/Sky_witness_2020.png/revision/latest/scale-to-width-down/78?cb=20200407065318" group-title="UK Freeview",UK: Sky Witness FHD
+#EXTINF:-1 tvg-id="skywitness.uk" tvg-name="Sky Witness" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7d/Sky_witness_2020.png/revision/latest/scale-to-width-down/78?cb=20200407065318" group-title="UK Freeview",Sky Witness
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276709.m3u8
-#EXTINF:-1 tvg-id="skywitnessplus1.uk" tvg-name="UK: Sky Witness+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7d/Sky_witness_2020.png/revision/latest/scale-to-width-down/78?cb=20200407065318" group-title="UK Freeview",UK: Sky Witness+1
+#EXTINF:-1 tvg-id="skywitnessplus1.uk" tvg-name="Sky Witness+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/7d/Sky_witness_2020.png/revision/latest/scale-to-width-down/78?cb=20200407065318" group-title="UK Freeview",Sky Witness+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276706.m3u8
-#EXTINF:-1 tvg-id="5starplus1.uk" tvg-name="UK: 5STAR+1" tvg-logo="https://tvepg.eu/img/united_kingdom/logo/5star_plus_1.png" group-title="UK Freeview",UK: 5STAR+1
+#EXTINF:-1 tvg-id="5starplus1.uk" tvg-name="5STAR+1" tvg-logo="https://tvepg.eu/img/united_kingdom/logo/5star_plus_1.png" group-title="UK Freeview",5STAR+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276701.m3u8
-#EXTINF:-1 tvg-id="fiveusaplus1.uk" tvg-name="UK: 5USA+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",UK: 5USA+1
+#EXTINF:-1 tvg-id="fiveusaplus1.uk" tvg-name="5USA+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/5USA_logo.svg/1920px-5USA_logo.svg.png" group-title="UK Freeview",5USA+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276699.m3u8
-#EXTINF:-1 tvg-id="alibiplus1.uk" tvg-name="UK: Alibi+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/53/U%26alibi_%282024%29.svg/revision/latest/scale-to-width-down/300?cb=20241106184723" group-title="UK Freeview",UK: Alibi+1
+#EXTINF:-1 tvg-id="alibiplus1.uk" tvg-name="Alibi+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/53/U%26alibi_%282024%29.svg/revision/latest/scale-to-width-down/300?cb=20241106184723" group-title="UK Freeview",Alibi+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276695.m3u8
-#EXTINF:-1 tvg-id="bbcentertainment.uk" tvg-name="UK: BBC Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/BBC_Entertainment_Logo.svg/583px-BBC_Entertainment_Logo.svg.png" group-title="UK Freeview",UK: BBC Entertainment
+#EXTINF:-1 tvg-id="bbcentertainment.uk" tvg-name="BBC Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/BBC_Entertainment_Logo.svg/583px-BBC_Entertainment_Logo.svg.png" group-title="UK Freeview",BBC Entertainment
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276748.m3u8
-#EXTINF:-1 tvg-id="bbcparliament.uk" tvg-name="UK: BBC Parliament" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/BBC_Parliament_2022.svg/1920px-BBC_Parliament_2022.svg.png" group-title="UK Freeview",UK: BBC Parliament
+#EXTINF:-1 tvg-id="bbcparliament.uk" tvg-name="BBC Parliament" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/BBC_Parliament_2022.svg/1920px-BBC_Parliament_2022.svg.png" group-title="UK Freeview",BBC Parliament
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276690.m3u8
-#EXTINF:-1 tvg-id="bbcscotland.uk" tvg-name="UK: BBC Scotland FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/BBC_Scotland_2021_%28division%29.svg/1920px-BBC_Scotland_2021_%28division%29.svg.png" group-title="UK Freeview",UK: BBC Scotland FHD
+#EXTINF:-1 tvg-id="bbcscotland.uk" tvg-name="BBC Scotland" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/BBC_Scotland_2021_%28division%29.svg/1920px-BBC_Scotland_2021_%28division%29.svg.png" group-title="UK Freeview",BBC Scotland
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276689.m3u8
-#EXTINF:-1 tvg-id="Really.uk" tvg-name="UK: CBS Reality+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7AxCDPMKmMFe310kIeQeXkvhHCLMO-QIu7eu0Fe0sv0-1yGQ5fckU6pTug4KwXGcG5Z0&usqp=CAU" group-title="UK Freeview",UK: CBS Reality+1
+#EXTINF:-1 tvg-id="Really.uk" tvg-name="CBS Reality+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7AxCDPMKmMFe310kIeQeXkvhHCLMO-QIu7eu0Fe0sv0-1yGQ5fckU6pTug4KwXGcG5Z0&usqp=CAU" group-title="UK Freeview",CBS Reality+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276684.m3u8
-#EXTINF:-1 tvg-id="channel5plus1.uk" tvg-name="UK: Channel 5+1" tvg-logo="https://logodix.com/logo/1299632.png" group-title="UK Freeview",UK: Channel 5+1
+#EXTINF:-1 tvg-id="channel5plus1.uk" tvg-name="Channel 5+1" tvg-logo="https://logodix.com/logo/1299632.png" group-title="UK Freeview",Channel 5+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276736.m3u8
-#EXTINF:-1 tvg-id="comedycentralextra.uk" tvg-name="UK: Comedy Central Extra" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/a/a2/Comedy_Central_Extra_Logo_2019.svg/330px-Comedy_Central_Extra_Logo_2019.svg.png" group-title="UK Freeview",UK: Comedy Central Extra
+#EXTINF:-1 tvg-id="comedycentralextra.uk" tvg-name="Comedy Central Extra" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/a/a2/Comedy_Central_Extra_Logo_2019.svg/330px-Comedy_Central_Extra_Logo_2019.svg.png" group-title="UK Freeview",Comedy Central Extra
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276678.m3u8
-#EXTINF:-1 tvg-id="comedycentralplus1.uk" tvg-name="UK: ComedyCent+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcsEmqsKSCOGGzaYuht3JgRWmzODQh37Z_g&s" group-title="UK Freeview",UK: ComedyCent+1
+#EXTINF:-1 tvg-id="comedycentralplus1.uk" tvg-name="ComedyCent+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcsEmqsKSCOGGzaYuht3JgRWmzODQh37Z_g&s" group-title="UK Freeview",ComedyCent+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276679.m3u8
-#EXTINF:-1 tvg-id="davejavu.uk" tvg-name="UK: Dave ja vu" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dave_ja_vu.png/800px-Dave_ja_vu.png" group-title="UK Freeview",UK: Dave ja vu
+#EXTINF:-1 tvg-id="davejavu.uk" tvg-name="Dave ja vu" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dave_ja_vu.png/800px-Dave_ja_vu.png" group-title="UK Freeview",Dave ja vu
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276674.m3u8
-#EXTINF:-1 tvg-id="discoverydmaxplus1.uk" tvg-name="UK: DMAX+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5NMn3f3CBe5LcStpuFivYLuBP5rcolSEtaw&s" group-title="UK Freeview",UK: DMAX+1
+#EXTINF:-1 tvg-id="discoverydmaxplus1.uk" tvg-name="DMAX+1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5NMn3f3CBe5LcStpuFivYLuBP5rcolSEtaw&s" group-title="UK Freeview",DMAX+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276672.m3u8
-#EXTINF:-1 tvg-id="dramaplus1.uk" tvg-name="UK: Drama+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/U%26Drama_%2B1_logo_2024.svg/1024px-U%26Drama_%2B1_logo_2024.svg.png" group-title="UK Freeview",UK: Drama+1
+#EXTINF:-1 tvg-id="dramaplus1.uk" tvg-name="Drama+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/U%26Drama_%2B1_logo_2024.svg/1024px-U%26Drama_%2B1_logo_2024.svg.png" group-title="UK Freeview",Drama+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276670.m3u8
-#EXTINF:-1 tvg-id="5ACTION.uk" tvg-name="UK: E! FHD" tvg-logo="https://www.pngkey.com/png/full/406-4065017_e-tv-1-logo-png-transparent-e-entertainment.png" group-title="UK Freeview",UK: E! FHD
+#EXTINF:-1 tvg-id="5ACTION.uk" tvg-name="E!" tvg-logo="https://www.pngkey.com/png/full/406-4065017_e-tv-1-logo-png-transparent-e-entertainment.png" group-title="UK Freeview",E!
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276669.m3u8
-#EXTINF:-1 tvg-id="e4plus1.uk" tvg-name="UK: E4+1" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/E4-%2B1-RGB-Colour-Positive-255x140.png?itok=B49Vws0Y" group-title="UK Freeview",UK: E4+1
+#EXTINF:-1 tvg-id="e4plus1.uk" tvg-name="E4+1" tvg-logo="https://www.freeview.co.uk/sites/default/files/styles/255_wide/public/2019-10/E4-%2B1-RGB-Colour-Positive-255x140.png?itok=B49Vws0Y" group-title="UK Freeview",E4+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276661.m3u8
-#EXTINF:-1 tvg-id="edenplus1.uk" tvg-name="UK: Eden+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/U%26eden_%282024%29.svg/1920px-U%26eden_%282024%29.svg.png" group-title="UK Freeview",UK: Eden+1
+#EXTINF:-1 tvg-id="edenplus1.uk" tvg-name="Eden+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/U%26eden_%282024%29.svg/1920px-U%26eden_%282024%29.svg.png" group-title="UK Freeview",Eden+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276665.m3u8
-#EXTINF:-1 tvg-id="film4plus1.uk" tvg-name="UK: Film 4 +1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo91CUV22lyldIqxQB3YOTiWYjDG5DaMisKQ&s" group-title="UK Freeview",UK: Film 4 +1
+#EXTINF:-1 tvg-id="film4plus1.uk" tvg-name="Film 4 +1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo91CUV22lyldIqxQB3YOTiWYjDG5DaMisKQ&s" group-title="UK Freeview",Film 4 +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276657.m3u8
-#EXTINF:-1 tvg-id="goldplus1.uk" tvg-name="UK: GOLD+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/80/U%26GOLD_%282024%29.svg/revision/latest?cb=20241015171331" group-title="UK Freeview",UK: GOLD+1
+#EXTINF:-1 tvg-id="goldplus1.uk" tvg-name="GOLD+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/80/U%26GOLD_%282024%29.svg/revision/latest?cb=20241015171331" group-title="UK Freeview",GOLD+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276653.m3u8
-#EXTINF:-1 tvg-id="greataction.uk" tvg-name="UK: GREAT Action" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8f/Great%21_Action.png" group-title="UK Freeview",UK: GREAT Action
+#EXTINF:-1 tvg-id="greataction.uk" tvg-name="GREAT Action" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8f/Great%21_Action.png" group-title="UK Freeview",GREAT Action
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276552.m3u8
-#EXTINF:-1 tvg-id="greatactionplus1.uk" tvg-name="UK: GREAT Action +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ad/Great%21_Action_%2B1.svg/revision/latest/scale-to-width-down/250?cb=20230322125635" group-title="UK Freeview",UK: GREAT Action +1
+#EXTINF:-1 tvg-id="greatactionplus1.uk" tvg-name="GREAT Action +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ad/Great%21_Action_%2B1.svg/revision/latest/scale-to-width-down/250?cb=20230322125635" group-title="UK Freeview",GREAT Action +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276551.m3u8
-#EXTINF:-1 tvg-id="greatclassic.uk" tvg-name="UK: GREAT Classic" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e1/Great%21_Romance.svg/revision/latest?cb=20230105075906" group-title="UK Freeview",UK: GREAT Classic
+#EXTINF:-1 tvg-id="greatclassic.uk" tvg-name="GREAT Classic" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e1/Great%21_Romance.svg/revision/latest?cb=20230105075906" group-title="UK Freeview",GREAT Classic
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276550.m3u8
-#EXTINF:-1 tvg-id="greatclassicplus1.uk" tvg-name="UK: GREAT Classic +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/6f/Great%21_Romance_%2B1.svg/revision/latest?cb=20230105075836" group-title="UK Freeview",UK: GREAT Classic +1
+#EXTINF:-1 tvg-id="greatclassicplus1.uk" tvg-name="GREAT Classic +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/6f/Great%21_Romance_%2B1.svg/revision/latest?cb=20230105075836" group-title="UK Freeview",GREAT Classic +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276549.m3u8
-#EXTINF:-1 tvg-id="greatmovies.uk" tvg-name="UK: GREAT Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Great%21_Movies_logo_2021.svg/800px-Great%21_Movies_logo_2021.svg.png" group-title="UK Freeview",UK: GREAT Movies
+#EXTINF:-1 tvg-id="greatmovies.uk" tvg-name="GREAT Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Great%21_Movies_logo_2021.svg/800px-Great%21_Movies_logo_2021.svg.png" group-title="UK Freeview",GREAT Movies
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276548.m3u8
-#EXTINF:-1 tvg-id="greatmoviessplus1.uk" tvg-name="UK: GREAT Movies +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c6/Great%21_Movies_Logo_%28%2B1%29.svg/revision/latest/scale-to-width-down/250?cb=20220402162209" group-title="UK Freeview",UK: GREAT Movies +1
+#EXTINF:-1 tvg-id="greatmoviessplus1.uk" tvg-name="GREAT Movies +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c6/Great%21_Movies_Logo_%28%2B1%29.svg/revision/latest/scale-to-width-down/250?cb=20220402162209" group-title="UK Freeview",GREAT Movies +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276547.m3u8
-#EXTINF:-1 tvg-id="greattv.uk" tvg-name="UK: GREAT TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Great%21_TV_logo_2021.svg/800px-Great%21_TV_logo_2021.svg.png" group-title="UK Freeview",UK: GREAT TV
+#EXTINF:-1 tvg-id="greattv.uk" tvg-name="GREAT TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Great%21_TV_logo_2021.svg/800px-Great%21_TV_logo_2021.svg.png" group-title="UK Freeview",GREAT TV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276546.m3u8
-#EXTINF:-1 tvg-id="greattvplus1.uk" tvg-name="UK: GREAT TV +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5a/Great%21_TV_Logo_%28%2B1%29.svg/revision/latest/scale-to-width-down/250?cb=20220502154341" group-title="UK Freeview",UK: GREAT TV +1
+#EXTINF:-1 tvg-id="greattvplus1.uk" tvg-name="GREAT TV +1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5a/Great%21_TV_Logo_%28%2B1%29.svg/revision/latest/scale-to-width-down/250?cb=20220502154341" group-title="UK Freeview",GREAT TV +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276545.m3u8
-#EXTINF:-1 tvg-id="hgtv.uk" tvg-name="UK: HGTV SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a8/HGTV_2010.svg/revision/latest?cb=20231006154546" group-title="UK Freeview",UK: HGTV SD
+#EXTINF:-1 tvg-id="hgtv.uk" tvg-name="HGTV" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a8/HGTV_2010.svg/revision/latest?cb=20231006154546" group-title="UK Freeview",HGTV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276652.m3u8
-#EXTINF:-1 tvg-id="hgtvplus1.uk" tvg-name="UK: HGTV+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/33/HGTV_%2B1.svg/revision/latest?cb=20220504202139" group-title="UK Freeview",UK: HGTV+1
+#EXTINF:-1 tvg-id="hgtvplus1.uk" tvg-name="HGTV+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/33/HGTV_%2B1.svg/revision/latest?cb=20220504202139" group-title="UK Freeview",HGTV+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276651.m3u8
-#EXTINF:-1 tvg-id="horrorxtra.uk" tvg-name="UK: Horror Xtra (Horror channel)" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ad/Legend_Xtra.svg/revision/latest?cb=20231105175746" group-title="UK Freeview",UK: Horror Xtra (Horror channel)
+#EXTINF:-1 tvg-id="horrorxtra.uk" tvg-name="Horror Xtra (Horror channel)" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ad/Legend_Xtra.svg/revision/latest?cb=20231105175746" group-title="UK Freeview",Horror Xtra (Horror channel)
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276583.m3u8
-#EXTINF:-1 tvg-id="horrorxtraplus1.uk" tvg-name="UK: Horror Xtra +1 (Horror channel+1)" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/88/Legend_Xtra_%2B1.svg/revision/latest?cb=20231122105930" group-title="UK Freeview",UK: Horror Xtra +1 (Horror channel+1)
+#EXTINF:-1 tvg-id="horrorxtraplus1.uk" tvg-name="Horror Xtra +1 (Horror channel+1)" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/88/Legend_Xtra_%2B1.svg/revision/latest?cb=20231122105930" group-title="UK Freeview",Horror Xtra +1 (Horror channel+1)
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276584.m3u8
-#EXTINF:-1 tvg-id="itv3plus1.uk" tvg-name="UK: ITV 3 +1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/ITV3_%2B1_logo_2022.svg/2560px-ITV3_%2B1_logo_2022.svg.png" group-title="UK Freeview",UK: ITV 3 +1
+#EXTINF:-1 tvg-id="itv3plus1.uk" tvg-name="ITV 3 +1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/ITV3_%2B1_logo_2022.svg/2560px-ITV3_%2B1_logo_2022.svg.png" group-title="UK Freeview",ITV 3 +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276728.m3u8
-#EXTINF:-1 tvg-id="itv1angliaplus1.uk" tvg-name="UK: ITV+1" tvg-logo="https://static.filmon.com/assets/channels/1817/logo.png" group-title="UK Freeview",UK: ITV+1
+#EXTINF:-1 tvg-id="itv1angliaplus1.uk" tvg-name="ITV+1" tvg-logo="https://static.filmon.com/assets/channels/1817/logo.png" group-title="UK Freeview",ITV+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276744.m3u8
-#EXTINF:-1 tvg-id="itv2plus1.uk" tvg-name="UK: ITV2+1" tvg-logo="https://cdn-0.tvprofil.com/img/kanali-logo/itv2_plus1.png" group-title="UK Freeview",UK: ITV2+1
+#EXTINF:-1 tvg-id="itv2plus1.uk" tvg-name="ITV2+1" tvg-logo="https://cdn-0.tvprofil.com/img/kanali-logo/itv2_plus1.png" group-title="UK Freeview",ITV2+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276732.m3u8
-#EXTINF:-1 tvg-id="itv4plus1.uk" tvg-name="UK: ITV4+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/ITV4_logo_2013.svg/1920px-ITV4_logo_2013.svg.png" group-title="UK Freeview",UK: ITV4+1
+#EXTINF:-1 tvg-id="itv4plus1.uk" tvg-name="ITV4+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/ITV4_logo_2013.svg/1920px-ITV4_logo_2013.svg.png" group-title="UK Freeview",ITV4+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276724.m3u8
-#EXTINF:-1 tvg-id="more4.uk" tvg-name="UK: More 4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/More4_logo_2018.svg/800px-More4_logo_2018.svg.png" group-title="UK Freeview",UK: More 4 FHD
+#EXTINF:-1 tvg-id="more4.uk" tvg-name="More 4" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/More4_logo_2018.svg/800px-More4_logo_2018.svg.png" group-title="UK Freeview",More 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276650.m3u8
-#EXTINF:-1 tvg-id="more4plus1.uk" tvg-name="UK: More 4+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/dc/More4_%2B1_2018_%28II%29.svg/revision/latest/scale-to-width-down/250?cb=20210515144256" group-title="UK Freeview",UK: More 4+1
+#EXTINF:-1 tvg-id="more4plus1.uk" tvg-name="More 4+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/dc/More4_%2B1_2018_%28II%29.svg/revision/latest/scale-to-width-down/250?cb=20210515144256" group-title="UK Freeview",More 4+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276647.m3u8
-#EXTINF:-1 tvg-id="mtv.uk" tvg-name="UK: MTV FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e7/MTV_2021_Retro.svg/revision/latest?cb=20230607080834" group-title="UK Freeview",UK: MTV FHD
+#EXTINF:-1 tvg-id="mtv.uk" tvg-name="MTV" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e7/MTV_2021_Retro.svg/revision/latest?cb=20230607080834" group-title="UK Freeview",MTV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276646.m3u8
-#EXTINF:-1 tvg-id="picktv.uk" tvg-name="UK: Pick SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/archive/5/5e/20231118085321%21Pick_UK_logo_2013.svg" group-title="UK Freeview",UK: Pick SD
+#EXTINF:-1 tvg-id="picktv.uk" tvg-name="Pick" tvg-logo="https://upload.wikimedia.org/wikipedia/en/archive/5/5e/20231118085321%21Pick_UK_logo_2013.svg" group-title="UK Freeview",Pick
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276645.m3u8
-#EXTINF:-1 tvg-id="pick.ie.plus1" tvg-name="UK: Pick+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Pick_%2B1_logo_2016.svg/600px-Pick_%2B1_logo_2016.svg.png" group-title="UK Freeview",UK: Pick+1
+#EXTINF:-1 tvg-id="pick.ie.plus1" tvg-name="Pick+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Pick_%2B1_logo_2016.svg/600px-Pick_%2B1_logo_2016.svg.png" group-title="UK Freeview",Pick+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276644.m3u8
-#EXTINF:-1 tvg-id="questred.uk" tvg-name="UK: Quest Red SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cf/Quest_Red_%282017%29.svg/revision/latest?cb=20200508202517" group-title="UK Freeview",UK: Quest Red SD
+#EXTINF:-1 tvg-id="questred.uk" tvg-name="Quest Red" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cf/Quest_Red_%282017%29.svg/revision/latest?cb=20200508202517" group-title="UK Freeview",Quest Red
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276639.m3u8
-#EXTINF:-1 tvg-id="questredplus1.uk" tvg-name="UK: Quest Red+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/92/Quest_Red_%2B1_2017.svg/revision/latest/scale-to-width-down/1000?cb=20210629145739" group-title="UK Freeview",UK: Quest Red+1
+#EXTINF:-1 tvg-id="questredplus1.uk" tvg-name="Quest Red+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/92/Quest_Red_%2B1_2017.svg/revision/latest/scale-to-width-down/1000?cb=20210629145739" group-title="UK Freeview",Quest Red+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276638.m3u8
-#EXTINF:-1 tvg-id="questplus1.uk" tvg-name="UK: QUEST+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/2/28/Quest_%2B1_2014_%281%29.svg/revision/latest/scale-to-width-down/1000?cb=20210629145433" group-title="UK Freeview",UK: QUEST+1
+#EXTINF:-1 tvg-id="questplus1.uk" tvg-name="QUEST+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/2/28/Quest_%2B1_2014_%281%29.svg/revision/latest/scale-to-width-down/1000?cb=20210629145433" group-title="UK Freeview",QUEST+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276640.m3u8
-#EXTINF:-1 tvg-id="really.uk" tvg-name="UK: Really SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/2/2d/Really_2013.svg/revision/latest?cb=20130511121930" group-title="UK Freeview",UK: Really SD
+#EXTINF:-1 tvg-id="really.uk" tvg-name="Really" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/2/2d/Really_2013.svg/revision/latest?cb=20130511121930" group-title="UK Freeview",Really
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276637.m3u8
-#EXTINF:-1 tvg-id="RTEJRTV" tvg-name="UK: RTE 2 +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/RTE2plus1.jpg/250px-RTE2plus1.jpg" group-title="UK Freeview",UK: RTE 2 +1
+#EXTINF:-1 tvg-id="RTEJRTV" tvg-name="RTE 2 +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/RTE2plus1.jpg/250px-RTE2plus1.jpg" group-title="UK Freeview",RTE 2 +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276603.m3u8
-#EXTINF:-1 tvg-id="rteonehd.ie" tvg-name="UK: RTE ONE FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e4/RT%C3%89_One_2014.svg/revision/latest?cb=20210310103914" group-title="UK Freeview",UK: RTE ONE FHD
+#EXTINF:-1 tvg-id="rteonehd.ie" tvg-name="RTE ONE" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e4/RT%C3%89_One_2014.svg/revision/latest?cb=20210310103914" group-title="UK Freeview",RTE ONE
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276609.m3u8
-#EXTINF:-1 tvg-id="rteoneplus1.ie" tvg-name="UK: RTE ONE+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e4/RT%C3%89_One_2014.svg/revision/latest?cb=20210310103914" group-title="UK Freeview",UK: RTE ONE+1
+#EXTINF:-1 tvg-id="rteoneplus1.ie" tvg-name="RTE ONE+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e4/RT%C3%89_One_2014.svg/revision/latest?cb=20210310103914" group-title="UK Freeview",RTE ONE+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276606.m3u8
-#EXTINF:-1 tvg-id="rtetwohd.ie" tvg-name="UK: RTE TWO FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e0/RT%C3%892.svg/revision/latest?cb=20220529161203" group-title="UK Freeview",UK: RTE TWO FHD
+#EXTINF:-1 tvg-id="rtetwohd.ie" tvg-name="RTE TWO" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e0/RT%C3%892.svg/revision/latest?cb=20220529161203" group-title="UK Freeview",RTE TWO
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276605.m3u8
-#EXTINF:-1 tvg-id="s4c.uk" tvg-name="UK: S4C FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/38/S4C_2014.svg/revision/latest?cb=20140410142924" group-title="UK Freeview",UK: S4C FHD
+#EXTINF:-1 tvg-id="s4c.uk" tvg-name="S4C" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/38/S4C_2014.svg/revision/latest?cb=20140410142924" group-title="UK Freeview",S4C
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276636.m3u8
-#EXTINF:-1 tvg-id="showcase.uk" tvg-name="UK: Showcase" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/1b/Showcase_Australia.svg/revision/latest?cb=20250426155315" group-title="UK Freeview",UK: Showcase
+#EXTINF:-1 tvg-id="showcase.uk" tvg-name="Showcase" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/1b/Showcase_Australia.svg/revision/latest?cb=20250426155315" group-title="UK Freeview",Showcase
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276633.m3u8
-#EXTINF:-1 tvg-id="skyreplay.uk" tvg-name="UK: Sky Replay SD" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/5/59/Sky_Replay_Logo_2021.svg/800px-Sky_Replay_Logo_2021.svg.png?20240519181209" group-title="UK Freeview",UK: Sky Replay SD
+#EXTINF:-1 tvg-id="skyreplay.uk" tvg-name="Sky Replay" tvg-logo="https://upload.wikimedia.org/wikipedia/de/thumb/5/59/Sky_Replay_Logo_2021.svg/800px-Sky_Replay_Logo_2021.svg.png?20240519181209" group-title="UK Freeview",Sky Replay
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276714.m3u8
-#EXTINF:-1 tvg-id="smithsonian.uk" tvg-name="UK: Smithsonian HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Smithsonian_logo_color.svg/153px-Smithsonian_logo_color.svg.png" group-title="UK Freeview",UK: Smithsonian HD
+#EXTINF:-1 tvg-id="smithsonian.uk" tvg-name="Smithsonian HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Smithsonian_logo_color.svg/153px-Smithsonian_logo_color.svg.png" group-title="UK Freeview",Smithsonian HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276567.m3u8
-#EXTINF:-1 tvg-id="sonytv.uk" tvg-name="UK: SONY CHANNEL" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/61/Sony_Channel_2019.svg/revision/latest?cb=20200803060814" group-title="UK Freeview",UK: SONY CHANNEL
+#EXTINF:-1 tvg-id="sonytv.uk" tvg-name="SONY CHANNEL" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/61/Sony_Channel_2019.svg/revision/latest?cb=20200803060814" group-title="UK Freeview",SONY CHANNEL
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276632.m3u8
-#EXTINF:-1 tvg-id="sonymax2.uk" tvg-name="UK: SONY MAX 2" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/f/f2/%E0%A6%B8%E0%A6%A8%E0%A6%BF_%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%B8_%E0%A7%A8_%E0%A6%8F%E0%A6%B0_%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B.png" group-title="UK Freeview",UK: SONY MAX 2
+#EXTINF:-1 tvg-id="sonymax2.uk" tvg-name="SONY MAX 2" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/f/f2/%E0%A6%B8%E0%A6%A8%E0%A6%BF_%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%B8_%E0%A7%A8_%E0%A6%8F%E0%A6%B0_%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B.png" group-title="UK Freeview",SONY MAX 2
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276629.m3u8
-#EXTINF:-1 tvg-id="sonymax.uk" tvg-name="UK: SONY MAX FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/46/Sony_MAX_SD.png/revision/latest?cb=20221023220126" group-title="UK Freeview",UK: SONY MAX FHD
+#EXTINF:-1 tvg-id="sonymax.uk" tvg-name="SONY MAX" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/46/Sony_MAX_SD.png/revision/latest?cb=20221023220126" group-title="UK Freeview",SONY MAX
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276631.m3u8
-#EXTINF:-1 tvg-id="sonysab.uk" tvg-name="UK: SONY TV FHD" tvg-logo="https://www.sky.com/contentstack/assets/bltcaeb0983267f4b43/blt1ee1c21b3e0e0c8b/64085aff4914b51042364a05/download" group-title="UK Freeview",UK: SONY TV FHD
+#EXTINF:-1 tvg-id="sonysab.uk" tvg-name="SONY TV" tvg-logo="https://www.sky.com/contentstack/assets/bltcaeb0983267f4b43/blt1ee1c21b3e0e0c8b/64085aff4914b51042364a05/download" group-title="UK Freeview",SONY TV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276628.m3u8
-#EXTINF:-1 tvg-id="starplus.uk" tvg-name="UK: Star Plus FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png" group-title="UK Freeview",UK: Star Plus FHD
+#EXTINF:-1 tvg-id="starplus.uk" tvg-name="Star Plus" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png" group-title="UK Freeview",Star Plus
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276626.m3u8
-#EXTINF:-1 tvg-id="stv.uk" tvg-name="UK: STV FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/STV_logo_2014.svg/800px-STV_logo_2014.svg.png" group-title="UK Freeview",UK: STV FHD
+#EXTINF:-1 tvg-id="stv.uk" tvg-name="STV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/STV_logo_2014.svg/800px-STV_logo_2014.svg.png" group-title="UK Freeview",STV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276624.m3u8
-#EXTINF:-1 tvg-id="syfy.uk" tvg-name="UK: SYFY FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fb/Syfy_%282017%29.svg/revision/latest?cb=20171210093256" group-title="UK Freeview",UK: SYFY FHD
+#EXTINF:-1 tvg-id="syfy.uk" tvg-name="SYFY" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fb/Syfy_%282017%29.svg/revision/latest?cb=20171210093256" group-title="UK Freeview",SYFY
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276622.m3u8
-#EXTINF:-1 tvg-id="talkingpictures.uk" tvg-name="UK: TalkingPictures" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/ea/TPTV_promotional_logo.png" group-title="UK Freeview",UK: TalkingPictures
+#EXTINF:-1 tvg-id="talkingpictures.uk" tvg-name="TalkingPictures" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/ea/TPTV_promotional_logo.png" group-title="UK Freeview",TalkingPictures
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276619.m3u8
-#EXTINF:-1 tvg-id="TG4" tvg-name="UK: TG4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/TG4_logo.svg/1920px-TG4_logo.svg.png" group-title="UK Freeview",UK: TG4
+#EXTINF:-1 tvg-id="TG4" tvg-name="TG4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/TG4_logo.svg/1920px-TG4_logo.svg.png" group-title="UK Freeview",TG4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276601.m3u8
-#EXTINF:-1 tvg-id="TG4" tvg-name="UK: TG4 FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/TG4_logo.svg/1920px-TG4_logo.svg.png" group-title="UK Freeview",UK: TG4 FHD
+#EXTINF:-1 tvg-id="TG4" tvg-name="TG4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/TG4_logo.svg/1920px-TG4_logo.svg.png" group-title="UK Freeview",TG4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276598.m3u8
-#EXTINF:-1 tvg-id="that'stv.uk" tvg-name="UK: That's TV Gold" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/80/That%27s_TV_logo.png" group-title="UK Freeview",UK: That's TV Gold
+#EXTINF:-1 tvg-id="that'stv.uk" tvg-name="That's TV Gold" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/80/That%27s_TV_logo.png" group-title="UK Freeview",That's TV Gold
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276544.m3u8
-#EXTINF:-1 tvg-id="tlc.uk" tvg-name="UK: TLC FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/88/TLC_%28UK_and_Ireland%29.png" group-title="UK Freeview",UK: TLC FHD
+#EXTINF:-1 tvg-id="tlc.uk" tvg-name="TLC" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/88/TLC_%28UK_and_Ireland%29.png" group-title="UK Freeview",TLC
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276618.m3u8
-#EXTINF:-1 tvg-id="tlcplus1.uk" tvg-name="UK: TLC+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/70/TLC_%2B1.svg/revision/latest/scale-to-width-down/250?cb=20220503210524" group-title="UK Freeview",UK: TLC+1
+#EXTINF:-1 tvg-id="tlcplus1.uk" tvg-name="TLC+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/70/TLC_%2B1.svg/revision/latest/scale-to-width-down/250?cb=20220503210524" group-title="UK Freeview",TLC+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276616.m3u8
-#EXTINF:-1 tvg-id="tvone.uk" tvg-name="UK: TV ONE" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/db/TV_One_logo_2016.svg/revision/latest?cb=20170917183717" group-title="UK Freeview",UK: TV ONE
+#EXTINF:-1 tvg-id="tvone.uk" tvg-name="TV ONE" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/db/TV_One_logo_2016.svg/revision/latest?cb=20170917183717" group-title="UK Freeview",TV ONE
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276564.m3u8
-#EXTINF:-1 tvg-id="utv.uk" tvg-name="UK: UTV FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/1920px-ITV1_logo_%282022%29.svg.png" group-title="UK Freeview",UK: UTV FHD
+#EXTINF:-1 tvg-id="utv.uk" tvg-name="UTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/1920px-ITV1_logo_%282022%29.svg.png" group-title="UK Freeview",UTV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276600.m3u8
-#EXTINF:-1 tvg-id="utv.uk" tvg-name="UK: UTV Ireland" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/1920px-ITV1_logo_%282022%29.svg.png" group-title="UK Freeview",UK: UTV Ireland
+#EXTINF:-1 tvg-id="utv.uk" tvg-name="UTV Ireland" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/1920px-ITV1_logo_%282022%29.svg.png" group-title="UK Freeview",UTV Ireland
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276596.m3u8
-#EXTINF:-1 tvg-id="virginmediafour.ie" tvg-name="UK: Virgin Media 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Virgin_Media_Four_logo.svg/1920px-Virgin_Media_Four_logo.svg.png" group-title="UK Freeview",UK: Virgin Media 4
+#EXTINF:-1 tvg-id="virginmediafour.ie" tvg-name="Virgin Media 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Virgin_Media_Four_logo.svg/1920px-Virgin_Media_Four_logo.svg.png" group-title="UK Freeview",Virgin Media 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276586.m3u8
-#EXTINF:-1 tvg-id="VIRGIN ONE" tvg-name="UK: Virgin Media One FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Virgin_Media_One_logo_2018.svg/1920px-Virgin_Media_One_logo_2018.svg.png" group-title="UK Freeview",UK: Virgin Media One FHD
+#EXTINF:-1 tvg-id="VIRGIN ONE" tvg-name="Virgin Media One" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Virgin_Media_One_logo_2018.svg/1920px-Virgin_Media_One_logo_2018.svg.png" group-title="UK Freeview",Virgin Media One
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276595.m3u8
-#EXTINF:-1 tvg-id="virginmediathree.ie" tvg-name="UK: Virgin Media Three FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Virgin_Media_Three_logo_2018.svg/1920px-Virgin_Media_Three_logo_2018.svg.png" group-title="UK Freeview",UK: Virgin Media Three FHD
+#EXTINF:-1 tvg-id="virginmediathree.ie" tvg-name="Virgin Media Three" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Virgin_Media_Three_logo_2018.svg/1920px-Virgin_Media_Three_logo_2018.svg.png" group-title="UK Freeview",Virgin Media Three
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276589.m3u8
-#EXTINF:-1 tvg-id="virginmediatwo.ie" tvg-name="UK: Virgin Media Two FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Virgin_Media_Two_logo_2018.svg/1920px-Virgin_Media_Two_logo_2018.svg.png" group-title="UK Freeview",UK: Virgin Media Two FHD
+#EXTINF:-1 tvg-id="virginmediatwo.ie" tvg-name="Virgin Media Two" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Virgin_Media_Two_logo_2018.svg/1920px-Virgin_Media_Two_logo_2018.svg.png" group-title="UK Freeview",Virgin Media Two
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276592.m3u8
-#EXTINF:-1 tvg-id="w.uk" tvg-name="UK: Watch" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/1920px-U%26W_%282024%29.svg.png" group-title="UK Freeview",UK: Watch
+#EXTINF:-1 tvg-id="w.uk" tvg-name="Watch" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/1920px-U%26W_%282024%29.svg.png" group-title="UK Freeview",Watch
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276613.m3u8
-#EXTINF:-1 tvg-id="wplus1.uk" tvg-name="UK: Watch +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/250px-U%26W_%282024%29.svg.png" group-title="UK Freeview",UK: Watch +1
+#EXTINF:-1 tvg-id="wplus1.uk" tvg-name="Watch +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/250px-U%26W_%282024%29.svg.png" group-title="UK Freeview",Watch +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276612.m3u8
-#EXTINF:-1 tvg-id="w.uk" tvg-name="UK: WATCH FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/1920px-U%26W_%282024%29.svg.png" group-title="UK Freeview",UK: WATCH FHD
+#EXTINF:-1 tvg-id="w.uk" tvg-name="WATCH" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/U%26W_%282024%29.svg/1920px-U%26W_%282024%29.svg.png" group-title="UK Freeview",WATCH
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276615.m3u8
-#EXTINF:-1 tvg-id="yesterday.uk" tvg-name="UK: YESTERDAY" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/97/U%26YESTERDAY_%282024%29.svg/revision/latest/scale-to-width-down/1000?cb=20240507152545" group-title="UK Freeview",UK: YESTERDAY
+#EXTINF:-1 tvg-id="yesterday.uk" tvg-name="YESTERDAY" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/97/U%26YESTERDAY_%282024%29.svg/revision/latest/scale-to-width-down/1000?cb=20240507152545" group-title="UK Freeview",YESTERDAY
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276611.m3u8
-#EXTINF:-1 tvg-id="yesterdayplus1.uk" tvg-name="UK: YESTERDAY+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/15/U%26Yesterday%2B1.png" group-title="UK Freeview",UK: YESTERDAY+1
+#EXTINF:-1 tvg-id="yesterdayplus1.uk" tvg-name="YESTERDAY+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/15/U%26Yesterday%2B1.png" group-title="UK Freeview",YESTERDAY+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276610.m3u8
-#EXTINF:-1 tvg-id="babytv.uk" tvg-name="UK: BabyTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/bc/BabyTV_logo.png" group-title="Ralphie",UK: BabyTV
+#EXTINF:-1 tvg-id="babytv.uk" tvg-name="BabyTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/bc/BabyTV_logo.png" group-title="Ralphie",BabyTV
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277152.m3u8
-#EXTINF:-1 tvg-id="boomerang.uk.plus1" tvg-name="UK: Boomerang+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e9/Boomerang_%2B1_2015.svg/revision/latest?cb=20190430192447" group-title="Ralphie",UK: Boomerang+1
+#EXTINF:-1 tvg-id="boomerang.uk.plus1" tvg-name="Boomerang+1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e9/Boomerang_%2B1_2015.svg/revision/latest?cb=20190430192447" group-title="Ralphie",Boomerang+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277150.m3u8
-#EXTINF:-1 tvg-id="boomerang.uk" tvg-name="UK: Boomerang FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/49/Boomerang_2015.svg/revision/latest?cb=20220308111336" group-title="Ralphie",UK: Boomerang FHD
+#EXTINF:-1 tvg-id="boomerang.uk" tvg-name="Boomerang FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/49/Boomerang_2015.svg/revision/latest?cb=20220308111336" group-title="Ralphie",Boomerang FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277149.m3u8
-#EXTINF:-1 tvg-id="cartoonnetwork.uk" tvg-name="UK: Cartoon Network FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ee/Cartoon_Network_2010.svg/revision/latest?cb=20210726224754" group-title="Ralphie",UK: Cartoon Network FHD
+#EXTINF:-1 tvg-id="cartoonnetwork.uk" tvg-name="Cartoon Network FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ee/Cartoon_Network_2010.svg/revision/latest?cb=20210726224754" group-title="Ralphie",Cartoon Network FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277148.m3u8
-#EXTINF:-1 tvg-id="cartoonito.uk" tvg-name="UK: Cartoonito" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/67/Cartoonito_logo_2021.svg/revision/latest?cb=20211112214721" group-title="Ralphie",UK: Cartoonito
+#EXTINF:-1 tvg-id="cartoonito.uk" tvg-name="Cartoonito" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/67/Cartoonito_logo_2021.svg/revision/latest?cb=20211112214721" group-title="Ralphie",Cartoonito
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277146.m3u8
-#EXTINF:-1 tvg-id="cbbc.uk" tvg-name="UK: CBBC FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/CBBC_2016_logo.svg/400px-CBBC_2016_logo.svg.png" group-title="Ralphie",UK: CBBC FHD
+#EXTINF:-1 tvg-id="cbbc.uk" tvg-name="CBBC FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/CBBC_2016_logo.svg/400px-CBBC_2016_logo.svg.png" group-title="Ralphie",CBBC FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277145.m3u8
-#EXTINF:-1 tvg-id="cbeebies.uk" tvg-name="UK: CBeebies FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/CBeebies.svg/500px-CBeebies.svg.png" group-title="Ralphie",UK: CBeebies FHD
+#EXTINF:-1 tvg-id="cbeebies.uk" tvg-name="CBeebies FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/CBeebies.svg/500px-CBeebies.svg.png" group-title="Ralphie",CBeebies FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277144.m3u8
-#EXTINF:-1 tvg-id="nickjr.uk" tvg-name="UK: Nick Jr. FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/800px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",UK: Nick Jr. FHD
+#EXTINF:-1 tvg-id="nickjr.uk" tvg-name="Nick Jr. FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/800px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",Nick Jr. FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277143.m3u8
-#EXTINF:-1 tvg-id="nickjr.uk.plus1" tvg-name="UK: Nick Jr. +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/640px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",UK: Nick Jr. +1
+#EXTINF:-1 tvg-id="nickjr.uk.plus1" tvg-name="Nick Jr. +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/640px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",Nick Jr. +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277141.m3u8
-#EXTINF:-1 tvg-id="nickjrtoo.uk" tvg-name="UK: Nick  Jr. Too" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/89/Nick_Jr_Too.svg/revision/latest?cb=20240211195406" group-title="Ralphie",UK: Nick  Jr. Too
+#EXTINF:-1 tvg-id="nickjrtoo.uk" tvg-name="Nick  Jr. Too" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/89/Nick_Jr_Too.svg/revision/latest?cb=20240211195406" group-title="Ralphie",Nick  Jr. Too
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277140.m3u8
-#EXTINF:-1 tvg-id="nickelodeon.uk" tvg-name="UK: Nickelodeon FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/800px-Nickelodeon_2023_logo_%28outline%29.svg.png" group-title="Ralphie",UK: Nickelodeon FHD
+#EXTINF:-1 tvg-id="nickelodeon.uk" tvg-name="Nickelodeon FHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/800px-Nickelodeon_2023_logo_%28outline%29.svg.png" group-title="Ralphie",Nickelodeon FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277139.m3u8
-#EXTINF:-1 tvg-id="nickelodeon.uk.plus1" tvg-name="UK: Nickelodeon +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/1200px-Nickelodeon_2023_logo_%28outline%29.svg.png" group-title="Ralphie",UK: Nickelodeon +1
+#EXTINF:-1 tvg-id="nickelodeon.uk.plus1" tvg-name="Nickelodeon +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/1200px-Nickelodeon_2023_logo_%28outline%29.svg.png" group-title="Ralphie",Nickelodeon +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277138.m3u8
-#EXTINF:-1 tvg-id="nicktoons.uk" tvg-name="UK: Nicktoons" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nicktoons_2023_Outlined_Logo.png/800px-Nicktoons_2023_Outlined_Logo.png" group-title="Ralphie",UK: Nicktoons
+#EXTINF:-1 tvg-id="nicktoons.uk" tvg-name="Nicktoons" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nicktoons_2023_Outlined_Logo.png/800px-Nicktoons_2023_Outlined_Logo.png" group-title="Ralphie",Nicktoons
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277136.m3u8
-#EXTINF:-1 tvg-id="pop.uk" tvg-name="UK: POP" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Pop_UK_TV_Logo_%282015%29.svg/1280px-Pop_UK_TV_Logo_%282015%29.svg.png" group-title="Ralphie",UK: POP
+#EXTINF:-1 tvg-id="pop.uk" tvg-name="POP" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Pop_UK_TV_Logo_%282015%29.svg/1280px-Pop_UK_TV_Logo_%282015%29.svg.png" group-title="Ralphie",POP
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277135.m3u8
-#EXTINF:-1 tvg-id="pop.uk.plus1" tvg-name="UK: POP+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Pop_%2B1_UK_TV_Logo_%282015%29.svg/512px-Pop_%2B1_UK_TV_Logo_%282015%29.svg.png?20221125203036" group-title="Ralphie",UK: POP+1
+#EXTINF:-1 tvg-id="pop.uk.plus1" tvg-name="POP+1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Pop_%2B1_UK_TV_Logo_%282015%29.svg/512px-Pop_%2B1_UK_TV_Logo_%282015%29.svg.png?20221125203036" group-title="Ralphie",POP+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277134.m3u8
-#EXTINF:-1 tvg-id="popmax.uk" tvg-name="UK: POP Max" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pop-max-logo.png/220px-Pop-max-logo.png" group-title="Ralphie",UK: POP Max
+#EXTINF:-1 tvg-id="popmax.uk" tvg-name="POP Max" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pop-max-logo.png/220px-Pop-max-logo.png" group-title="Ralphie",POP Max
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277133.m3u8
-#EXTINF:-1 tvg-id="popmax.uk.plus1" tvg-name="UK: POP Max+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pop-max-logo.png/220px-Pop-max-logo.png" group-title="Ralphie",UK: POP Max+1
+#EXTINF:-1 tvg-id="popmax.uk.plus1" tvg-name="POP Max+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pop-max-logo.png/220px-Pop-max-logo.png" group-title="Ralphie",POP Max+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277132.m3u8
-#EXTINF:-1 tvg-id="tinypop.uk" tvg-name="UK: Tiny Pop" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/New_Tiny_Pop_Logo_2018.png/220px-New_Tiny_Pop_Logo_2018.png" group-title="Ralphie",UK: Tiny Pop
+#EXTINF:-1 tvg-id="tinypop.uk" tvg-name="Tiny Pop" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/New_Tiny_Pop_Logo_2018.png/220px-New_Tiny_Pop_Logo_2018.png" group-title="Ralphie",Tiny Pop
 https://live-pop-ssai.simplestreamcdn.com/v1/master/774d979dd66704abea7c5b62cb34c6815fda0d35/narrative-tinypop-live-amagi/playlist.m3u8?&ads.ip=86.178.19.45&ads.app_bundle=&ads.app_store_url=https://player.popfun.co.uk/&ads.content_id=5d06e8b8-a037-11f0-94fd-02fed476212d&ads.content_title=Masha+And+The+Bear&ads.platform=web&ads.os_type=web
-#EXTINF:-1 tvg-id="tinypop.uk.plus1" tvg-name="UK: Tiny Pop+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/New_Tiny_Pop_Logo_2018.png/220px-New_Tiny_Pop_Logo_2018.png" group-title="Ralphie",UK: Tiny Pop+1
+#EXTINF:-1 tvg-id="tinypop.uk.plus1" tvg-name="Tiny Pop+1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/New_Tiny_Pop_Logo_2018.png/220px-New_Tiny_Pop_Logo_2018.png" group-title="Ralphie",Tiny Pop+1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277130.m3u8
-#EXTINF:-1 tvg-id="cbbc.uk" tvg-name="UK: CBBC HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/CBBC_2016_logo.svg/400px-CBBC_2016_logo.svg.png" group-title="Ralphie",UK: CBBC HD
+#EXTINF:-1 tvg-id="cbbc.uk" tvg-name="CBBC HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/CBBC_2016_logo.svg/400px-CBBC_2016_logo.svg.png" group-title="Ralphie",CBBC HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277128.m3u8
-#EXTINF:-1 tvg-id="cbeebies.uk" tvg-name="UK: CBeebies HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/CBeebies.svg/500px-CBeebies.svg.png" group-title="Ralphie",UK: CBeebies HD
+#EXTINF:-1 tvg-id="cbeebies.uk" tvg-name="CBeebies HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/CBeebies.svg/500px-CBeebies.svg.png" group-title="Ralphie",CBeebies HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277127.m3u8
-#EXTINF:-1 tvg-id="cartoonnetwork.uk" tvg-name="UK: Cartoon Network HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ee/Cartoon_Network_2010.svg/revision/latest?cb=20210726224754" group-title="Ralphie",UK: Cartoon Network HD
+#EXTINF:-1 tvg-id="cartoonnetwork.uk" tvg-name="Cartoon Network HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/ee/Cartoon_Network_2010.svg/revision/latest?cb=20210726224754" group-title="Ralphie",Cartoon Network HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277126.m3u8
-#EXTINF:-1 tvg-id="nickelodeon.uk" tvg-name="UK: Nick HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Nick_HD_Logo.svg/500px-Nick_HD_Logo.svg.png" group-title="Ralphie",UK: Nick HD
+#EXTINF:-1 tvg-id="nickelodeon.uk" tvg-name="Nick HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Nick_HD_Logo.svg/500px-Nick_HD_Logo.svg.png" group-title="Ralphie",Nick HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277125.m3u8
-#EXTINF:-1 tvg-id="boomerang.uk" tvg-name="UK: Boomerang HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/49/Boomerang_2015.svg/revision/latest?cb=20220308111336" group-title="Ralphie",UK: Boomerang HD
+#EXTINF:-1 tvg-id="boomerang.uk" tvg-name="Boomerang HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/49/Boomerang_2015.svg/revision/latest?cb=20220308111336" group-title="Ralphie",Boomerang HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277124.m3u8
-#EXTINF:-1 tvg-id="nickjr.uk" tvg-name="UK: Nick Jr HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/800px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",UK: Nick Jr HD
+#EXTINF:-1 tvg-id="nickjr.uk" tvg-name="Nick Jr HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_%28outline%29.svg/800px-Nick_Jr._logo_2023_%28outline%29.svg.png" group-title="Ralphie",Nick Jr HD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277123.m3u8
-#EXTINF:-1 tvg-id="rtejr.uk" tvg-name="UK: RTE jr" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/fa/RT%C3%89jr_logo.png" group-title="Ralphie",UK: RTE jr
+#EXTINF:-1 tvg-id="rtejr.uk" tvg-name="RTE jr" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/fa/RT%C3%89jr_logo.png" group-title="Ralphie",RTE jr
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277122.m3u8
-#EXTINF:-1 tvg-id="cartoonnetwork.uk.plus1" tvg-name="UK: Cartoon Network +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cartoon_Network_%2B1_UK_Logo.svg/1280px-Cartoon_Network_%2B1_UK_Logo.svg.png" group-title="Ralphie",UK: Cartoon Network +1
+#EXTINF:-1 tvg-id="cartoonnetwork.uk.plus1" tvg-name="Cartoon Network +1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cartoon_Network_%2B1_UK_Logo.svg/1280px-Cartoon_Network_%2B1_UK_Logo.svg.png" group-title="Ralphie",Cartoon Network +1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277121.m3u8
-#EXTINF:-1 tvg-id="skykids.uk" tvg-name="UK: Sky Kids FHD" tvg-logo="https://venturethree.com/assets/_fullWidth/Sky-Kids-Character-Lock-Up.jpg" group-title="Ralphie",UK: Sky Kids FHD
+#EXTINF:-1 tvg-id="skykids.uk" tvg-name="Sky Kids FHD" tvg-logo="https://venturethree.com/assets/_fullWidth/Sky-Kids-Character-Lock-Up.jpg" group-title="Ralphie",Sky Kids FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/277120.m3u8
-#EXTINF:-1 tvg-id="skysportsmainevent.uk" tvg-name="UK: Sky Sports Main Event UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Main Event UHD
+#EXTINF:-1 tvg-id="skysportsmainevent.uk" tvg-name="Sky Sports Main Event UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Main Event UHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/620667.m3u8
-#EXTINF:-1 tvg-id="skysportsmainevent.uk" tvg-name="UK: Sky Sports Main Event FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Main Event FHD 50fps
+#EXTINF:-1 tvg-id="skysportsmainevent.uk" tvg-name="Sky Sports Main Event FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Main Event FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276918.m3u8
-#EXTINF:-1 tvg-id="skysportspremiereleague.uk" tvg-name="UK: Sky Sports Premier League FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f2/Sky_Sports_Premier_League.svg/revision/latest?cb=20170717173017" group-title="Sky Sports",UK: Sky Sports Premier League FHD 50fps
+#EXTINF:-1 tvg-id="skysportspremiereleague.uk" tvg-name="Sky Sports Premier League FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f2/Sky_Sports_Premier_League.svg/revision/latest?cb=20170717173017" group-title="Sky Sports",Sky Sports Premier League FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276906.m3u8
-#EXTINF:-1 tvg-id="skysportsfootball.uk" tvg-name="UK: Sky Sports Football FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fb/Sky_Sports_Football_2020.svg/revision/latest?cb=20200924152526" group-title="Sky Sports",UK: Sky Sports Football FHD 50fps
+#EXTINF:-1 tvg-id="skysportsfootball.uk" tvg-name="Sky Sports Football FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fb/Sky_Sports_Football_2020.svg/revision/latest?cb=20200924152526" group-title="Sky Sports",Sky Sports Football FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276924.m3u8
-#EXTINF:-1 tvg-id="skysports+.uk" tvg-name="UK: Sky Sports + FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports + FHD 50fps
+#EXTINF:-1 tvg-id="skysports+.uk" tvg-name="Sky Sports + FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports + FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276933.m3u8
-#EXTINF:-1 tvg-id="skysportscricket.uk" tvg-name="UK: Sky Sports Cricket FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Cricket FHD 50fps
+#EXTINF:-1 tvg-id="skysportscricket.uk" tvg-name="Sky Sports Cricket FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Cricket FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276930.m3u8
-#EXTINF:-1 tvg-id="skysportsgolf.uk" tvg-name="UK: Sky Sports Golf FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Golf FHD 50fps
+#EXTINF:-1 tvg-id="skysportsgolf.uk" tvg-name="Sky Sports Golf FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Golf FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276921.m3u8
-#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="UK: Sky Sports F1 FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports F1 FHD 50fps
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="Sky Sports F1 FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports F1 FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/746777.m3u8
-#EXTINF:-1 tvg-id="skysportstennis.uk" tvg-name="UK: Sky Sports Tennis FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Tennis FHD 50fps
+#EXTINF:-1 tvg-id="skysportstennis.uk" tvg-name="Sky Sports Tennis FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Tennis FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/318045.m3u8
-#EXTINF:-1 tvg-id="skysportsnews.uk" tvg-name="UK: Sky Sports News FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports News FHD 50fps
+#EXTINF:-1 tvg-id="skysportsnews.uk" tvg-name="Sky Sports News FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports News FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276912.m3u8
-#EXTINF:-1 tvg-id="skysportsaction.uk" tvg-name="UK: Sky Sports Action FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Action FHD 50fps
+#EXTINF:-1 tvg-id="skysportsaction.uk" tvg-name="Sky Sports Action FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Action FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276909.m3u8
-#EXTINF:-1 tvg-id="skysportsmix.uk" tvg-name="UK: Sky Sports Mix FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Mix FHD 50fps
+#EXTINF:-1 tvg-id="skysportsmix.uk" tvg-name="Sky Sports Mix FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Mix FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276915.m3u8
-#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="UK: Sky Sports Darts FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Darts FHD 50fps
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="Sky Sports Darts FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Darts FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276927.m3u8
-#EXTINF:-1 tvg-id="skysportsracing.uk" tvg-name="UK: Sky Sports Racing FHD 50fps" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Racing FHD 50fps
+#EXTINF:-1 tvg-id="skysportsracing.uk" tvg-name="Sky Sports Racing FHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Racing FHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276903.m3u8
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UK: Sky Sports 1 UHD" tvg-logo="https://archive.org/download/sky-sport-uhd/sky-sport-uhd.png" group-title="Sky Sports",UK: Sky Sports 1 UHD
+#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Sky Sports 1 UHD" tvg-logo="https://archive.org/download/sky-sport-uhd/sky-sport-uhd.png" group-title="Sky Sports",Sky Sports 1 UHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/620665.m3u8
-#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="UK: Sky Sports 2 UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports 2 UHD
+#EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="Sky Sports 2 UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports 2 UHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/620664.m3u8
-#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="UK: Sky Sports Darts UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",UK: Sky Sports Darts UHD
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="Sky Sports Darts UHD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/78?cb=20250729202917" group-title="Sky Sports",Sky Sports Darts UHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/620666.m3u8
-#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="UK: Sky Sports F1 UHD" tvg-logo="https://archive.org/download/sky-sport-uhd/sky-sport-uhd.png" group-title="Sky Sports",UK: Sky Sports F1 UHD
+#EXTINF:-1 tvg-id="skysportsf1.uk" tvg-name="Sky Sports F1 UHD" tvg-logo="https://archive.org/download/sky-sport-uhd/sky-sport-uhd.png" group-title="Sky Sports",Sky Sports F1 UHD
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/746772.m3u8
-#EXTINF:-1 tvg-id="tntsports1.uk" tvg-name="UK: TNT Sport 1 FHD 50FPS" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 1 FHD 50FPS
+#EXTINF:-1 tvg-id="tntsports1.uk" tvg-name="TNT Sport 1" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 1
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276802.m3u8
-#EXTINF:-1 tvg-id="tntsports2.uk" tvg-name="UK: TNT Sport 2 FHD 50FPS" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 2 FHD 50FPS
+#EXTINF:-1 tvg-id="tntsports2.uk" tvg-name="TNT Sport 2" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 2
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276801.m3u8
-#EXTINF:-1 tvg-id="tntsports3.uk" tvg-name="UK: TNT Sport 3 FHD 50FPS" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 3 FHD 50FPS
+#EXTINF:-1 tvg-id="tntsports3.uk" tvg-name="TNT Sport 3" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 3
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276800.m3u8
-#EXTINF:-1 tvg-id="tntsports4.uk" tvg-name="UK: TNT Sport 4 FHD 50FPS" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 4 FHD 50FPS
+#EXTINF:-1 tvg-id="tntsports4.uk" tvg-name="TNT Sport 4" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 4
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276799.m3u8
-#EXTINF:-1 tvg-id="tntsports5.uk" tvg-name="UK: TNT Sport 5" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 5
+#EXTINF:-1 tvg-id="tntsports5.uk" tvg-name="TNT Sport 5" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 5
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276890.m3u8
-#EXTINF:-1 tvg-id="tntsports6.uk" tvg-name="UK: TNT Sport 6" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 6
+#EXTINF:-1 tvg-id="tntsports6.uk" tvg-name="TNT Sport 6" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 6
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276889.m3u8
-#EXTINF:-1 tvg-id="tntsports7.uk" tvg-name="UK: TNT Sport 7" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 7
+#EXTINF:-1 tvg-id="tntsports7.uk" tvg-name="TNT Sport 7" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 7
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276888.m3u8
-#EXTINF:-1 tvg-id="tntsports8.uk" tvg-name="UK: TNT Sport 8" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 8
+#EXTINF:-1 tvg-id="tntsports8.uk" tvg-name="TNT Sport 8" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 8
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276887.m3u8
-#EXTINF:-1 tvg-id="tntsports9.uk" tvg-name="UK: TNT Sport 9" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 9
+#EXTINF:-1 tvg-id="tntsports9.uk" tvg-name="TNT Sport 9" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 9
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276886.m3u8
-#EXTINF:-1 tvg-id="tntsports10.uk" tvg-name="UK: TNT Sport 10" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport 10
+#EXTINF:-1 tvg-id="tntsports10.uk" tvg-name="TNT Sport 10" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport 10
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276885.m3u8
-#EXTINF:-1 tvg-id="tntsportultimate.uk" tvg-name="UK: TNT Sport Ultimate 4K" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",UK: TNT Sport Ultimate 4K
+#EXTINF:-1 tvg-id="tntsportultimate.uk" tvg-name="TNT Sport Ultimate 4K" tvg-logo="https://i.eurosport.com/2023/02/21/3562375-72556668-2560-1440.png" group-title="TNT Sports",TNT Sport Ultimate 4K
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/276789.m3u8
 #EXTINF:-1 tvg-id="(no tvg-id)" tvg-name="◈ PremierLeague Replay info ᴴᴰ" tvg-logo="https://sportslogohistory.com/wp-content/uploads/2020/04/Premier_League_pres.png" group-title="EPL Replay",◈ PremierLeague Replay info ᴴᴰ
 http://kroozott.xyz:80/live/randall.debord@yahoo.com/5279757438/758845.m3u8
