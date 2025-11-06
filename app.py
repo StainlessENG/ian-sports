@@ -112,10 +112,9 @@ def player_api():
     password = request.values.get("password", "")
     action = request.values.get("action", "")
 
-    # ----- LOGIN (no action) -----
-    if action == "":
-        # invalid user
-        if username not in USERS or USERS[username] != password:
+    # Check credentials first for all requests
+    if username not in USERS or USERS[username] != password:
+        if action == "":
             xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <xmltv>
   <user_info>
@@ -132,8 +131,10 @@ def player_api():
   </server_info>
 </xmltv>"""
             return Response(xml, content_type="text/xml; charset=utf-8")
+        return Response("Invalid credentials", status=403)
 
-        # valid user
+    # ----- LOGIN (no action) -----
+    if action == "":
         xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <xmltv>
   <user_info>
@@ -142,19 +143,22 @@ def player_api():
     <message>Active</message>
     <status>Active</status>
     <auth>1</auth>
+    <exp_date></exp_date>
+    <is_trial>0</is_trial>
+    <active_cons>0</active_cons>
+    <created_at>1640000000</created_at>
+    <max_connections>1</max_connections>
   </user_info>
   <server_info>
     <url>{request.host}</url>
     <port>80</port>
     <https_port>443</https_port>
     <server_protocol>http</server_protocol>
+    <rtmp_port>1935</rtmp_port>
+    <timestamp_now>{int(time.time())}</timestamp_now>
   </server_info>
 </xmltv>"""
         return Response(xml, content_type="text/xml; charset=utf-8")
-
-    # ----- Any other action -----
-    return jsonify({"error": "action not handled"})
-
 
     # -------- LIVE CATEGORIES --------
     if action == "get_live_categories":
@@ -170,7 +174,7 @@ def player_api():
     # -------- LIVE STREAMS --------
     if action == "get_live_streams":
         data = fetch_m3u()
-        cat_filter = request.args.get("category_id")
+        cat_filter = request.values.get("category_id")
         xml_root = Element("xml")
         for s in data["streams"]:
             if cat_filter and str(s["category_id"]) != str(cat_filter):
@@ -187,10 +191,32 @@ def player_api():
         xml_bytes = tostring(xml_root, encoding="utf-8")
         return Response(xml_bytes, content_type="application/xml; charset=utf-8")
 
-    # -------- EMPTY STUBS (VOD/SERIES) --------
-    empty_xml = Element("xml")
-    xml_bytes = tostring(empty_xml, encoding="utf-8")
-    return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+    # -------- VOD CATEGORIES (empty) --------
+    if action == "get_vod_categories":
+        empty_xml = Element("xml")
+        xml_bytes = tostring(empty_xml, encoding="utf-8")
+        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+
+    # -------- VOD STREAMS (empty) --------
+    if action == "get_vod_streams":
+        empty_xml = Element("xml")
+        xml_bytes = tostring(empty_xml, encoding="utf-8")
+        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+
+    # -------- SERIES CATEGORIES (empty) --------
+    if action == "get_series_categories":
+        empty_xml = Element("xml")
+        xml_bytes = tostring(empty_xml, encoding="utf-8")
+        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+
+    # -------- SERIES (empty) --------
+    if action == "get_series":
+        empty_xml = Element("xml")
+        xml_bytes = tostring(empty_xml, encoding="utf-8")
+        return Response(xml_bytes, content_type="application/xml; charset=utf-8")
+
+    # -------- DEFAULT --------
+    return jsonify({"error": "action not handled", "action": action})
 
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
@@ -202,6 +228,15 @@ def live_redirect(username, password, stream_id, ext):
         if s["stream_id"] == stream_id:
             return redirect(s["url"])
     return Response("Stream not found", status=404)
+
+
+@app.route("/xmltv.php")
+def xmltv():
+    username = request.args.get("username")
+    password = request.args.get("password")
+    if not valid_user(username, password):
+        return Response("Invalid credentials", status=403)
+    return redirect(EPG_URL)
 
 
 if __name__ == "__main__":
