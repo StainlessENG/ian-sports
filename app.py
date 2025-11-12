@@ -10,8 +10,8 @@ app = Flask(__name__)
 # ---------------- CONFIG ----------------
 USERS = {
     "dad": "devon",
-    "john": "pass123",            # existing 'john'
-    "John": "Sidford2025",        # NEW: capital-J John
+    "john": "pass123",
+    "John": "Sidford2025",
     "mark": "Sidmouth2025",
     "james": "October2025",
     "ian": "October2025",
@@ -19,30 +19,24 @@ USERS = {
     "main": "admin"
 }
 
-# Default M3U for everyone (make sure dl=1)
+# Default M3U for everyone (except John)
 DEFAULT_M3U_URL = (
-    "https://www.dropbox.com/scl/fi/1u7zsewtv22z4qxjsbuol/"
-    "m3u4u-102864-675347-Playlist.m3u?rlkey=k20q8mtc7kyc5awdqonlngvt7"
-    "&st=e90xbhth&dl=1"
+    "https://www.dropbox.com/scl/fi/no7lxzan1p7u2xxghtcyh/"
+    "m3u4u-102864-675366-Playlist.m3u?"
+    "rlkey=szo7ff13ym9niie46aovzkvtq&st=jyouomsg&dl=1"
 )
 
-# Per-user M3U overrides
+# John’s custom M3U
 USER_M3U_URLS = {
-    # NEW: John (capital J) uses a different playlist
-    "John": "https://www.dropbox.com/scl/fi/h46n1fssly1ntasgg00id/"
-            "m3u4u-102864-35343-MergedPlaylist.m3u?rlkey=7rgc5z8g5znxfgla17an50smz"
-            "&st=un3tsyuc&dl=1"
+    "John": (
+        "https://www.dropbox.com/scl/fi/h46n1fssly1ntasgg00id/"
+        "m3u4u-102864-35343-MergedPlaylist.m3u?"
+        "rlkey=7rgc5z8g5znxfgla17an50smz&st=un3tsyuc&dl=1"
+    )
 }
 
-# EPG (same for all unless you add per-user later)
 EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
-
-# Cache TTL: 24 hours
-CACHE_TTL = 86400
-# ----------------------------------------
-
-# Cache keyed by source URL so each playlist is cached independently
-# Example: _m3u_cache[url] = {"ts": epoch_seconds, "parsed": {...}, "last_fetch_time": "..."}
+CACHE_TTL = 86400  # 24h
 _m3u_cache = {}
 
 UA_HEADERS = {
@@ -54,20 +48,19 @@ UA_HEADERS = {
 }
 
 
-# -------- Helper functions --------
+# -------- Helpers --------
 def valid_user(username, password):
     return username in USERS and USERS[username] == password
 
 
-def get_m3u_url_for_user(username: str) -> str:
-    """Return the per-user M3U URL or the default."""
+def get_m3u_url_for_user(username):
     return USER_M3U_URLS.get(username, DEFAULT_M3U_URL)
 
 
 def wants_json():
     accept = request.headers.get("Accept", "").lower()
-    user_agent = request.headers.get("User-Agent", "").lower()
-    if "smarters" in user_agent or "okhttp" in user_agent:
+    ua = request.headers.get("User-Agent", "").lower()
+    if "smarters" in ua or "okhttp" in ua:
         return True
     if "xml" in accept:
         return False
@@ -79,35 +72,32 @@ def wants_json():
     return True
 
 
-def fetch_m3u_for_user(username: str):
-    """
-    Fetch and cache the M3U for a specific user (per-URL cache).
-    """
-    url = get_m3u_url_for_user(username)
+def fetch_m3u(url, username=""):
+    """Fetch and parse an M3U (with cache)."""
     now = time.time()
     entry = _m3u_cache.get(url)
-
     if entry and entry.get("parsed") and now - entry.get("ts", 0) < CACHE_TTL:
         return entry["parsed"]
 
     try:
-        print(f"[INFO] Fetching fresh M3U from Dropbox for user '{username}'...")
+        print(f"[INFO] Fetching fresh M3U for '{username or url}'...")
         resp = requests.get(url, headers=UA_HEADERS, timeout=25)
         resp.raise_for_status()
-
         parsed = parse_m3u(resp.text)
         _m3u_cache[url] = {
             "ts": now,
             "parsed": parsed,
-            "last_fetch_time": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
+            "last_fetch_time": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
         }
-        print(f"[INFO] ✅ Cached playlist for '{username}' updated at {_m3u_cache[url]['last_fetch_time']}")
+        print(f"[INFO] ✅ Cached playlist for '{username or url}' at {_m3u_cache[url]['last_fetch_time']}")
         return parsed
-
     except Exception as e:
-        print(f"[ERROR] Unable to fetch playlist for '{username}': {e}")
-        # Fallback to last known parsed for this URL if exists
+        print(f"[ERROR] Failed to fetch playlist for '{username or url}': {e}")
         return (entry and entry.get("parsed")) or {"categories": [], "streams": []}
+
+
+def fetch_m3u_for_user(username):
+    return fetch_m3u(get_m3u_url_for_user(username), username)
 
 
 def parse_m3u(text):
@@ -115,7 +105,6 @@ def parse_m3u(text):
     streams, cat_map = [], {}
     next_cat_id, stream_id = 1, 1
     attr_re = re.compile(r'(\w[\w-]*)="([^"]*)"')
-
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -126,15 +115,12 @@ def parse_m3u(text):
             while j < len(lines) and lines[j].startswith("#"):
                 j += 1
             url = lines[j].strip() if j < len(lines) else ""
-
             group = attrs.get("group-title", "Uncategorised")
             logo = attrs.get("tvg-logo", "")
             epg_id = attrs.get("tvg-id", "")
-
             if group not in cat_map:
                 cat_map[group] = next_cat_id
                 next_cat_id += 1
-
             streams.append({
                 "stream_id": stream_id,
                 "num": stream_id,
@@ -147,39 +133,44 @@ def parse_m3u(text):
                 "category_name": group,
                 "direct_source": url,
                 "tv_archive": 0,
-                "tv_archive_duration": 0
+                "tv_archive_duration": 0,
             })
             stream_id += 1
             i = j
         else:
             i += 1
-
-    categories = [{"category_id": str(cid), "category_name": name, "parent_id": 0}
-                  for name, cid in sorted(cat_map.items(), key=lambda x: x[1])]
-
+    categories = [{"category_id": str(cid), "category_name": n, "parent_id": 0}
+                  for n, cid in sorted(cat_map.items(), key=lambda x: x[1])]
     return {"categories": categories, "streams": streams}
 
 
-# -------- ROUTES --------
-
+# -------- Routes --------
 @app.route("/")
 def index():
-    # Show some quick status for default URL
     default = _m3u_cache.get(DEFAULT_M3U_URL, {})
-    default_count = len(default.get("parsed", {}).get("streams", [])) if default.get("parsed") else 0
-    default_last = default.get("last_fetch_time", "Never")
-
-    # Also show John’s status if present
-    john_url = USER_M3U_URLS.get("John")
-    john = _m3u_cache.get(john_url, {}) if john_url else {}
-    john_count = len(john.get("parsed", {}).get("streams", [])) if john.get("parsed") else 0
-    john_last = john.get("last_fetch_time", "Never")
-
+    john = _m3u_cache.get(USER_M3U_URLS.get("John", ""), {})
     return (
-        "✅ Xtream Bridge via Dropbox (per-user playlists)<br>"
-        f"<b>Default</b> — Last Fetch: {default_last} | Streams: {default_count}<br>"
-        f"<b>John</b> — Last Fetch: {john_last} | Streams: {john_count}"
+        f"✅ Xtream Bridge via Dropbox (multi-user)<br>"
+        f"<b>Default</b> — Last Fetch: {default.get('last_fetch_time','Never')} "
+        f"| Streams: {len(default.get('parsed', {}).get('streams', []))}<br>"
+        f"<b>John</b> — Last Fetch: {john.get('last_fetch_time','Never')} "
+        f"| Streams: {len(john.get('parsed', {}).get('streams', []))}"
     )
+
+
+@app.route("/refresh")
+def refresh_all():
+    """
+    Manually clear and re-fetch all M3Us (force sync).
+    Use:  https://xtream-bridge.onrender.com/refresh
+    """
+    print("[INFO] 🔄 Manual refresh triggered...")
+    _m3u_cache.clear()
+    # Fetch both playlists fresh
+    fetch_m3u(DEFAULT_M3U_URL, "Default")
+    for user, url in USER_M3U_URLS.items():
+        fetch_m3u(url, user)
+    return "✅ M3U playlists forcibly refreshed and re-cached!"
 
 
 @app.route("/get.php")
@@ -197,7 +188,6 @@ def player_api():
     password = request.values.get("password", "")
     action = request.values.get("action", "")
     use_json = wants_json()
-
     if not valid_user(username, password):
         msg = {"user_info": {"username": username, "password": password,
                              "message": "Invalid credentials", "auth": 0, "status": "Disabled"}}
@@ -216,7 +206,7 @@ def player_api():
                 "active_cons": "0",
                 "created_at": "1640000000",
                 "max_connections": "1",
-                "allowed_output_formats": ["m3u8", "ts"]
+                "allowed_output_formats": ["m3u8", "ts"],
             },
             "server_info": {
                 "url": request.host.split(":")[0],
@@ -226,8 +216,8 @@ def player_api():
                 "rtmp_port": "1935",
                 "timezone": "UTC",
                 "timestamp_now": int(time.time()),
-                "time_now": time.strftime("%Y-%m-%d %H:%M:%S")
-            }
+                "time_now": time.strftime("%Y-%m-%d %H:%M:%S"),
+            },
         }
         return jsonify(info) if use_json else Response("<status>Active</status>", content_type="text/xml")
 
@@ -251,7 +241,6 @@ def player_api():
     return jsonify({"error": "action not handled", "action": action}) if use_json else Response("<error/>", 400)
 
 
-# Redirect-only live route (kept as before)
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
 def live_redirect(username, password, stream_id, ext):
     if not valid_user(username, password):
@@ -269,7 +258,6 @@ def xmltv():
     password = request.args.get("password", "")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    # Same EPG for all users (adjust here if you add per-user later)
     return redirect(EPG_URL)
 
 
