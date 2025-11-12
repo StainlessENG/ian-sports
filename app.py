@@ -15,13 +15,18 @@ USERS = {
     "main": "admin"
 }
 
-# Your GitHub M3U playlist (raw link)
-M3U_URL = "https://raw.githubusercontent.com/StainlessENG/ian-sports/refs/heads/main/Main%20Playlist.m3u"
-EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
+# m3u4u credentials (used to get fresh token)
+M3U4U_EMAIL = "jamesjeley@me.com"
+M3U4U_PASSWORD = "jempot-fedteH-sumhe9"
+
+# Default token (used until new one is fetched)
+M3U4U_TOKEN = "476rnmqd4ds4rkd3nekg"
+
 CACHE_TTL = 600  # seconds
 # ----------------------------------------
 
 _m3u_cache = {"ts": 0, "parsed": None}
+_token_cache = {"ts": 0, "token": M3U4U_TOKEN}
 
 
 # -------- Helper functions --------
@@ -33,38 +38,70 @@ def wants_json():
     """Detect if client wants JSON (default) or XML"""
     accept = request.headers.get('Accept', '').lower()
     user_agent = request.headers.get('User-Agent', '').lower()
-    
-    # Force JSON for known apps that need it
     if 'smarters' in user_agent or 'okhttp' in user_agent:
         return True
-    
-    # Force XML for apps that explicitly request it
     if 'xml' in accept:
         return False
-    
-    # Check output_format parameter (some apps use this)
     output_format = request.values.get('output', '').lower()
     if output_format == 'json':
         return True
     if output_format in ['xml', 'm3u8', 'ts']:
         return False
-    
-    # Default to JSON (most modern apps)
     return True
 
 
+def get_m3u4u_token(force_refresh=False):
+    """Retrieve or reuse the m3u4u token."""
+    now = time.time()
+    if (
+        not force_refresh
+        and _token_cache["token"]
+        and now - _token_cache["ts"] < 86400  # refresh every 24h
+    ):
+        return _token_cache["token"]
+
+    try:
+        login_url = "https://m3u4u.com/api/login"
+        data = {"email": M3U4U_EMAIL, "password": M3U4U_PASSWORD}
+        headers = {"User-Agent": "XtreamBridge/1.0"}
+        resp = requests.post(login_url, json=data, headers=headers, timeout=15)
+        resp.raise_for_status()
+        info = resp.json()
+        token = info.get("token") or info.get("user", {}).get("token")
+
+        if not token:
+            print("[ERROR] No token received from m3u4u login.")
+            return _token_cache["token"]
+
+        _token_cache["token"] = token
+        _token_cache["ts"] = now
+        print(f"[INFO] New m3u4u token fetched: {token}")
+        return token
+    except Exception as e:
+        print(f"[ERROR] Unable to fetch m3u4u token: {e}")
+        return _token_cache["token"]
+
+
 def fetch_m3u():
+    """Fetch and parse M3U playlist from m3u4u."""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
-    resp = requests.get(M3U_URL, timeout=15)
-    resp.raise_for_status()
-    text = resp.text
-    parsed = parse_m3u(text)
-    _m3u_cache["parsed"] = parsed
-    _m3u_cache["ts"] = now
-    return parsed
+    token = get_m3u4u_token()
+    m3u_url = f"https://m3u4u.com/playlist/{token}/m3u_plus"
+
+    try:
+        headers = {"User-Agent": "XtreamBridge/1.0"}
+        resp = requests.get(m3u_url, headers=headers, timeout=20)
+        resp.raise_for_status()
+        parsed = parse_m3u(resp.text)
+        _m3u_cache["parsed"] = parsed
+        _m3u_cache["ts"] = now
+        return parsed
+    except Exception as e:
+        print(f"[ERROR] Unable to fetch playlist: {e}")
+        return {"categories": [], "streams": []}
 
 
 def parse_m3u(text):
@@ -119,11 +156,11 @@ def parse_m3u(text):
     return {"categories": categories, "streams": streams}
 
 
-# -------- Routes --------
+# -------- ROUTES --------
 
 @app.route("/")
 def index():
-    return "✅ Xtream Bridge running OK (iOS + Android Compatible)"
+    return "✅ Xtream Bridge connected to m3u4u (live + EPG working)"
 
 
 @app.route("/get.php")
@@ -132,7 +169,8 @@ def get_m3u():
     password = request.args.get("password")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    return redirect(M3U_URL)
+    token = get_m3u4u_token()
+    return redirect(f"https://m3u4u.com/playlist/{token}/m3u_plus")
 
 
 @app.route("/player_api.php", methods=["GET", "POST"])
@@ -142,174 +180,59 @@ def player_api():
     action = request.values.get("action", "")
     use_json = wants_json()
 
-    # Check credentials first
-    if username not in USERS or USERS[username] != password:
-        if use_json:
-            return jsonify({
-                "user_info": {
-                    "username": username,
-                    "password": password,
-                    "message": "Invalid credentials",
-                    "auth": 0,
-                    "status": "Disabled"
-                }
-            })
-        else:
-            xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<user_info>
-  <username>{username}</username>
-  <password>{password}</password>
-  <message>Invalid credentials</message>
-  <auth>0</auth>
-  <status>Disabled</status>
-</user_info>"""
-            return Response(xml, content_type="text/xml; charset=utf-8")
+    if not valid_user(username, password):
+        msg = {"user_info": {"username": username, "password": password,
+                             "message": "Invalid credentials", "auth": 0, "status": "Disabled"}}
+        return jsonify(msg) if use_json else Response("<error>Invalid credentials</error>", 403)
 
-    # ----- LOGIN (no action) -----
+    # LOGIN INFO
     if action == "":
-        if use_json:
-            return jsonify({
-                "user_info": {
-                    "username": username,
-                    "password": password,
-                    "message": "Active",
-                    "auth": 1,
-                    "status": "Active",
-                    "exp_date": None,
-                    "is_trial": "0",
-                    "active_cons": "0",
-                    "created_at": "1640000000",
-                    "max_connections": "1",
-                    "allowed_output_formats": ["m3u8", "ts"]
-                },
-                "server_info": {
-                    "url": request.host.split(':')[0],
-                    "port": "80",
-                    "https_port": "443",
-                    "server_protocol": "http",
-                    "rtmp_port": "1935",
-                    "timezone": "UTC",
-                    "timestamp_now": int(time.time()),
-                    "time_now": time.strftime("%Y-%m-%d %H:%M:%S")
-                }
-            })
-        else:
-            xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<user_info>
-  <username>{username}</username>
-  <password>{password}</password>
-  <message>Active</message>
-  <auth>1</auth>
-  <status>Active</status>
-  <exp_date></exp_date>
-  <is_trial>0</is_trial>
-  <active_cons>0</active_cons>
-  <created_at>1640000000</created_at>
-  <max_connections>2</max_connections>
-</user_info>
-<server_info>
-  <url>{request.host}</url>
-  <port>80</port>
-  <https_port>443</https_port>
-  <server_protocol>http</server_protocol>
-  <rtmp_port>1935</rtmp_port>
-  <timestamp_now>{int(time.time())}</timestamp_now>
-</server_info>"""
-            return Response(xml, content_type="text/xml; charset=utf-8")
+        info = {
+            "user_info": {
+                "username": username,
+                "password": password,
+                "message": "Active",
+                "auth": 1,
+                "status": "Active",
+                "exp_date": None,
+                "is_trial": "0",
+                "active_cons": "0",
+                "created_at": "1640000000",
+                "max_connections": "1",
+                "allowed_output_formats": ["m3u8", "ts"]
+            },
+            "server_info": {
+                "url": request.host.split(':')[0],
+                "port": "80",
+                "https_port": "443",
+                "server_protocol": "http",
+                "rtmp_port": "1935",
+                "timezone": "UTC",
+                "timestamp_now": int(time.time()),
+                "time_now": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
+        }
+        return jsonify(info) if use_json else Response("<status>Active</status>", content_type="text/xml")
 
-    # -------- LIVE CATEGORIES --------
+    # LIVE CATEGORIES
     if action == "get_live_categories":
         cats = fetch_m3u()["categories"]
-        if use_json:
-            return jsonify(cats)
-        else:
-            xml_root = Element("categories")
-            for c in cats:
-                el = SubElement(xml_root, "category")
-                for k, v in c.items():
-                    SubElement(el, k).text = str(v)
-            return Response(tostring(xml_root, encoding="utf-8"), 
-                          content_type="application/xml; charset=utf-8")
+        return jsonify(cats) if use_json else Response(tostring(Element("categories")), content_type="text/xml")
 
-    # -------- LIVE STREAMS --------
+    # LIVE STREAMS
     if action == "get_live_streams":
         data = fetch_m3u()
         cat_filter = request.values.get("category_id")
-        result = []
-        for s in data["streams"]:
-            if cat_filter and str(s["category_id"]) != str(cat_filter):
-                continue
-            result.append(s)
-        
-        if use_json:
-            return jsonify(result)
-        else:
-            xml_root = Element("channels")
-            for s in result:
-                ch = SubElement(xml_root, "channel")
-                SubElement(ch, "num").text = str(s["num"])
-                SubElement(ch, "name").text = s["name"]
-                SubElement(ch, "stream_type").text = s["stream_type"]
-                SubElement(ch, "stream_id").text = str(s["stream_id"])
-                SubElement(ch, "stream_icon").text = s["stream_icon"]
-                SubElement(ch, "epg_channel_id").text = s["epg_channel_id"]
-                SubElement(ch, "category_id").text = s["category_id"]
-                SubElement(ch, "direct_source").text = s["direct_source"]
-            return Response(tostring(xml_root, encoding="utf-8"),
-                          content_type="application/xml; charset=utf-8")
+        result = [s for s in data["streams"] if not cat_filter or str(s["category_id"]) == str(cat_filter)]
+        return jsonify(result) if use_json else Response(tostring(Element("channels")), content_type="text/xml")
 
-    # -------- VOD CATEGORIES (empty) --------
-    if action == "get_vod_categories":
-        if use_json:
-            return jsonify([])
-        return Response("<categories/>", content_type="application/xml")
+    # EMPTY ACTIONS
+    if action in ["get_vod_categories", "get_vod_streams", "get_series_categories",
+                  "get_series", "get_series_info", "get_vod_info", "get_short_epg",
+                  "get_simple_data_table"]:
+        return jsonify([]) if use_json else Response("<empty/>", content_type="text/xml")
 
-    # -------- VOD STREAMS (empty) --------
-    if action == "get_vod_streams":
-        if use_json:
-            return jsonify([])
-        return Response("<streams/>", content_type="application/xml")
-
-    # -------- SERIES CATEGORIES (empty) --------
-    if action == "get_series_categories":
-        if use_json:
-            return jsonify([])
-        return Response("<categories/>", content_type="application/xml")
-
-    # -------- SERIES (empty) --------
-    if action == "get_series":
-        if use_json:
-            return jsonify([])
-        return Response("<series/>", content_type="application/xml")
-
-    # -------- SERIES INFO (empty) --------
-    if action == "get_series_info":
-        if use_json:
-            return jsonify({})
-        return Response("<info/>", content_type="application/xml")
-
-    # -------- VOD INFO (empty) --------
-    if action == "get_vod_info":
-        if use_json:
-            return jsonify({})
-        return Response("<info/>", content_type="application/xml")
-
-    # -------- SHORT EPG --------
-    if action == "get_short_epg":
-        if use_json:
-            return jsonify({"epg_listings": []})
-        return Response("<epg_listings/>", content_type="application/xml")
-
-    # -------- SIMPLE DATA TABLE --------
-    if action == "get_simple_data_table":
-        if use_json:
-            return jsonify([])
-        return Response("<data/>", content_type="application/xml")
-
-    # -------- DEFAULT --------
-    if use_json:
-        return jsonify({"error": "action not handled", "action": action})
-    return Response("<error>Action not handled</error>", content_type="application/xml")
+    return jsonify({"error": "action not handled", "action": action}) if use_json else Response("<error/>", 400)
 
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
@@ -329,7 +252,8 @@ def xmltv():
     password = request.args.get("password")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    return redirect(EPG_URL)
+    token = get_m3u4u_token()
+    return redirect(f"https://m3u4u.com/epg/{token}")
 
 
 if __name__ == "__main__":
