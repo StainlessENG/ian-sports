@@ -1,4 +1,7 @@
-import os, time, re, requests
+import os
+import time
+import re
+import requests
 from flask import Flask, request, redirect, jsonify, Response
 from xml.etree.ElementTree import Element, SubElement, tostring
 
@@ -15,11 +18,14 @@ USERS = {
     "main": "admin"
 }
 
-# Use your Cloudflare Worker proxy instead of m3u4u directly
-M3U_URL = "https://misty-cloud-084d.bigmanuk.workers.dev/m3u"
-EPG_URL = "https://misty-cloud-084d.bigmanuk.workers.dev/epg"
+# Your Dropbox-hosted M3U playlist (direct link)
+M3U_URL = "https://www.dropbox.com/scl/fi/1u7zsewtv22z4qxjsbuol/m3u4u-102864-675347-Playlist.m3u?rlkey=k20q8mtc7kyc5awdqonlngvt7&st=e90xbhth&dl=1"
 
-CACHE_TTL = 86400  # 24 hours
+# Your EPG (keep using m3u4u or Dropbox if you mirror it)
+EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
+
+# Cache for 24 hours
+CACHE_TTL = 86400  # 24h
 # ----------------------------------------
 
 _m3u_cache = {"ts": 0, "parsed": None, "last_fetch_time": "Never"}
@@ -47,31 +53,30 @@ def wants_json():
 
 
 def fetch_m3u():
-    """Fetch and parse M3U from Cloudflare Worker (max once per 24h)."""
+    """Fetch and cache M3U once per 24 hours"""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
     try:
-        print("[INFO] Fetching fresh M3U playlist from Cloudflare Worker...")
+        print("[INFO] Fetching fresh M3U from Dropbox...")
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/122.0.0.0 Safari/537.36"
-            ),
-            "Accept": "application/vnd.apple.mpegurl,application/x-mpegURL,text/plain;q=0.9,*/*;q=0.8",
+            )
         }
-
         resp = requests.get(M3U_URL, headers=headers, timeout=25)
         resp.raise_for_status()
 
         parsed = parse_m3u(resp.text)
         _m3u_cache["parsed"] = parsed
         _m3u_cache["ts"] = now
-        _m3u_cache["last_fetch_time"] = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
-
-        print(f"[INFO] ✅ M3U refreshed at {_m3u_cache['last_fetch_time']}")
+        _m3u_cache["last_fetch_time"] = time.strftime(
+            "%Y-%m-%d %H:%M:%S UTC", time.gmtime()
+        )
+        print(f"[INFO] ✅ Cached playlist updated at {_m3u_cache['last_fetch_time']}")
         return parsed
 
     except Exception as e:
@@ -80,7 +85,7 @@ def fetch_m3u():
 
 
 def parse_m3u(text):
-    """Parse M3U text into structured data."""
+    """Parse M3U text into structured data"""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     streams, cat_map = [], {}
     next_cat_id, stream_id = 1, 1
@@ -136,7 +141,7 @@ def parse_m3u(text):
 def index():
     count = len(_m3u_cache["parsed"]["streams"]) if _m3u_cache["parsed"] else 0
     return (
-        f"✅ Xtream Bridge via Cloudflare Worker<br>"
+        f"✅ Xtream Bridge via Dropbox<br>"
         f"Cache TTL: 24h<br>"
         f"Last Fetch: {_m3u_cache['last_fetch_time']}<br>"
         f"Streams Cached: {count}"
