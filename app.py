@@ -19,24 +19,24 @@ USERS = {
     "main": "admin"
 }
 
-# Default M3U for everyone (except John)
+# ✅ Default M3U for everyone EXCEPT John
 DEFAULT_M3U_URL = (
     "https://www.dropbox.com/scl/fi/no7lxzan1p7u2xxghtcyh/"
     "m3u4u-102864-675366-Playlist.m3u?"
     "rlkey=szo7ff13ym9niie46aovzkvtq&st=jyouomsg&dl=1"
 )
 
-# John’s custom M3U
+# ✅ Custom M3U for John (capital J)
 USER_M3U_URLS = {
     "John": (
         "https://www.dropbox.com/scl/fi/h46n1fssly1ntasgg00id/"
         "m3u4u-102864-35343-MergedPlaylist.m3u?"
-        "rlkey=7rgc5z8g5znxfgla17an50smz&st=un3tsyuc&dl=1"
+        "rlkey=7rgc5z8g5znxfgla17an50smz&st=ekopupn5&dl=1"
     )
 }
 
 EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
-CACHE_TTL = 86400  # 24h
+CACHE_TTL = 86400  # 24 hours
 _m3u_cache = {}
 
 UA_HEADERS = {
@@ -54,6 +54,7 @@ def valid_user(username, password):
 
 
 def get_m3u_url_for_user(username):
+    """Return per-user playlist or default."""
     return USER_M3U_URLS.get(username, DEFAULT_M3U_URL)
 
 
@@ -73,7 +74,7 @@ def wants_json():
 
 
 def fetch_m3u(url, username=""):
-    """Fetch and parse an M3U (with cache)."""
+    """Fetch and parse playlist (with cache)."""
     now = time.time()
     entry = _m3u_cache.get(url)
     if entry and entry.get("parsed") and now - entry.get("ts", 0) < CACHE_TTL:
@@ -87,7 +88,7 @@ def fetch_m3u(url, username=""):
         _m3u_cache[url] = {
             "ts": now,
             "parsed": parsed,
-            "last_fetch_time": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
+            "last_fetch_time": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
         }
         print(f"[INFO] ✅ Cached playlist for '{username or url}' at {_m3u_cache[url]['last_fetch_time']}")
         return parsed
@@ -160,17 +161,13 @@ def index():
 
 @app.route("/refresh")
 def refresh_all():
-    """
-    Manually clear and re-fetch all M3Us (force sync).
-    Use:  https://xtream-bridge.onrender.com/refresh
-    """
-    print("[INFO] 🔄 Manual refresh triggered...")
+    """Force clear and re-fetch all playlists."""
+    print("[INFO] 🔄 Manual full refresh triggered...")
     _m3u_cache.clear()
-    # Fetch both playlists fresh
     fetch_m3u(DEFAULT_M3U_URL, "Default")
     for user, url in USER_M3U_URLS.items():
         fetch_m3u(url, user)
-    return "✅ M3U playlists forcibly refreshed and re-cached!"
+    return "✅ All playlists forcibly refreshed and re-cached."
 
 
 @app.route("/get.php")
