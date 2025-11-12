@@ -18,20 +18,18 @@ USERS = {
     "main": "admin"
 }
 
-# Your Dropbox-hosted M3U playlist (direct link)
+# Dropbox-hosted M3U (make sure dl=1 for direct)
 M3U_URL = "https://www.dropbox.com/scl/fi/1u7zsewtv22z4qxjsbuol/m3u4u-102864-675347-Playlist.m3u?rlkey=k20q8mtc7kyc5awdqonlngvt7&st=e90xbhth&dl=1"
 
-# Your EPG (from m3u4u or Dropbox)
+# EPG (use your working source)
 EPG_URL = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
 
-# Cache TTL: 24 hours
-CACHE_TTL = 86400  # seconds
+CACHE_TTL = 86400  # 24 hours
 # ----------------------------------------
 
 _m3u_cache = {"ts": 0, "parsed": None, "last_fetch_time": "Never"}
 
 
-# -------- Helper functions --------
 def valid_user(username, password):
     return username in USERS and USERS[username] == password
 
@@ -52,13 +50,12 @@ def wants_json():
 
 
 def fetch_m3u():
-    """Fetch and cache M3U once every 24 hours"""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
     try:
-        print("[INFO] Fetching fresh M3U playlist from Dropbox...")
+        print("[INFO] Fetching fresh M3U from Dropbox...")
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -77,14 +74,12 @@ def fetch_m3u():
         )
         print(f"[INFO] ✅ Cached playlist updated at {_m3u_cache['last_fetch_time']}")
         return parsed
-
     except Exception as e:
         print(f"[ERROR] Unable to fetch playlist: {e}")
         return _m3u_cache["parsed"] or {"categories": [], "streams": []}
 
 
 def parse_m3u(text):
-    """Parse M3U text into structured categories and streams"""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     streams, cat_map = [], {}
     next_cat_id, stream_id = 1, 1
@@ -133,8 +128,6 @@ def parse_m3u(text):
 
     return {"categories": categories, "streams": streams}
 
-
-# -------- ROUTES --------
 
 @app.route("/")
 def index():
@@ -216,45 +209,15 @@ def player_api():
     return jsonify({"error": "action not handled", "action": action}) if use_json else Response("<error/>", 400)
 
 
-# -------- HYBRID LIVE ROUTE --------
+# Redirect-only live route (no proxying)
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
-def live_hybrid(username, password, stream_id, ext):
+def live_redirect(username, password, stream_id, ext):
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-
-    user_agent = request.headers.get("User-Agent", "").lower()
-    is_apple = any(x in user_agent for x in ["iphone", "ipad", "applecoremedia", "safari"])
-
     data = fetch_m3u()
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
-            stream_url = s["direct_source"]
-
-            # iOS: Proxy the request to ensure HTTPS and correct headers
-            if is_apple:
-                try:
-                    headers = {
-                        "User-Agent": (
-                            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) "
-                            "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                            "Version/17.5 Mobile Safari/604.1"
-                        ),
-                        "Accept": "application/vnd.apple.mpegurl,application/x-mpegURL"
-                    }
-                    r = requests.get(stream_url, headers=headers, timeout=10)
-                    r.raise_for_status()
-
-                    content_type = r.headers.get("Content-Type", "").lower()
-                    if "mpegurl" not in content_type:
-                        content_type = "application/vnd.apple.mpegurl"
-
-                    return Response(r.content, content_type=content_type)
-                except Exception as e:
-                    return Response(f"Stream error: {e}", status=502)
-
-            # Non-Apple: use redirect (efficient)
-            return redirect(stream_url)
-
+            return redirect(s["direct_source"])
     return Response("Stream not found", status=404)
 
 
