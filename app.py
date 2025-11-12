@@ -15,9 +15,9 @@ USERS = {
     "main": "admin"
 }
 
-# Direct m3u4u playlist + EPG
-M3U_URL = "http://m3u4u.com/m3u/782dyq7dzda1gr9zy4zp"
-EPG_URL = "http://m3u4u.com/epg/782dyq7dzda1gr9zy4zp"
+# Use your Cloudflare Worker proxy instead of m3u4u directly
+M3U_URL = "https://misty-cloud-084d.bigmanuk.workers.dev/m3u"
+EPG_URL = "https://misty-cloud-084d.bigmanuk.workers.dev/epg"
 
 CACHE_TTL = 86400  # 24 hours
 # ----------------------------------------
@@ -32,40 +32,35 @@ def valid_user(username, password):
 
 def wants_json():
     """Detect if client wants JSON (default) or XML"""
-    accept = request.headers.get('Accept', '').lower()
-    user_agent = request.headers.get('User-Agent', '').lower()
-    if 'smarters' in user_agent or 'okhttp' in user_agent:
+    accept = request.headers.get("Accept", "").lower()
+    user_agent = request.headers.get("User-Agent", "").lower()
+    if "smarters" in user_agent or "okhttp" in user_agent:
         return True
-    if 'xml' in accept:
+    if "xml" in accept:
         return False
-    output_format = request.values.get('output', '').lower()
-    if output_format == 'json':
+    fmt = request.values.get("output", "").lower()
+    if fmt == "json":
         return True
-    if output_format in ['xml', 'm3u8', 'ts']:
+    if fmt in ["xml", "m3u8", "ts"]:
         return False
     return True
 
 
 def fetch_m3u():
-    """Fetch and parse M3U playlist from m3u4u (max once per 24h)."""
+    """Fetch and parse M3U from Cloudflare Worker (max once per 24h)."""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
     try:
-        print("[INFO] Fetching fresh M3U playlist from m3u4u...")
-
-        # Pretend to be a normal browser to avoid 403
+        print("[INFO] Fetching fresh M3U playlist from Cloudflare Worker...")
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/122.0.0.0 Safari/537.36"
             ),
-            "Referer": "https://m3u4u.com/",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Connection": "keep-alive",
+            "Accept": "application/vnd.apple.mpegurl,application/x-mpegURL,text/plain;q=0.9,*/*;q=0.8",
         }
 
         resp = requests.get(M3U_URL, headers=headers, timeout=25)
@@ -76,17 +71,16 @@ def fetch_m3u():
         _m3u_cache["ts"] = now
         _m3u_cache["last_fetch_time"] = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
 
-        print(f"[INFO] ✅ M3U successfully refreshed at {_m3u_cache['last_fetch_time']}")
+        print(f"[INFO] ✅ M3U refreshed at {_m3u_cache['last_fetch_time']}")
         return parsed
 
     except Exception as e:
         print(f"[ERROR] Unable to fetch playlist: {e}")
-        # Use cached data if available
         return _m3u_cache["parsed"] or {"categories": [], "streams": []}
 
 
 def parse_m3u(text):
-    """Parse M3U text into structured JSON format."""
+    """Parse M3U text into structured data."""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     streams, cat_map = [], {}
     next_cat_id, stream_id = 1, 1
@@ -98,12 +92,10 @@ def parse_m3u(text):
         if line.startswith("#EXTINF"):
             attrs = dict(attr_re.findall(line))
             name = line.split(",", 1)[1].strip() if "," in line else attrs.get("tvg-name", "Channel")
-            url = ""
             j = i + 1
             while j < len(lines) and lines[j].startswith("#"):
                 j += 1
-            if j < len(lines):
-                url = lines[j].strip()
+            url = lines[j].strip() if j < len(lines) else ""
 
             group = attrs.get("group-title", "Uncategorised")
             logo = attrs.get("tvg-logo", "")
@@ -142,11 +134,13 @@ def parse_m3u(text):
 
 @app.route("/")
 def index():
-    return f"""✅ Xtream Bridge connected to m3u4u<br>
-Cache TTL: 24h<br>
-Last Fetch: {_m3u_cache['last_fetch_time']}<br>
-Streams Cached: {len(_m3u_cache['parsed']['streams']) if _m3u_cache['parsed'] else 0}
-"""
+    count = len(_m3u_cache["parsed"]["streams"]) if _m3u_cache["parsed"] else 0
+    return (
+        f"✅ Xtream Bridge via Cloudflare Worker<br>"
+        f"Cache TTL: 24h<br>"
+        f"Last Fetch: {_m3u_cache['last_fetch_time']}<br>"
+        f"Streams Cached: {count}"
+    )
 
 
 @app.route("/get.php")
@@ -187,7 +181,7 @@ def player_api():
                 "allowed_output_formats": ["m3u8", "ts"]
             },
             "server_info": {
-                "url": request.host.split(':')[0],
+                "url": request.host.split(":")[0],
                 "port": "80",
                 "https_port": "443",
                 "server_protocol": "http",
@@ -212,9 +206,11 @@ def player_api():
         return jsonify(result) if use_json else Response(tostring(Element("channels")), content_type="text/xml")
 
     # EMPTY ACTIONS
-    if action in ["get_vod_categories", "get_vod_streams", "get_series_categories",
-                  "get_series", "get_series_info", "get_vod_info", "get_short_epg",
-                  "get_simple_data_table"]:
+    if action in [
+        "get_vod_categories", "get_vod_streams", "get_series_categories",
+        "get_series", "get_series_info", "get_vod_info",
+        "get_short_epg", "get_simple_data_table"
+    ]:
         return jsonify([]) if use_json else Response("<empty/>", content_type="text/xml")
 
     return jsonify({"error": "action not handled", "action": action}) if use_json else Response("<error/>", 400)
