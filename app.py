@@ -11,7 +11,7 @@ app = Flask(__name__)
 USERS = {
     "dad": "devon",
     "john": "pass123",
-    "John": "Sidford2025",
+    "John": "Sidford2025",  # capital J
     "mark": "Sidmouth2025",
     "james": "October2025",
     "ian": "October2025",
@@ -155,8 +155,31 @@ def index():
         f"<b>Default</b> — Last Fetch: {default.get('last_fetch_time','Never')} "
         f"| Streams: {len(default.get('parsed', {}).get('streams', []))}<br>"
         f"<b>John</b> — Last Fetch: {john.get('last_fetch_time','Never')} "
-        f"| Streams: {len(john.get('parsed', {}).get('streams', []))}"
+        f"| Streams: {len(john.get('parsed', {}).get('streams', []))}<br><br>"
+        f"<a href='/debug'>🔍 Debug what each user sees</a><br>"
+        f"<a href='/refresh'>🔄 Force refresh playlists</a>"
     )
+
+
+@app.route("/debug")
+def debug_info():
+    """Show which URLs and files are currently mapped and cached."""
+    info = []
+    for user in USERS.keys():
+        url = get_m3u_url_for_user(user)
+        try:
+            text = ""
+            if url in _m3u_cache and "parsed" in _m3u_cache[url]:
+                text = f"(cached: {len(_m3u_cache[url]['parsed']['streams'])} streams)"
+            else:
+                resp = requests.get(url, headers=UA_HEADERS, timeout=10)
+                resp.raise_for_status()
+                lines = resp.text.splitlines()[:5]
+                text = "<br>".join(lines)
+            info.append(f"<b>{user}</b> → {url}<br>{text}<br><hr>")
+        except Exception as e:
+            info.append(f"<b>{user}</b> → {url}<br>❌ Error: {e}<hr>")
+    return "<h3>🔍 Current User-to-Playlist Mapping</h3>" + "".join(info)
 
 
 @app.route("/refresh")
