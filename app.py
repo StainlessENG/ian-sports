@@ -15,18 +15,14 @@ USERS = {
     "main": "admin"
 }
 
-# m3u4u credentials (used to get fresh token)
-M3U4U_EMAIL = "jamesjeley@me.com"
-M3U4U_PASSWORD = "jempot-fedteH-sumhe9"
-
-# Default token (used until new one is fetched)
-M3U4U_TOKEN = "476rnmqd4ds4rkd3nekg"
+# Direct m3u4u playlist + EPG
+M3U_URL = "http://m3u4u.com/m3u/782dyq7dzda1gr9zy4zp"
+EPG_URL = "http://m3u4u.com/epg/782dyq7dzda1gr9zy4zp"
 
 CACHE_TTL = 600  # seconds
 # ----------------------------------------
 
 _m3u_cache = {"ts": 0, "parsed": None}
-_token_cache = {"ts": 0, "token": M3U4U_TOKEN}
 
 
 # -------- Helper functions --------
@@ -50,50 +46,15 @@ def wants_json():
     return True
 
 
-def get_m3u4u_token(force_refresh=False):
-    """Retrieve or reuse the m3u4u token."""
-    now = time.time()
-    if (
-        not force_refresh
-        and _token_cache["token"]
-        and now - _token_cache["ts"] < 86400  # refresh every 24h
-    ):
-        return _token_cache["token"]
-
-    try:
-        login_url = "https://m3u4u.com/api/login"
-        data = {"email": M3U4U_EMAIL, "password": M3U4U_PASSWORD}
-        headers = {"User-Agent": "XtreamBridge/1.0"}
-        resp = requests.post(login_url, json=data, headers=headers, timeout=15)
-        resp.raise_for_status()
-        info = resp.json()
-        token = info.get("token") or info.get("user", {}).get("token")
-
-        if not token:
-            print("[ERROR] No token received from m3u4u login.")
-            return _token_cache["token"]
-
-        _token_cache["token"] = token
-        _token_cache["ts"] = now
-        print(f"[INFO] New m3u4u token fetched: {token}")
-        return token
-    except Exception as e:
-        print(f"[ERROR] Unable to fetch m3u4u token: {e}")
-        return _token_cache["token"]
-
-
 def fetch_m3u():
     """Fetch and parse M3U playlist from m3u4u."""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
-    token = get_m3u4u_token()
-    m3u_url = f"https://m3u4u.com/playlist/{token}/m3u_plus"
-
     try:
         headers = {"User-Agent": "XtreamBridge/1.0"}
-        resp = requests.get(m3u_url, headers=headers, timeout=20)
+        resp = requests.get(M3U_URL, headers=headers, timeout=20)
         resp.raise_for_status()
         parsed = parse_m3u(resp.text)
         _m3u_cache["parsed"] = parsed
@@ -160,7 +121,7 @@ def parse_m3u(text):
 
 @app.route("/")
 def index():
-    return "✅ Xtream Bridge connected to m3u4u (live + EPG working)"
+    return "✅ Xtream Bridge connected directly to m3u4u playlist."
 
 
 @app.route("/get.php")
@@ -169,8 +130,7 @@ def get_m3u():
     password = request.args.get("password")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    token = get_m3u4u_token()
-    return redirect(f"https://m3u4u.com/playlist/{token}/m3u_plus")
+    return redirect(M3U_URL)
 
 
 @app.route("/player_api.php", methods=["GET", "POST"])
@@ -252,8 +212,7 @@ def xmltv():
     password = request.args.get("password")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    token = get_m3u4u_token()
-    return redirect(f"https://m3u4u.com/epg/{token}")
+    return redirect(EPG_URL)
 
 
 if __name__ == "__main__":
