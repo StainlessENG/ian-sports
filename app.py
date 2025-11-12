@@ -17,9 +17,9 @@ USERS = {
 
 # ✅ Default playlist for everyone except John
 DEFAULT_M3U_URL = (
-    "https://www.dropbox.com/scl/fi/no7lxzan1p7u2xxghtcyh/"
-    "m3u4u-102864-675366-Playlist.m3u?"
-    "rlkey=szo7ff13ym9niie46aovzkvtq&st=jyouomsg&dl=1"
+    "https://www.dropbox.com/scl/fi/xz0966ignzhvfu4k6b9if/"
+    "m3u4u-102864-674859-Playlist.m3u?"
+    "rlkey=eomxtmihnxvq9hpd1ic41bfgb&st=j95n333j&dl=1"
 )
 
 # ✅ Custom playlist for John
