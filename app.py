@@ -163,8 +163,10 @@ def api():
     a = request.args.get("action", "")
     ua = request.headers.get("User-Agent", "").lower()
 
-    xml_client = any(k in ua for k in ["iptv", "okhttp", "smarters", "android"])
-    wants_xml = xml_client or "xml" in request.headers.get("Accept", "").lower()
+    # ✅ Smarters / Android expect JSON
+    json_clients = any(k in ua for k in ["okhttp", "smarters", "android", "tivi"])
+    wants_xml = not json_clients
+
     valid = valid_user(u, p)
 
     # LOGIN (no action)
