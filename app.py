@@ -22,7 +22,7 @@ EPG_URL = "http://m3u4u.com/epg/782dyq7dzda1gr9zy4zp"
 CACHE_TTL = 86400  # 24 hours
 # ----------------------------------------
 
-_m3u_cache = {"ts": 0, "parsed": None}
+_m3u_cache = {"ts": 0, "parsed": None, "last_fetch_time": "Never"}
 
 
 # -------- Helper functions --------
@@ -54,21 +54,39 @@ def fetch_m3u():
 
     try:
         print("[INFO] Fetching fresh M3U playlist from m3u4u...")
-        headers = {"User-Agent": "XtreamBridge/1.0"}
-        resp = requests.get(M3U_URL, headers=headers, timeout=20)
+
+        # Pretend to be a normal browser to avoid 403
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0.0.0 Safari/537.36"
+            ),
+            "Referer": "https://m3u4u.com/",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Connection": "keep-alive",
+        }
+
+        resp = requests.get(M3U_URL, headers=headers, timeout=25)
         resp.raise_for_status()
+
         parsed = parse_m3u(resp.text)
         _m3u_cache["parsed"] = parsed
         _m3u_cache["ts"] = now
-        print(f"[INFO] M3U successfully refreshed at {time.strftime('%Y-%m-%d %H:%M:%S')}")
+        _m3u_cache["last_fetch_time"] = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
+
+        print(f"[INFO] ✅ M3U successfully refreshed at {_m3u_cache['last_fetch_time']}")
         return parsed
+
     except Exception as e:
         print(f"[ERROR] Unable to fetch playlist: {e}")
-        # Use previous cached data if available
+        # Use cached data if available
         return _m3u_cache["parsed"] or {"categories": [], "streams": []}
 
 
 def parse_m3u(text):
+    """Parse M3U text into structured JSON format."""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     streams, cat_map = [], {}
     next_cat_id, stream_id = 1, 1
@@ -124,7 +142,11 @@ def parse_m3u(text):
 
 @app.route("/")
 def index():
-    return "✅ Xtream Bridge (m3u4u connected, 24h cache active)."
+    return f"""✅ Xtream Bridge connected to m3u4u<br>
+Cache TTL: 24h<br>
+Last Fetch: {_m3u_cache['last_fetch_time']}<br>
+Streams Cached: {len(_m3u_cache['parsed']['streams']) if _m3u_cache['parsed'] else 0}
+"""
 
 
 @app.route("/get.php")
