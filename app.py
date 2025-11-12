@@ -19,7 +19,7 @@ USERS = {
 M3U_URL = "http://m3u4u.com/m3u/782dyq7dzda1gr9zy4zp"
 EPG_URL = "http://m3u4u.com/epg/782dyq7dzda1gr9zy4zp"
 
-CACHE_TTL = 600  # seconds
+CACHE_TTL = 86400  # 24 hours
 # ----------------------------------------
 
 _m3u_cache = {"ts": 0, "parsed": None}
@@ -47,22 +47,25 @@ def wants_json():
 
 
 def fetch_m3u():
-    """Fetch and parse M3U playlist from m3u4u."""
+    """Fetch and parse M3U playlist from m3u4u (max once per 24h)."""
     now = time.time()
     if _m3u_cache["parsed"] and now - _m3u_cache["ts"] < CACHE_TTL:
         return _m3u_cache["parsed"]
 
     try:
+        print("[INFO] Fetching fresh M3U playlist from m3u4u...")
         headers = {"User-Agent": "XtreamBridge/1.0"}
         resp = requests.get(M3U_URL, headers=headers, timeout=20)
         resp.raise_for_status()
         parsed = parse_m3u(resp.text)
         _m3u_cache["parsed"] = parsed
         _m3u_cache["ts"] = now
+        print(f"[INFO] M3U successfully refreshed at {time.strftime('%Y-%m-%d %H:%M:%S')}")
         return parsed
     except Exception as e:
         print(f"[ERROR] Unable to fetch playlist: {e}")
-        return {"categories": [], "streams": []}
+        # Use previous cached data if available
+        return _m3u_cache["parsed"] or {"categories": [], "streams": []}
 
 
 def parse_m3u(text):
@@ -121,7 +124,7 @@ def parse_m3u(text):
 
 @app.route("/")
 def index():
-    return "✅ Xtream Bridge connected directly to m3u4u playlist."
+    return "✅ Xtream Bridge (m3u4u connected, 24h cache active)."
 
 
 @app.route("/get.php")
