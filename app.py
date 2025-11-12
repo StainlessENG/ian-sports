@@ -205,7 +205,7 @@ def player_api():
   <is_trial>0</is_trial>
   <active_cons>0</active_cons>
   <created_at>1640000000</created_at>
-  <max_connections>1</max_connections>
+  <max_connections>2</max_connections>
 </user_info>
 <server_info>
   <url>{request.host}</url>
