@@ -164,7 +164,8 @@ def parse_m3u(text):
                 "tv_archive_duration": 0,
                 "custom_sid": "",
                 "tv_archive_start": "",
-                "tv_archive_stop": ""
+                "tv_archive_stop": "",
+                "container_extension": "m3u8"
             })
 
             stream_id += 1
@@ -212,6 +213,29 @@ def whoami():
     })
 
 
+@app.route("/test_stream/<int:stream_id>")
+def test_stream(stream_id):
+    """Debug endpoint to test stream URLs directly"""
+    username = request.args.get("username", "main")
+    password = request.args.get("password", "admin")
+    
+    if not valid_user(username, password):
+        return "Invalid credentials", 403
+    
+    data = fetch_m3u_for_user(username)
+    for s in data["streams"]:
+        if s["stream_id"] == stream_id:
+            return f"""
+            <h3>Stream #{stream_id}: {s['name']}</h3>
+            <p><b>Direct URL:</b><br><textarea style="width:100%;height:60px">{s['direct_source']}</textarea></p>
+            <p><b>Xtream URL:</b><br>http://{request.host}/live/{username}/{password}/{stream_id}.m3u8</p>
+            <p><a href="{s['direct_source']}" target="_blank">Test Direct Link</a></p>
+            <p><a href="/live/{username}/{password}/{stream_id}.m3u8">Test Via Proxy</a></p>
+            """
+    
+    return "Stream not found", 404
+
+
 @app.route("/player_api.php", methods=["GET", "POST"])
 def player_api():
     username = request.values.get("username", "")
@@ -219,7 +243,7 @@ def player_api():
     action = request.values.get("action", "")
     use_json = wants_json()
 
-    print(f"[API] user={username}, action={action}, json={use_json}")
+    print(f"[API] user={username}, action={action}, json={use_json}, UA={request.headers.get('User-Agent', '')[:40]}")
 
     # Invalid credentials
     if not valid_user(username, password):
@@ -316,14 +340,17 @@ def player_api():
 
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
-def live(username, password, stream_id, ext):
+@app.route("/live/<username>/<password>/<int:stream_id>")
+def live(username, password, stream_id, ext=None):
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
 
     data = fetch_m3u_for_user(username)
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
-            return redirect(s["direct_source"])
+            target_url = s["direct_source"]
+            print(f"[STREAM] Redirecting stream {stream_id} to: {target_url[:80]}...")
+            return redirect(target_url, code=302)
 
     return Response("Stream not found", status=404)
 
