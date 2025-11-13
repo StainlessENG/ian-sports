@@ -190,8 +190,50 @@ def index():
         f"✅ Xtream Bridge (Multi-User)<br><br>"
         f"<b>Default:</b> {len(default.get('parsed', {}).get('streams', []))} streams<br>"
         f"<b>John:</b> {len(john.get('parsed', {}).get('streams', []))} streams<br><br>"
-        f"<a href='/whoami?username=main&password=admin'>Test Login</a>"
+        f"<a href='/whoami?username=main&password=admin'>🧭 Test Login</a> | "
+        f"<a href='/debug'>🔍 Debug Users</a> | "
+        f"<a href='/refresh'>🔄 Refresh Cache</a> | "
+        f"<a href='/test_stream/1?username=main&password=admin'>🎬 Test Stream</a>"
     )
+
+
+@app.route("/debug")
+def debug_info():
+    """Show which URLs and files are currently mapped and cached."""
+    info = ["<h2>🔍 User-to-Playlist Mapping</h2>"]
+    for user in USERS.keys():
+        url = get_m3u_url_for_user(user)
+        cache = _m3u_cache.get(url, {})
+        streams = len(cache.get("parsed", {}).get("streams", []))
+        last_fetch = cache.get("last_fetch", "Never")
+        
+        info.append(f"""
+        <div style='border:1px solid #ccc; padding:10px; margin:10px 0;'>
+            <b>User:</b> {user}<br>
+            <b>Playlist:</b> {'Custom' if user in USER_M3U_URLS else 'Default'}<br>
+            <b>Streams:</b> {streams}<br>
+            <b>Last Fetch:</b> {last_fetch}<br>
+            <b>URL:</b> <small>{url[:80]}...</small>
+        </div>
+        """)
+    
+    info.append("<br><a href='/'>← Back to Home</a>")
+    return "".join(info)
+
+
+@app.route("/refresh")
+def refresh_all():
+    """Force clear and re-fetch all playlists."""
+    print("[INFO] 🔄 Manual full refresh triggered...")
+    _m3u_cache.clear()
+    fetch_m3u(DEFAULT_M3U_URL, "Default")
+    for user, url in USER_M3U_URLS.items():
+        fetch_m3u(url, user)
+    return """
+    <h2>✅ Cache Refreshed</h2>
+    <p>All playlists have been forcibly refreshed and re-cached.</p>
+    <a href='/'>← Back to Home</a>
+    """
 
 
 @app.route("/whoami")
