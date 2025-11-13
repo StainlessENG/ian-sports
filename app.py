@@ -341,6 +341,8 @@ def player_api():
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
 @app.route("/live/<username>/<password>/<int:stream_id>")
+@app.route("/<username>/<password>/<int:stream_id>.<ext>")
+@app.route("/<username>/<password>/<int:stream_id>")
 def live(username, password, stream_id, ext=None):
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
@@ -349,7 +351,7 @@ def live(username, password, stream_id, ext=None):
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
             target_url = s["direct_source"]
-            print(f"[STREAM] Redirecting stream {stream_id} to: {target_url[:80]}...")
+            print(f"[STREAM] Redirecting stream {stream_id} ({s['name']}) to: {target_url[:80]}...")
             return redirect(target_url, code=302)
 
     return Response("Stream not found", status=404)
