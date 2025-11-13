@@ -130,6 +130,12 @@ def parse_m3u(text):
     stream_id = 1
     next_cat = 1
     attr_re = re.compile(r'(\w[\w-]*)="([^"]*)"')
+    epg_url = None
+
+    # Extract EPG URL from M3U header
+    if lines and lines[0].startswith("#EXTM3U"):
+        header_attrs = dict(attr_re.findall(lines[0]))
+        epg_url = header_attrs.get("url-tvg") or header_attrs.get("x-tvg-url")
 
     i = 0
     while i < len(lines):
@@ -178,7 +184,7 @@ def parse_m3u(text):
         for k, v in cat_map.items()
     ]
 
-    return {"categories": categories, "streams": streams}
+    return {"categories": categories, "streams": streams, "epg_url": epg_url}
 
 # ---------------- ROUTES ----------------
 
