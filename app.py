@@ -327,6 +327,29 @@ def player_api():
             xml = list_to_xml("streams", "channel", streams)
             return Response(f'<?xml version="1.0"?>{xml}', content_type="application/xml")
 
+    # Account info (alias for main auth check)
+    if action == "get_account_info":
+        account_info = {
+            "username": username,
+            "password": password,
+            "message": "Active",
+            "auth": 1,
+            "status": "Active",
+            "exp_date": None,
+            "is_trial": "0",
+            "active_cons": "0",
+            "created_at": "1640000000",
+            "max_connections": "1"
+        }
+        if use_json:
+            return jsonify(account_info)
+        else:
+            xml = '<?xml version="1.0"?><user_info>'
+            for k, v in account_info.items():
+                xml += f'<{k}>{v}</{k}>'
+            xml += '</user_info>'
+            return Response(xml, content_type="application/xml")
+
     # VOD/Series (not supported)
     if action in ["get_vod_categories", "get_vod_streams", "get_series_categories",
                   "get_series", "get_series_info", "get_vod_info", "get_short_epg"]:
