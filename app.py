@@ -192,10 +192,12 @@ def parse_m3u(text):
 def index():
     default = _m3u_cache.get(DEFAULT_M3U_URL, {})
     john = _m3u_cache.get(USER_M3U_URLS.get("John", ""), {})
+    main = _m3u_cache.get(USER_M3U_URLS.get("main", ""), {})
     return (
         f"✅ Xtream Bridge (Multi-User)<br><br>"
         f"<b>Default:</b> {len(default.get('parsed', {}).get('streams', []))} streams<br>"
-        f"<b>John:</b> {len(john.get('parsed', {}).get('streams', []))} streams<br><br>"
+        f"<b>John:</b> {len(john.get('parsed', {}).get('streams', []))} streams<br>"
+        f"<b>Main:</b> {len(main.get('parsed', {}).get('streams', []))} streams<br><br>"
         f"<a href='/whoami?username=main&password=admin'>🧭 Test Login</a> | "
         f"<a href='/debug'>🔍 Debug Users</a> | "
         f"<a href='/refresh'>🔄 Refresh Cache</a> | "
@@ -212,6 +214,7 @@ def debug_info():
         cache = _m3u_cache.get(url, {})
         streams = len(cache.get("parsed", {}).get("streams", []))
         last_fetch = cache.get("last_fetch", "Never")
+        epg_url = cache.get("parsed", {}).get("epg_url", "Not found")
         
         info.append(f"""
         <div style='border:1px solid #ccc; padding:10px; margin:10px 0;'>
@@ -219,7 +222,8 @@ def debug_info():
             <b>Playlist:</b> {'Custom' if user in USER_M3U_URLS else 'Default'}<br>
             <b>Streams:</b> {streams}<br>
             <b>Last Fetch:</b> {last_fetch}<br>
-            <b>URL:</b> <small>{url[:80]}...</small>
+            <b>EPG URL:</b> <small>{epg_url}</small><br>
+            <b>M3U URL:</b> <small>{url[:80]}...</small>
         </div>
         """)
     
@@ -422,7 +426,13 @@ def live(username, password, stream_id, ext=None):
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
             target_url = s["direct_source"]
-            print(f"[STREAM] Redirecting stream {stream_id} ({s['name']}) to: {target_url[:80]}...")
+            
+            # Log what extension was requested vs what we're serving
+            requested_ext = ext or "none"
+            actual_ext = "m3u8" if ".m3u8" in target_url else "ts" if ".ts" in target_url else "unknown"
+            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']}), Req ext: {requested_ext}, Actual: {actual_ext}")
+            print(f"[STREAM] Redirecting to: {target_url[:80]}...")
+            
             return redirect(target_url, code=302)
 
     return Response("Stream not found", status=404)
@@ -434,7 +444,19 @@ def xmltv():
     password = request.args.get("password", "")
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    return redirect(EPG_URL)
+    
+    # Get user's playlist data to extract EPG URL
+    data = fetch_m3u_for_user(username)
+    epg_url = data.get("epg_url")
+    
+    # Fallback to default if no EPG found in M3U
+    if not epg_url:
+        epg_url = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
+        print(f"[EPG] No EPG in M3U for {username}, using fallback")
+    else:
+        print(f"[EPG] Using EPG from M3U for {username}: {epg_url[:60]}...")
+    
+    return redirect(epg_url)
 
 
 @app.route("/get.php")
