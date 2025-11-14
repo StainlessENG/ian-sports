@@ -178,7 +178,8 @@ def parse_m3u(text):
                 "custom_sid": "",
                 "tv_archive_start": "",
                 "tv_archive_stop": "",
-                "container_extension": "m3u8"
+                "container_extension": "m3u8",
+                "is_adult": "0"
             })
 
             stream_id += 1
