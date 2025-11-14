@@ -439,6 +439,11 @@ def live(username, password, stream_id, ext=None):
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
 
+    # TEMPORARILY DISABLED CACHE FOR TESTING
+    # cache_key = f"{username}:{stream_id}"
+    # now = time.time()
+    
+    # Fetch fresh every time
     data = fetch_m3u_for_user(username)
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
@@ -446,11 +451,13 @@ def live(username, password, stream_id, ext=None):
             
             requested_ext = ext or "none"
             actual_ext = "m3u8" if ".m3u8" in target_url else "ts" if ".ts" in target_url else "unknown"
-            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']}), Req ext: {requested_ext}, Actual: {actual_ext}")
+            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']})")
+            print(f"[STREAM] Requested: .{requested_ext} | Actual: .{actual_ext}")
             print(f"[STREAM] Redirecting to: {target_url[:80]}...")
             
             return redirect(target_url, code=302)
 
+    print(f"[ERROR] Stream {stream_id} not found for user {username}")
     return Response("Stream not found", status=404)
 
 
