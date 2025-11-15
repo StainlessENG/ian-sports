@@ -29,14 +29,10 @@ DEFAULT_M3U_URL = (
 # Custom playlists - John and main get their own
 USER_M3U_URLS = {
     "John": (
-        "https://www.dropbox.com/scl/fi/h46n1fssly1ntasgg00id/"
-        "m3u4u-102864-35343-MergedPlaylist.m3u?"
-        "rlkey=7rgc5z8g5znxfgla17an50smz&st=ekopupn5&dl=1"
+        "http://m3u4u.com/m3u/5g28nejz1zhv45q3yzpe"
     ),
     "main": (
-        "https://www.dropbox.com/scl/fi/go509m79v58q86rhmyii4/"
-        "m3u4u-102864-670937-Playlist.m3u?"
-        "rlkey=hz4r443sknsa17oqhr4jzk33j&st=a3o7xjoq&dl=1"
+        "http://m3u4u.com/m3u/p87vnr8dzdu4w2q6n41j"
     )
 }
 
