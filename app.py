@@ -1,3 +1,4 @@
+
 import os
 import time
 import re
@@ -43,7 +44,6 @@ USER_M3U_URLS = {
 
 CACHE_TTL = 86400
 _m3u_cache = {}
-_stream_redirect_cache = {}  # New: cache stream redirects briefly
 
 UA_HEADERS = {
     "User-Agent": (
@@ -178,8 +178,7 @@ def parse_m3u(text):
                 "custom_sid": "",
                 "tv_archive_start": "",
                 "tv_archive_stop": "",
-                "container_extension": "m3u8",
-                "is_adult": "0"
+                "container_extension": "m3u8"
             })
 
             stream_id += 1
@@ -437,13 +436,9 @@ def player_api():
 @app.route("/<username>/<password>/<int:stream_id>.<ext>")
 @app.route("/<username>/<password>/<int:stream_id>")
 def live(username, password, stream_id, ext=None):
-    print(f"[STREAM REQUEST] Route hit: /.../{username}/{password}/{stream_id}.{ext}")
-    
     if not valid_user(username, password):
-        print(f"[STREAM] Invalid credentials: {username}/{password}")
         return Response("Invalid credentials", status=403)
 
-    # Fetch fresh every time
     data = fetch_m3u_for_user(username)
     for s in data["streams"]:
         if s["stream_id"] == stream_id:
@@ -451,23 +446,12 @@ def live(username, password, stream_id, ext=None):
             
             requested_ext = ext or "none"
             actual_ext = "m3u8" if ".m3u8" in target_url else "ts" if ".ts" in target_url else "unknown"
-            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']})")
-            print(f"[STREAM] Requested: .{requested_ext} | Actual: .{actual_ext}")
+            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']}), Req ext: {requested_ext}, Actual: {actual_ext}")
             print(f"[STREAM] Redirecting to: {target_url[:80]}...")
             
             return redirect(target_url, code=302)
 
-    print(f"[ERROR] Stream {stream_id} not found for user {username}")
     return Response("Stream not found", status=404)
-
-
-# Catch-all to see what URLs Smarters is requesting
-@app.route('/<path:path>')
-def catch_all(path):
-    print(f"[CATCH-ALL] Unmatched request: {request.method} /{path}")
-    print(f"[CATCH-ALL] Full URL: {request.url}")
-    print(f"[CATCH-ALL] User-Agent: {request.headers.get('User-Agent', 'None')[:50]}")
-    return Response("Not found", status=404)
 
 
 @app.route("/xmltv.php")
