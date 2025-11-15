@@ -437,13 +437,12 @@ def player_api():
 @app.route("/<username>/<password>/<int:stream_id>.<ext>")
 @app.route("/<username>/<password>/<int:stream_id>")
 def live(username, password, stream_id, ext=None):
+    print(f"[STREAM REQUEST] Route hit: /.../{username}/{password}/{stream_id}.{ext}")
+    
     if not valid_user(username, password):
+        print(f"[STREAM] Invalid credentials: {username}/{password}")
         return Response("Invalid credentials", status=403)
 
-    # TEMPORARILY DISABLED CACHE FOR TESTING
-    # cache_key = f"{username}:{stream_id}"
-    # now = time.time()
-    
     # Fetch fresh every time
     data = fetch_m3u_for_user(username)
     for s in data["streams"]:
@@ -460,6 +459,15 @@ def live(username, password, stream_id, ext=None):
 
     print(f"[ERROR] Stream {stream_id} not found for user {username}")
     return Response("Stream not found", status=404)
+
+
+# Catch-all to see what URLs Smarters is requesting
+@app.route('/<path:path>')
+def catch_all(path):
+    print(f"[CATCH-ALL] Unmatched request: {request.method} /{path}")
+    print(f"[CATCH-ALL] Full URL: {request.url}")
+    print(f"[CATCH-ALL] User-Agent: {request.headers.get('User-Agent', 'None')[:50]}")
+    return Response("Not found", status=404)
 
 
 @app.route("/xmltv.php")
