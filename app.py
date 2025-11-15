@@ -1,61 +1,49 @@
+
 import os
 import time
 import re
 import requests
-import html
 from flask import Flask, request, redirect, jsonify, Response
 from xml.etree.ElementTree import Element, SubElement, tostring
-from functools import wraps
-from threading import Lock
-from collections import OrderedDict
-from urllib.parse import urljoin, urlparse
-import hashlib
 
 app = Flask(__name__)
 
 # ---------------- CONFIG ----------------
 
-# Load users from environment variable (JSON format)
-# Example: USERS='{"dad":"devon","john":"pass123"}'
-import json
-USERS = json.loads(os.environ.get('USERS', '{}'))
+USERS = {
+    "dad": "devon",
+    "john": "pass123",
+    "John": "Sidford2025",
+    "mark": "Sidmouth2025",
+    "james": "October2025",
+    "ian": "October2025",
+    "harry": "October2025",
+    "main": "admin"
+}
 
-# Fallback for development only - REMOVE IN PRODUCTION
-if not USERS:
-    print("[WARNING] No users configured via USERS env var. Using insecure defaults.")
-    USERS = {
-        "dad": "devon",
-        "john": "pass123",
-        "John": "Sidford2025",
-        "mark": "Sidmouth2025",
-        "james": "October2025",
-        "ian": "October2025",
-        "harry": "October2025",
-        "main": "admin"
-    }
+# Default playlist for dad, john, mark, james, ian, harry
+DEFAULT_M3U_URL = (
+    "https://www.dropbox.com/scl/fi/xz0966ignzhvfu4k6b9if/"
+    "m3u4u-102864-674859-Playlist.m3u?"
+    "rlkey=eomxtmihnxvq9hpd1ic41bfgb&st=9h1js2c3&dl=1"
+)
 
-# Default playlist + EPG
-DEFAULT_M3U_URL = os.environ.get('DEFAULT_M3U_URL', "http://m3u4u.com/m3u/jwmzn1w282ukvxw4n721")
-DEFAULT_EPG_URL = os.environ.get('DEFAULT_EPG_URL', "http://m3u4u.com/xml/jwmzn1w282ukvxw4n721")
+# Custom playlists - John and main get their own
+USER_M3U_URLS = {
+    "John": (
+        "https://www.dropbox.com/scl/fi/h46n1fssly1ntasgg00id/"
+        "m3u4u-102864-35343-MergedPlaylist.m3u?"
+        "rlkey=7rgc5z8g5znxfgla17an50smz&st=ekopupn5&dl=1"
+    ),
+    "main": (
+        "https://www.dropbox.com/scl/fi/go509m79v58q86rhmyii4/"
+        "m3u4u-102864-670937-Playlist.m3u?"
+        "rlkey=hz4r443sknsa17oqhr4jzk33j&st=a3o7xjoq&dl=1"
+    )
+}
 
-# Custom playlists (load from env or use defaults)
-USER_M3U_URLS = json.loads(os.environ.get('USER_M3U_URLS', '{}'))
-if not USER_M3U_URLS:
-    USER_M3U_URLS = {
-        "John": "http://m3u4u.com/m3u/5g28nejz1zhv45q3yzpe",
-        "main": "http://m3u4u.com/m3u/p87vnr8dzdu4w2q6n41j"
-    }
-
-# Matching EPGs
-USER_EPG_URLS = json.loads(os.environ.get('USER_EPG_URLS', '{}'))
-if not USER_EPG_URLS:
-    USER_EPG_URLS = {
-        "John": DEFAULT_EPG_URL,
-        "main": "http://m3u4u.com/xml/p87vnr8dzdu4w2q6n41j"
-    }
-
-CACHE_TTL = int(os.environ.get('CACHE_TTL', '86400'))
-CACHE_MAX_SIZE = int(os.environ.get('CACHE_MAX_SIZE', '100'))
+CACHE_TTL = 86400
+_m3u_cache = {}
 
 UA_HEADERS = {
     "User-Agent": (
@@ -65,154 +53,78 @@ UA_HEADERS = {
     )
 }
 
-# Thread-safe cache with LRU eviction
-class ThreadSafeCache:
-    def __init__(self, max_size=100, ttl=86400):
-        self.max_size = max_size
-        self.ttl = ttl
-        self.cache = OrderedDict()
-        self.lock = Lock()
-    
-    def get(self, key):
-        with self.lock:
-            if key in self.cache:
-                entry = self.cache[key]
-                if time.time() - entry["ts"] < self.ttl:
-                    # Move to end (most recently used)
-                    self.cache.move_to_end(key)
-                    return entry["data"]
-                else:
-                    # Expired
-                    del self.cache[key]
-            return None
-    
-    def set(self, key, data):
-        with self.lock:
-            # Remove oldest if at capacity
-            if len(self.cache) >= self.max_size:
-                self.cache.popitem(last=False)
-            
-            self.cache[key] = {"data": data, "ts": time.time()}
-            self.cache.move_to_end(key)
-
-_m3u_cache = ThreadSafeCache(max_size=CACHE_MAX_SIZE, ttl=CACHE_TTL)
-
-# Compile regex once
-ATTR_RE = re.compile(r'(\w[\w-]*)="([^"]*)"')
-
-# Rate limiting: simple in-memory counter
-class RateLimiter:
-    def __init__(self, max_attempts=10, window=300):
-        self.max_attempts = max_attempts
-        self.window = window
-        self.attempts = {}
-        self.lock = Lock()
-    
-    def is_allowed(self, key):
-        now = time.time()
-        with self.lock:
-            if key not in self.attempts:
-                self.attempts[key] = []
-            
-            # Remove old attempts
-            self.attempts[key] = [t for t in self.attempts[key] if now - t < self.window]
-            
-            if len(self.attempts[key]) >= self.max_attempts:
-                return False
-            
-            self.attempts[key].append(now)
-            return True
-
-rate_limiter = RateLimiter(
-    max_attempts=int(os.environ.get('RATE_LIMIT_MAX', '20')),
-    window=int(os.environ.get('RATE_LIMIT_WINDOW', '300'))
-)
-
-# --------------- HELPERS ----------------
-
-def get_client_ip():
-    """Get real client IP, considering proxies"""
-    return request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
+# ---------------- HELPERS ----------------
 
 def valid_user(username, password):
-    """Validate user credentials with rate limiting"""
-    if not username or not password:
-        return False
-    
-    # Rate limit by IP
-    ip = get_client_ip()
-    if not rate_limiter.is_allowed(f"auth:{ip}"):
-        print(f"[RATE-LIMIT] IP {ip} exceeded auth attempts")
-        return False
-    
-    # Constant-time comparison to prevent timing attacks
-    if username not in USERS:
-        return False
-    
-    expected = USERS[username]
-    # Simple constant-time comparison
-    return len(password) == len(expected) and password == expected
+    return username in USERS and USERS[username] == password
 
 
 def get_m3u_url_for_user(username):
-    return USER_M3U_URLS.get(username, DEFAULT_M3U_URL)
-
-
-def get_epg_url_for_user(username):
-    return USER_EPG_URLS.get(username, DEFAULT_EPG_URL)
+    """Return per-user playlist or default."""
+    url = USER_M3U_URLS.get(username, DEFAULT_M3U_URL)
+    print(f"[CONFIG] User '{username}' → {'CUSTOM' if username in USER_M3U_URLS else 'DEFAULT'} playlist")
+    print(f"[CONFIG] URL: {url[:80]}...")
+    return url
 
 
 def wants_json():
-    """Only return JSON when output=json is explicitly set."""
-    return request.values.get("output", "").lower() == "json"
+    """Determine if client wants JSON response."""
+    fmt = request.values.get("output", "").lower()
+    if fmt == "json":
+        return True
+    if fmt in ["xml", "m3u8", "ts"]:
+        return False
 
+    ua = request.headers.get("User-Agent", "").lower()
+    accept = request.headers.get("Accept", "").lower()
 
-def escape_xml(text):
-    """Escape XML special characters"""
-    if text is None:
-        return ""
-    return html.escape(str(text), quote=True)
+    if "smarters" in ua or "okhttp" in ua:
+        return True
+    if "json" in accept:
+        return True
+    if "xml" in accept and "json" not in accept:
+        return False
+
+    return True
 
 
 def list_to_xml(root_tag, item_tag, data_list):
-    """Convert list to XML with proper escaping"""
+    """Convert list of dicts to XML string"""
     root = Element(root_tag)
     for item in data_list:
-        elem = SubElement(root, item_tag)
-        for k, v in item.items():
-            child = SubElement(elem, k)
-            child.text = escape_xml(v)
-    return tostring(root, encoding="unicode")
+        item_elem = SubElement(root, item_tag)
+        for key, val in item.items():
+            child = SubElement(item_elem, key)
+            child.text = str(val) if val is not None else ""
+    return tostring(root, encoding='unicode')
 
 
 def fetch_m3u(url, username=""):
-    """Fetch and parse M3U with caching"""
-    # Validate URL
-    try:
-        parsed = urlparse(url)
-        if parsed.scheme not in ['http', 'https']:
-            raise ValueError("Invalid URL scheme")
-    except Exception as e:
-        print(f"[ERROR] Invalid URL: {url} - {e}")
-        return {"categories": [], "streams": []}
-    
-    # Check cache
-    cached = _m3u_cache.get(url)
-    if cached:
-        return cached
+    now = time.time()
+    entry = _m3u_cache.get(url)
+
+    if entry and now - entry["ts"] < CACHE_TTL:
+        return entry["parsed"]
 
     try:
-        print(f"[FETCH] {username} → {url}")
-        r = requests.get(url, headers=UA_HEADERS, timeout=15)
+        print(f"[INFO] Fetching: {username or url}")
+        r = requests.get(url, headers=UA_HEADERS, timeout=25)
         r.raise_for_status()
-        parsed_data = parse_m3u(r.text)
+        parsed = parse_m3u(r.text)
 
-        _m3u_cache.set(url, parsed_data)
-        return parsed_data
+        _m3u_cache[url] = {
+            "parsed": parsed,
+            "ts": now,
+            "last_fetch": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
+        }
+        print(f"[OK] Cached {len(parsed['streams'])} streams for {username}")
+        return parsed
 
     except Exception as e:
-        print(f"[ERROR] M3U fetch failed: {e}")
-        return {"categories": [], "streams": []}
+        print(f"[ERROR] Fetch failed: {username} => {e}")
+        if entry:
+            return entry["parsed"]
+        return {"categories": [], "streams": [], "epg_url": None}
 
 
 def fetch_m3u_for_user(username):
@@ -220,59 +132,180 @@ def fetch_m3u_for_user(username):
 
 
 def parse_m3u(text):
-    """Parse M3U playlist"""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
-    streams = []
-    categories = {}
-    sid = 1
-    cid = 1
+    streams, cat_map = [], {}
+    stream_id = 1
+    next_cat = 1
+    attr_re = re.compile(r'(\w[\w-]*)="([^"]*)"')
+    epg_url = None
+
+    # Extract EPG URL from M3U header
+    if lines and lines[0].startswith("#EXTM3U"):
+        header_attrs = dict(attr_re.findall(lines[0]))
+        epg_url = header_attrs.get("url-tvg") or header_attrs.get("x-tvg-url")
 
     i = 0
     while i < len(lines):
         if lines[i].startswith("#EXTINF"):
-            attrs = dict(ATTR_RE.findall(lines[i]))
-            
-            # Extract name after the comma
-            parts = lines[i].split(",", 1)
-            name = parts[1] if len(parts) > 1 else "Unknown"
-            
+            attrs = dict(attr_re.findall(lines[i]))
+            name = lines[i].split(",", 1)[1].strip() if "," in lines[i] else "Channel"
             group = attrs.get("group-title", "Uncategorised")
             logo = attrs.get("tvg-logo", "")
             epg = attrs.get("tvg-id", "")
 
-            i += 1
-            url = lines[i] if i < len(lines) and not lines[i].startswith("#") else ""
+            j = i + 1
+            while j < len(lines) and lines[j].startswith("#"):
+                j += 1
+            url = lines[j] if j < len(lines) else ""
 
-            if not url:
-                i += 1
-                continue
-
-            if group not in categories:
-                categories[group] = cid
-                cid += 1
+            if group not in cat_map:
+                cat_map[group] = next_cat
+                next_cat += 1
 
             streams.append({
-                "stream_id": sid,
-                "num": sid,
+                "stream_id": stream_id,
+                "num": stream_id,
                 "name": name,
                 "stream_type": "live",
                 "stream_icon": logo,
                 "epg_channel_id": epg,
-                "category_id": str(categories[group]),
+                "added": "1640000000",
+                "category_id": str(cat_map[group]),
                 "category_name": group,
                 "direct_source": url,
+                "tv_archive": 0,
+                "tv_archive_duration": 0,
+                "custom_sid": "",
+                "tv_archive_start": "",
+                "tv_archive_stop": "",
                 "container_extension": "m3u8"
             })
 
-            sid += 1
-        i += 1
+            stream_id += 1
+            i = j
+        else:
+            i += 1
 
-    cats = [{"category_id": str(v), "category_name": k, "parent_id": 0}
-            for k, v in categories.items()]
+    categories = [
+        {"category_id": str(v), "category_name": k, "parent_id": 0}
+        for k, v in cat_map.items()
+    ]
 
-    return {"categories": cats, "streams": streams}
+    return {"categories": categories, "streams": streams, "epg_url": epg_url}
 
-# ------------------ API ROUTES ------------------
+# ---------------- ROUTES ----------------
+
+@app.route("/")
+def index():
+    default = _m3u_cache.get(DEFAULT_M3U_URL, {})
+    john = _m3u_cache.get(USER_M3U_URLS.get("John", ""), {})
+    main = _m3u_cache.get(USER_M3U_URLS.get("main", ""), {})
+    return (
+        f"✅ Xtream Bridge (Multi-User)<br><br>"
+        f"<b>Default:</b> {len(default.get('parsed', {}).get('streams', []))} streams<br>"
+        f"<b>John:</b> {len(john.get('parsed', {}).get('streams', []))} streams<br>"
+        f"<b>Main:</b> {len(main.get('parsed', {}).get('streams', []))} streams<br><br>"
+        f"<a href='/whoami?username=main&password=admin'>🧭 Test Login</a> | "
+        f"<a href='/debug'>🔍 Debug Users</a> | "
+        f"<a href='/refresh'>🔄 Refresh Cache</a> | "
+        f"<a href='/test_stream/1?username=main&password=admin'>🎬 Test Stream</a>"
+    )
+
+
+@app.route("/debug")
+def debug_info():
+    """Show which URLs and files are currently mapped and cached."""
+    info = ["<h2>🔍 User-to-Playlist Mapping</h2>"]
+    
+    # Show what the code THINKS each user should get
+    info.append("<h3>Expected Assignments:</h3>")
+    for user in USERS.keys():
+        expected_url = USER_M3U_URLS.get(user, DEFAULT_M3U_URL)
+        is_custom = user in USER_M3U_URLS
+        info.append(f"<b>{user}</b>: {'CUSTOM' if is_custom else 'DEFAULT'} → {expected_url[:80]}...<br>")
+    
+    info.append("<hr><h3>Actual Cache Status:</h3>")
+    
+    for user in USERS.keys():
+        url = get_m3u_url_for_user(user)
+        cache = _m3u_cache.get(url, {})
+        streams = len(cache.get("parsed", {}).get("streams", []))
+        last_fetch = cache.get("last_fetch", "Never")
+        epg_url = cache.get("parsed", {}).get("epg_url", "Not found")
+        
+        info.append(f"""
+        <div style='border:1px solid #ccc; padding:10px; margin:10px 0;'>
+            <b>User:</b> {user}<br>
+            <b>Playlist:</b> {'Custom' if user in USER_M3U_URLS else 'Default'}<br>
+            <b>Streams:</b> {streams}<br>
+            <b>Last Fetch:</b> {last_fetch}<br>
+            <b>EPG URL:</b> <small>{epg_url}</small><br>
+            <b>M3U URL:</b> <small>{url[:80]}...</small>
+        </div>
+        """)
+    
+    info.append("<br><a href='/'>← Back to Home</a> | <a href='/refresh'>🔄 Force Refresh Now</a>")
+    return "".join(info)
+
+
+@app.route("/refresh")
+def refresh_all():
+    """Force clear and re-fetch all playlists."""
+    print("[INFO] 🔄 Manual full refresh triggered...")
+    _m3u_cache.clear()
+    fetch_m3u(DEFAULT_M3U_URL, "Default")
+    for user, url in USER_M3U_URLS.items():
+        fetch_m3u(url, user)
+    return """
+    <h2>✅ Cache Refreshed</h2>
+    <p>All playlists have been forcibly refreshed and re-cached.</p>
+    <a href='/'>← Back to Home</a> | <a href='/debug'>Check Debug</a>
+    """
+
+
+@app.route("/whoami")
+def whoami():
+    """Show which playlist and cache info this user gets."""
+    username = request.args.get("username", "")
+    password = request.args.get("password", "")
+    
+    if not valid_user(username, password):
+        return jsonify({"error": "Invalid credentials"}), 403
+    
+    url = get_m3u_url_for_user(username)
+    cache = _m3u_cache.get(url, {})
+    
+    return jsonify({
+        "username": username,
+        "playlist_url": url,
+        "streams": len(cache.get("parsed", {}).get("streams", [])),
+        "last_fetch": cache.get("last_fetch", "Never"),
+        "is_custom": username in USER_M3U_URLS
+    })
+
+
+@app.route("/test_stream/<int:stream_id>")
+def test_stream(stream_id):
+    """Debug endpoint to test stream URLs directly"""
+    username = request.args.get("username", "main")
+    password = request.args.get("password", "admin")
+    
+    if not valid_user(username, password):
+        return "Invalid credentials", 403
+    
+    data = fetch_m3u_for_user(username)
+    for s in data["streams"]:
+        if s["stream_id"] == stream_id:
+            return f"""
+            <h3>Stream #{stream_id}: {s['name']}</h3>
+            <p><b>Direct URL:</b><br><textarea style="width:100%;height:60px">{s['direct_source']}</textarea></p>
+            <p><b>Xtream URL:</b><br>http://{request.host}/live/{username}/{password}/{stream_id}.m3u8</p>
+            <p><a href="{s['direct_source']}" target="_blank">Test Direct Link</a></p>
+            <p><a href="/live/{username}/{password}/{stream_id}.m3u8">Test Via Proxy</a></p>
+            """
+    
+    return "Stream not found", 404
+
 
 @app.route("/player_api.php", methods=["GET", "POST"])
 def player_api():
@@ -281,175 +314,174 @@ def player_api():
     action = request.values.get("action", "")
     use_json = wants_json()
 
-    if not valid_user(username, password):
-        if use_json:
-            return jsonify({"user_info": {"auth": 0}}), 403
-        return Response(
-            "<response><user_info><auth>0</auth></user_info></response>",
-            status=403,
-            content_type="application/xml"
-        )
+    print(f"[API] user={username}, action={action}, json={use_json}, UA={request.headers.get('User-Agent', '')[:40]}")
 
-    # Base login
-    if action == "":
-        info = {
+    if not valid_user(username, password):
+        msg = {
             "user_info": {
-                "auth": 1,
-                "status": "Active",
-                "username": escape_xml(username),
-                "password": "******",  # Don't echo password
-                "allowed_output_formats": ["m3u8", "ts"]
+                "username": username,
+                "password": password,
+                "message": "Invalid credentials",
+                "auth": 0,
+                "status": "Disabled"
             }
         }
         if use_json:
+            return jsonify(msg), 403
+        else:
+            xml = '<?xml version="1.0"?><response><user_info><auth>0</auth><status>Disabled</status></user_info></response>'
+            return Response(xml, status=403, content_type="application/xml")
+
+    if action == "":
+        info = {
+            "user_info": {
+                "username": username,
+                "password": password,
+                "message": "Active",
+                "auth": 1,
+                "status": "Active",
+                "exp_date": None,
+                "is_trial": "0",
+                "active_cons": "0",
+                "created_at": "1640000000",
+                "max_connections": "1",
+                "allowed_output_formats": ["m3u8", "ts"]
+            },
+            "server_info": {
+                "url": request.host.split(":")[0],
+                "port": "80",
+                "https_port": "443",
+                "server_protocol": "http",
+                "rtmp_port": "1935",
+                "timezone": "UTC",
+                "timestamp_now": int(time.time()),
+                "time_now": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
+        }
+        
+        if use_json:
             return jsonify(info)
+        else:
+            xml = '<?xml version="1.0" encoding="UTF-8"?><response><user_info>'
+            for k, v in info["user_info"].items():
+                if isinstance(v, list):
+                    v = ",".join(v)
+                xml += f'<{k}>{v}</{k}>'
+            xml += '</user_info><server_info>'
+            for k, v in info["server_info"].items():
+                xml += f'<{k}>{v}</{k}>'
+            xml += '</server_info></response>'
+            return Response(xml, content_type="application/xml")
 
-        xml = "<response><user_info>"
-        for k, v in info["user_info"].items():
-            if isinstance(v, list):
-                v = ",".join(v)
-            xml += f"<{k}>{escape_xml(v)}</{k}>"
-        xml += "</user_info></response>"
-        return Response(xml, content_type="application/xml")
-
-    # Live Categories
     if action == "get_live_categories":
         cats = fetch_m3u_for_user(username)["categories"]
         if use_json:
             return jsonify(cats)
-        return Response(list_to_xml("categories", "category", cats),
-                        content_type="application/xml")
+        else:
+            xml = list_to_xml("categories", "category", cats)
+            return Response(f'<?xml version="1.0"?>{xml}', content_type="application/xml")
 
-    # Live Streams
     if action == "get_live_streams":
         data = fetch_m3u_for_user(username)
-        cat = request.values.get("category_id")
-        streams = [s for s in data["streams"]
-                   if not cat or str(s["category_id"]) == str(cat)]
-
+        cat_filter = request.values.get("category_id")
+        streams = [s for s in data["streams"] 
+                   if not cat_filter or str(s["category_id"]) == str(cat_filter)]
+        
         if use_json:
             return jsonify(streams)
-        return Response(list_to_xml("streams", "channel", streams),
-                        content_type="application/xml")
+        else:
+            xml = list_to_xml("streams", "channel", streams)
+            return Response(f'<?xml version="1.0"?>{xml}', content_type="application/xml")
 
-    return Response("<error>Unknown action</error>",
-                    status=400,
-                    content_type="application/xml")
+    if action == "get_account_info":
+        account_info = {
+            "username": username,
+            "password": password,
+            "message": "Active",
+            "auth": 1,
+            "status": "Active",
+            "exp_date": None,
+            "is_trial": "0",
+            "active_cons": "0",
+            "created_at": "1640000000",
+            "max_connections": "1"
+        }
+        if use_json:
+            return jsonify(account_info)
+        else:
+            xml = '<?xml version="1.0"?><user_info>'
+            for k, v in account_info.items():
+                xml += f'<{k}>{v}</{k}>'
+            xml += '</user_info>'
+            return Response(xml, content_type="application/xml")
 
-# -------- STREAM PROXY --------
+    if action in [
+        "get_vod_categories", "get_vod_streams", "get_series_categories",
+        "get_series", "get_series_info", "get_vod_info", "get_short_epg"
+    ]:
+        if use_json:
+            return jsonify([])
+        else:
+            return Response('<?xml version="1.0"?><response></response>', content_type="application/xml")
+
+    if use_json:
+        return jsonify({"error": "action not handled", "action": action})
+    else:
+        return Response(f'<?xml version="1.0"?><e>Unknown action: {action}</e>', 
+                      status=400, content_type="application/xml")
+
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
 @app.route("/live/<username>/<password>/<int:stream_id>")
+@app.route("/<username>/<password>/<int:stream_id>.<ext>")
+@app.route("/<username>/<password>/<int:stream_id>")
 def live(username, password, stream_id, ext=None):
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
 
     data = fetch_m3u_for_user(username)
-
-    stream = next((s for s in data["streams"] if s["stream_id"] == stream_id), None)
-    if not stream:
-        return Response("Stream not found", status=404)
-
-    target_url = stream["direct_source"]
-    
-    # Validate target URL
-    try:
-        parsed = urlparse(target_url)
-        if parsed.scheme not in ['http', 'https']:
-            return Response("Invalid stream URL", status=400)
-    except:
-        return Response("Invalid stream URL", status=400)
-
-    ext = ext or "m3u8"
-
-    # PROXY THE PLAYLIST (.m3u8) and rewrite URLs
-    if ext == "m3u8":
-        print(f"[PLAYLIST-PROXY] {username} → {target_url}")
-        try:
-            upstream = requests.get(target_url, headers=UA_HEADERS, timeout=10)
-            upstream.raise_for_status()
+    for s in data["streams"]:
+        if s["stream_id"] == stream_id:
+            target_url = s["direct_source"]
             
-            # Rewrite relative URLs in the playlist to absolute
-            content = upstream.text
-            base_url = target_url.rsplit('/', 1)[0] + '/'
+            requested_ext = ext or "none"
+            actual_ext = "m3u8" if ".m3u8" in target_url else "ts" if ".ts" in target_url else "unknown"
+            print(f"[STREAM] User: {username}, Stream: {stream_id} ({s['name']}), Req ext: {requested_ext}, Actual: {actual_ext}")
+            print(f"[STREAM] Redirecting to: {target_url[:80]}...")
             
-            lines = []
-            for line in content.splitlines():
-                if line and not line.startswith('#'):
-                    # If it's a relative URL, make it absolute
-                    if not line.startswith('http'):
-                        line = urljoin(base_url, line)
-                lines.append(line)
-            
-            rewritten = '\n'.join(lines)
-            
-            return Response(
-                rewritten,
-                content_type="application/vnd.apple.mpegurl"
-            )
-        except Exception as e:
-            print(f"[ERROR] Playlist proxy failed: {e}")
-            return Response("Upstream error", status=502)
+            return redirect(target_url, code=302)
 
-    # For segments or other extensions, redirect
-    print(f"[REDIRECT] {username} → {target_url}")
-    return redirect(target_url, code=302)
+    return Response("Stream not found", status=404)
 
-# ------------- EPG ----------------
 
 @app.route("/xmltv.php")
 def xmltv():
     username = request.args.get("username", "")
     password = request.args.get("password", "")
-
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-
-    epg_url = get_epg_url_for_user(username)
     
-    # Validate EPG URL
-    try:
-        parsed = urlparse(epg_url)
-        if parsed.scheme not in ['http', 'https']:
-            return Response("Invalid EPG URL", status=400)
-    except:
-        return Response("Invalid EPG URL", status=400)
+    data = fetch_m3u_for_user(username)
+    epg_url = data.get("epg_url")
     
-    print(f"[EPG] {username} → {epg_url}")
+    if not epg_url:
+        epg_url = "http://m3u4u.com/epg/476rnmqd4ds4rkd3nekg"
+        print(f"[EPG] No EPG in M3U for {username}, using fallback")
+    else:
+        print(f"[EPG] Using EPG from M3U for {username}: {epg_url[:60]}...")
+    
     return redirect(epg_url)
 
-# ------------- DIRECT M3U -------------
 
 @app.route("/get.php")
 def get_m3u():
     username = request.args.get("username", "")
     password = request.args.get("password", "")
-    
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    
-    m3u_url = get_m3u_url_for_user(username)
-    
-    # Validate M3U URL
-    try:
-        parsed = urlparse(m3u_url)
-        if parsed.scheme not in ['http', 'https']:
-            return Response("Invalid M3U URL", status=400)
-    except:
-        return Response("Invalid M3U URL", status=400)
-    
-    return redirect(m3u_url)
+    return redirect(get_m3u_url_for_user(username))
 
-# ------------- HEALTH CHECK -------------
-
-@app.route("/health")
-def health():
-    return jsonify({"status": "ok", "cache_size": len(_m3u_cache.cache)})
-
-# ----------------- MAIN -----------------
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "10000"))
-    print(f"[INFO] Starting server on port {port}")
-    print(f"[INFO] Configured users: {len(USERS)}")
-    app.run(host="0.0.0.0", port=port, threaded=True)
+    app.run(host="0.0.0.0", port=port)
