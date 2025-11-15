@@ -23,9 +23,7 @@ USERS = {
 
 # Default playlist for dad, john, mark, james, ian, harry
 DEFAULT_M3U_URL = (
-    "https://www.dropbox.com/scl/fi/xz0966ignzhvfu4k6b9if/"
-    "m3u4u-102864-674859-Playlist.m3u?"
-    "rlkey=eomxtmihnxvq9hpd1ic41bfgb&st=9h1js2c3&dl=1"
+    "http://m3u4u.com/m3u/jwmzn1w282ukvxw4n721"
 )
 
 # Custom playlists - John and main get their own
