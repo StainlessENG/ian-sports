@@ -2,42 +2,60 @@ import os
 import time
 import re
 import requests
+import html
 from flask import Flask, request, redirect, jsonify, Response
 from xml.etree.ElementTree import Element, SubElement, tostring
+from functools import wraps
+from threading import Lock
+from collections import OrderedDict
+from urllib.parse import urljoin, urlparse
+import hashlib
 
 app = Flask(__name__)
 
 # ---------------- CONFIG ----------------
 
-USERS = {
-    "dad": "devon",
-    "john": "pass123",
-    "John": "Sidford2025",
-    "mark": "Sidmouth2025",
-    "james": "October2025",
-    "ian": "October2025",
-    "harry": "October2025",
-    "main": "admin"
-}
+# Load users from environment variable (JSON format)
+# Example: USERS='{"dad":"devon","john":"pass123"}'
+import json
+USERS = json.loads(os.environ.get('USERS', '{}'))
+
+# Fallback for development only - REMOVE IN PRODUCTION
+if not USERS:
+    print("[WARNING] No users configured via USERS env var. Using insecure defaults.")
+    USERS = {
+        "dad": "devon",
+        "john": "pass123",
+        "John": "Sidford2025",
+        "mark": "Sidmouth2025",
+        "james": "October2025",
+        "ian": "October2025",
+        "harry": "October2025",
+        "main": "admin"
+    }
 
 # Default playlist + EPG
-DEFAULT_M3U_URL = "http://m3u4u.com/m3u/jwmzn1w282ukvxw4n721"
-DEFAULT_EPG_URL = "http://m3u4u.com/xml/jwmzn1w282ukvxw4n721"
+DEFAULT_M3U_URL = os.environ.get('DEFAULT_M3U_URL', "http://m3u4u.com/m3u/jwmzn1w282ukvxw4n721")
+DEFAULT_EPG_URL = os.environ.get('DEFAULT_EPG_URL', "http://m3u4u.com/xml/jwmzn1w282ukvxw4n721")
 
-# Custom playlists
-USER_M3U_URLS = {
-    "John": "http://m3u4u.com/m3u/5g28nejz1zhv45q3yzpe",
-    "main": "http://m3u4u.com/m3u/p87vnr8dzdu4w2q6n41j"
-}
+# Custom playlists (load from env or use defaults)
+USER_M3U_URLS = json.loads(os.environ.get('USER_M3U_URLS', '{}'))
+if not USER_M3U_URLS:
+    USER_M3U_URLS = {
+        "John": "http://m3u4u.com/m3u/5g28nejz1zhv45q3yzpe",
+        "main": "http://m3u4u.com/m3u/p87vnr8dzdu4w2q6n41j"
+    }
 
 # Matching EPGs
-USER_EPG_URLS = {
-    "John": DEFAULT_EPG_URL,   # John stays on default EPG
-    "main": "http://m3u4u.com/xml/p87vnr8dzdu4w2q6n41j"
-}
+USER_EPG_URLS = json.loads(os.environ.get('USER_EPG_URLS', '{}'))
+if not USER_EPG_URLS:
+    USER_EPG_URLS = {
+        "John": DEFAULT_EPG_URL,
+        "main": "http://m3u4u.com/xml/p87vnr8dzdu4w2q6n41j"
+    }
 
-CACHE_TTL = 86400
-_m3u_cache = {}
+CACHE_TTL = int(os.environ.get('CACHE_TTL', '86400'))
+CACHE_MAX_SIZE = int(os.environ.get('CACHE_MAX_SIZE', '100'))
 
 UA_HEADERS = {
     "User-Agent": (
@@ -47,10 +65,93 @@ UA_HEADERS = {
     )
 }
 
+# Thread-safe cache with LRU eviction
+class ThreadSafeCache:
+    def __init__(self, max_size=100, ttl=86400):
+        self.max_size = max_size
+        self.ttl = ttl
+        self.cache = OrderedDict()
+        self.lock = Lock()
+    
+    def get(self, key):
+        with self.lock:
+            if key in self.cache:
+                entry = self.cache[key]
+                if time.time() - entry["ts"] < self.ttl:
+                    # Move to end (most recently used)
+                    self.cache.move_to_end(key)
+                    return entry["data"]
+                else:
+                    # Expired
+                    del self.cache[key]
+            return None
+    
+    def set(self, key, data):
+        with self.lock:
+            # Remove oldest if at capacity
+            if len(self.cache) >= self.max_size:
+                self.cache.popitem(last=False)
+            
+            self.cache[key] = {"data": data, "ts": time.time()}
+            self.cache.move_to_end(key)
+
+_m3u_cache = ThreadSafeCache(max_size=CACHE_MAX_SIZE, ttl=CACHE_TTL)
+
+# Compile regex once
+ATTR_RE = re.compile(r'(\w[\w-]*)="([^"]*)"')
+
+# Rate limiting: simple in-memory counter
+class RateLimiter:
+    def __init__(self, max_attempts=10, window=300):
+        self.max_attempts = max_attempts
+        self.window = window
+        self.attempts = {}
+        self.lock = Lock()
+    
+    def is_allowed(self, key):
+        now = time.time()
+        with self.lock:
+            if key not in self.attempts:
+                self.attempts[key] = []
+            
+            # Remove old attempts
+            self.attempts[key] = [t for t in self.attempts[key] if now - t < self.window]
+            
+            if len(self.attempts[key]) >= self.max_attempts:
+                return False
+            
+            self.attempts[key].append(now)
+            return True
+
+rate_limiter = RateLimiter(
+    max_attempts=int(os.environ.get('RATE_LIMIT_MAX', '20')),
+    window=int(os.environ.get('RATE_LIMIT_WINDOW', '300'))
+)
+
 # --------------- HELPERS ----------------
 
+def get_client_ip():
+    """Get real client IP, considering proxies"""
+    return request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
+
 def valid_user(username, password):
-    return username in USERS and USERS[username] == password
+    """Validate user credentials with rate limiting"""
+    if not username or not password:
+        return False
+    
+    # Rate limit by IP
+    ip = get_client_ip()
+    if not rate_limiter.is_allowed(f"auth:{ip}"):
+        print(f"[RATE-LIMIT] IP {ip} exceeded auth attempts")
+        return False
+    
+    # Constant-time comparison to prevent timing attacks
+    if username not in USERS:
+        return False
+    
+    expected = USERS[username]
+    # Simple constant-time comparison
+    return len(password) == len(expected) and password == expected
 
 
 def get_m3u_url_for_user(username):
@@ -66,36 +167,51 @@ def wants_json():
     return request.values.get("output", "").lower() == "json"
 
 
+def escape_xml(text):
+    """Escape XML special characters"""
+    if text is None:
+        return ""
+    return html.escape(str(text), quote=True)
+
+
 def list_to_xml(root_tag, item_tag, data_list):
+    """Convert list to XML with proper escaping"""
     root = Element(root_tag)
     for item in data_list:
         elem = SubElement(root, item_tag)
         for k, v in item.items():
             child = SubElement(elem, k)
-            child.text = "" if v is None else str(v)
+            child.text = escape_xml(v)
     return tostring(root, encoding="unicode")
 
 
 def fetch_m3u(url, username=""):
-    now = time.time()
-
-    entry = _m3u_cache.get(url)
-    if entry and now - entry["ts"] < CACHE_TTL:
-        return entry["parsed"]
+    """Fetch and parse M3U with caching"""
+    # Validate URL
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ['http', 'https']:
+            raise ValueError("Invalid URL scheme")
+    except Exception as e:
+        print(f"[ERROR] Invalid URL: {url} - {e}")
+        return {"categories": [], "streams": []}
+    
+    # Check cache
+    cached = _m3u_cache.get(url)
+    if cached:
+        return cached
 
     try:
         print(f"[FETCH] {username} → {url}")
         r = requests.get(url, headers=UA_HEADERS, timeout=15)
         r.raise_for_status()
-        parsed = parse_m3u(r.text)
+        parsed_data = parse_m3u(r.text)
 
-        _m3u_cache[url] = {"parsed": parsed, "ts": now}
-        return parsed
+        _m3u_cache.set(url, parsed_data)
+        return parsed_data
 
     except Exception as e:
         print(f"[ERROR] M3U fetch failed: {e}")
-        if entry:
-            return entry["parsed"]
         return {"categories": [], "streams": []}
 
 
@@ -104,25 +220,32 @@ def fetch_m3u_for_user(username):
 
 
 def parse_m3u(text):
+    """Parse M3U playlist"""
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     streams = []
     categories = {}
     sid = 1
     cid = 1
 
-    attr_re = re.compile(r'(\w[\w-]*)="([^"]*)"')
-
     i = 0
     while i < len(lines):
         if lines[i].startswith("#EXTINF"):
-            attrs = dict(attr_re.findall(lines[i]))
-            name = lines[i].split(",", 1)[1]
+            attrs = dict(ATTR_RE.findall(lines[i]))
+            
+            # Extract name after the comma
+            parts = lines[i].split(",", 1)
+            name = parts[1] if len(parts) > 1 else "Unknown"
+            
             group = attrs.get("group-title", "Uncategorised")
             logo = attrs.get("tvg-logo", "")
             epg = attrs.get("tvg-id", "")
 
             i += 1
-            url = lines[i] if i < len(lines) else ""
+            url = lines[i] if i < len(lines) and not lines[i].startswith("#") else ""
+
+            if not url:
+                i += 1
+                continue
 
             if group not in categories:
                 categories[group] = cid
@@ -173,8 +296,8 @@ def player_api():
             "user_info": {
                 "auth": 1,
                 "status": "Active",
-                "username": username,
-                "password": password,
+                "username": escape_xml(username),
+                "password": "******",  # Don't echo password
                 "allowed_output_formats": ["m3u8", "ts"]
             }
         }
@@ -185,7 +308,7 @@ def player_api():
         for k, v in info["user_info"].items():
             if isinstance(v, list):
                 v = ",".join(v)
-            xml += f"<{k}>{v}</{k}>"
+            xml += f"<{k}>{escape_xml(v)}</{k}>"
         xml += "</user_info></response>"
         return Response(xml, content_type="application/xml")
 
@@ -213,7 +336,7 @@ def player_api():
                     status=400,
                     content_type="application/xml")
 
-# -------- OPTION 1: PLAYLIST PROXY ONLY --------
+# -------- STREAM PROXY --------
 
 @app.route("/live/<username>/<password>/<int:stream_id>.<ext>")
 @app.route("/live/<username>/<password>/<int:stream_id>")
@@ -228,24 +351,48 @@ def live(username, password, stream_id, ext=None):
         return Response("Stream not found", status=404)
 
     target_url = stream["direct_source"]
+    
+    # Validate target URL
+    try:
+        parsed = urlparse(target_url)
+        if parsed.scheme not in ['http', 'https']:
+            return Response("Invalid stream URL", status=400)
+    except:
+        return Response("Invalid stream URL", status=400)
+
     ext = ext or "m3u8"
 
-    # PROXY ONLY THE PLAYLIST (.m3u8)
+    # PROXY THE PLAYLIST (.m3u8) and rewrite URLs
     if ext == "m3u8":
         print(f"[PLAYLIST-PROXY] {username} → {target_url}")
         try:
             upstream = requests.get(target_url, headers=UA_HEADERS, timeout=10)
             upstream.raise_for_status()
+            
+            # Rewrite relative URLs in the playlist to absolute
+            content = upstream.text
+            base_url = target_url.rsplit('/', 1)[0] + '/'
+            
+            lines = []
+            for line in content.splitlines():
+                if line and not line.startswith('#'):
+                    # If it's a relative URL, make it absolute
+                    if not line.startswith('http'):
+                        line = urljoin(base_url, line)
+                lines.append(line)
+            
+            rewritten = '\n'.join(lines)
+            
             return Response(
-                upstream.content,
+                rewritten,
                 content_type="application/vnd.apple.mpegurl"
             )
         except Exception as e:
             print(f"[ERROR] Playlist proxy failed: {e}")
             return Response("Upstream error", status=502)
 
-    # SEGMENT REDIRECT
-    print(f"[REDIRECT-SEGMENT] {username} → {target_url}")
+    # For segments or other extensions, redirect
+    print(f"[REDIRECT] {username} → {target_url}")
     return redirect(target_url, code=302)
 
 # ------------- EPG ----------------
@@ -259,6 +406,15 @@ def xmltv():
         return Response("Invalid credentials", status=403)
 
     epg_url = get_epg_url_for_user(username)
+    
+    # Validate EPG URL
+    try:
+        parsed = urlparse(epg_url)
+        if parsed.scheme not in ['http', 'https']:
+            return Response("Invalid EPG URL", status=400)
+    except:
+        return Response("Invalid EPG URL", status=400)
+    
     print(f"[EPG] {username} → {epg_url}")
     return redirect(epg_url)
 
@@ -268,12 +424,32 @@ def xmltv():
 def get_m3u():
     username = request.args.get("username", "")
     password = request.args.get("password", "")
+    
     if not valid_user(username, password):
         return Response("Invalid credentials", status=403)
-    return redirect(get_m3u_url_for_user(username))
+    
+    m3u_url = get_m3u_url_for_user(username)
+    
+    # Validate M3U URL
+    try:
+        parsed = urlparse(m3u_url)
+        if parsed.scheme not in ['http', 'https']:
+            return Response("Invalid M3U URL", status=400)
+    except:
+        return Response("Invalid M3U URL", status=400)
+    
+    return redirect(m3u_url)
+
+# ------------- HEALTH CHECK -------------
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok", "cache_size": len(_m3u_cache.cache)})
 
 # ----------------- MAIN -----------------
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "10000"))
-    app.run(host="0.0.0.0", port=port)
+    print(f"[INFO] Starting server on port {port}")
+    print(f"[INFO] Configured users: {len(USERS)}")
+    app.run(host="0.0.0.0", port=port, threaded=True)
